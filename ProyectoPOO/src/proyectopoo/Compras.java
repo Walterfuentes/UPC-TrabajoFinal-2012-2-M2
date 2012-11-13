@@ -10,4 +10,6 @@ package proyectopoo;
  */
 public class Compras {
     
+    
+    
 }
