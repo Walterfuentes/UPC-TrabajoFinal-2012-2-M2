@@ -10,16 +10,15 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import static org.junit.Assert.*;
 
 
 /**
  *
  * @author walterfuentes
  */
-public class ClientesTest {
+public class autenticacionUsuarioTest {
     
-    public ClientesTest() {
+    public autenticacionUsuarioTest() {
     }
 
     @BeforeClass
@@ -36,6 +35,15 @@ public class ClientesTest {
     
     @After
     public void tearDown() {
+        
+    }
+    
+    public void AgregarUsuario(){
+        String Nombre = "Juan";
+        String Contrasena = "MiContrasena01";
+        
+      autenticacionUsuario test01 = new autenticacionUsuario(Nombre, Contrasena);
+        
     }
 
 }
