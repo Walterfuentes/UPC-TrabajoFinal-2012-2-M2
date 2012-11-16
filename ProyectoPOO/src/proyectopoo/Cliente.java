@@ -10,4 +10,9 @@ package proyectopoo;
  */
 public class Cliente {
     
+    private String nombre;
+    private String ApellidoPaterno;
+    private String ApellidoMaterno;
+    
+    
 }
