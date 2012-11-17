@@ -15,12 +15,12 @@ public class Cliente {
     private String ApellidoPaterno;
     private String ApellidoMaterno;
     private String Correo;
-    private int Dni;
-    private int telefonofijo;
-    private int celular;
+    private String Dni;
+    private String telefonofijo;
+    private String celular;
     private java.util.Date fechaIngreso;
 
-    public Cliente(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, int Dni, int telefonofijo, int celular) {
+    public Cliente(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular) {
         this.nombre = nombre;
         this.ApellidoPaterno = ApellidoPaterno;
         this.ApellidoMaterno = ApellidoMaterno;
@@ -55,19 +55,19 @@ public class Cliente {
         this.Correo = Correo;
     }
 
-    public int getDni() {
+    public String getDni() {
         return Dni;
     }
 
-    public void setDni(int Dni) {
+    public void setDni(String Dni) {
         this.Dni = Dni;
     }
 
-    public int getCelular() {
+    public String getCelular() {
         return celular;
     }
 
-    public void setCelular(int celular) {
+    public void setCelular(String celular) {
         this.celular = celular;
     }
 
@@ -87,11 +87,11 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public int getTelefonofijo() {
+    public String getTelefonofijo() {
         return telefonofijo;
     }
 
-    public void setTelefonofijo(int telefonofijo) {
+    public void setTelefonofijo(String telefonofijo) {
         this.telefonofijo = telefonofijo;
     }
     
