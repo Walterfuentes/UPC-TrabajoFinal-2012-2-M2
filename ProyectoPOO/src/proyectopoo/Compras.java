@@ -1,13 +1,9 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Historia de Usuario: Compras
+ * Desarrollado: Carlos Ricaldi
  */
 package proyectopoo;
 
-/**
- *
- * @author walterfuentes
- */
 public class Compras {
     
 }
