@@ -8,12 +8,12 @@ package proyectopoo;
  *
  * @author walterfuentes
  */
-public class Usuarios {
+public class Usuario {
     
     private String nombre;
     private String contrasenia;
 
-    public Usuarios(String nombre, String contrasenia) {
+    public Usuario(String nombre, String contrasenia) {
         this.nombre = nombre;
         this.contrasenia = contrasenia;
     }

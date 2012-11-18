@@ -51,7 +51,7 @@ public class autenticacionUsuarioTest {
         String Contrasena4 = "Micontrasena03";
       
       
-      autenticacionUsuario agregar = new autenticacionUsuario();
+      AutenticacionUsuarios agregar = new AutenticacionUsuarios();
       agregar.registrarUsuario(Nombre, Contrasena);
       agregar.registrarUsuario(Nombre2, Contrasena2);
       agregar.registrarUsuario(Nombre3, Contrasena3);
@@ -66,7 +66,7 @@ public class autenticacionUsuarioTest {
         String Contrasena = "MiContrasena01";
         String NombreNoexiste = "Walter";
         
-        autenticacionUsuario autenticar = new autenticacionUsuario();
+        AutenticacionUsuarios autenticar = new AutenticacionUsuarios();
         autenticar.registrarUsuario(Nombre, Contrasena);
         boolean respuestaEntregada = autenticar.validarExistenciaUsuario(Nombre);
         boolean Respuestadebeser = true;
@@ -88,7 +88,7 @@ public class autenticacionUsuarioTest {
         String Nombre4 = null;
         String Contrasena4 = null; 
         
-        autenticacionUsuario agregar = new autenticacionUsuario();
+        AutenticacionUsuarios agregar = new AutenticacionUsuarios();
         agregar.registrarUsuario(Nombre, Contrasena);
         
         

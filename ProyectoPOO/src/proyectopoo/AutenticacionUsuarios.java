@@ -10,13 +10,13 @@ import java.util.ArrayList;
  *
  * @author walterfuentes
  */
-public class autenticacionUsuario {
+public class AutenticacionUsuarios {
 
-    private ArrayList<Usuarios> usuarios;
+    private ArrayList<Usuario> usuarios;
     
 
-    public autenticacionUsuario() {
-        usuarios = new ArrayList<Usuarios>();
+    public AutenticacionUsuarios() {
+        usuarios = new ArrayList<Usuario>();
         
     }
 
@@ -41,7 +41,7 @@ public class autenticacionUsuario {
     public boolean validarExistenciaUsuario(String nombre) {
         boolean respuesta = false;
 
-        for (Usuarios aux : usuarios) {
+        for (Usuario aux : usuarios) {
             if (aux.getNombre().equalsIgnoreCase(nombre)) {
                 respuesta = true;
             }
@@ -52,7 +52,7 @@ public class autenticacionUsuario {
 
     public void registrarUsuario(String nombre, String contrasenia) { 
         if(validarExistenciaUsuario(nombre)== false){
-        Usuarios nuevoUsuario = new Usuarios(nombre, contrasenia);
+        Usuario nuevoUsuario = new Usuario(nombre, contrasenia);
         usuarios.add(nuevoUsuario);}else{
             System.out.println("No se Puede Agregar Usuario ya Existe");
         }
@@ -62,7 +62,7 @@ public class autenticacionUsuario {
     public void autenticarUsuario(String nombre, String contrasenia){
         String respuestaUsuario = " ";  
         if (validarCamposUsuario(nombre, contrasenia).equalsIgnoreCase("DatosCompletos")){
-        for(Usuarios aux: usuarios){  
+        for(Usuario aux: usuarios){  
             if((aux.getNombre().equalsIgnoreCase(nombre)) && (aux.getContrasenia().equalsIgnoreCase(contrasenia)))
                 System.out.println( "Autenticado");
         }
