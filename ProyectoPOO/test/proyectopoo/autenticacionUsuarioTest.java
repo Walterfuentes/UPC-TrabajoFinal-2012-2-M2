@@ -4,10 +4,7 @@
  */
 package proyectopoo;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+
 import org.junit.Test;
 import org.junit.*;
 import static org.junit.Assert.*;
@@ -22,23 +19,7 @@ public class autenticacionUsuarioTest {
     public autenticacionUsuarioTest() {
     }
 
-    @BeforeClass
-    public static void setUpClass() throws Exception {
-    }
-
-    @AfterClass
-    public static void tearDownClass() throws Exception {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-        
-    }
-    
+   
     @Test
     public void AgregarUsuario(){
         String Nombre = "Juan";
@@ -98,6 +79,7 @@ public class autenticacionUsuarioTest {
         agregar.autenticarUsuario(Nombre2, Contrasena2);
         agregar.autenticarUsuario(Nombre3, Contrasena3);
         agregar.autenticarUsuario(Nombre4, Contrasena4);
+        
         
          
     }
