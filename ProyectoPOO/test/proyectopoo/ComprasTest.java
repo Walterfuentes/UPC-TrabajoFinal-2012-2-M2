@@ -4,34 +4,38 @@
  */
 package proyectopoo;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-    
-    @RunWith(Suite.class)
-@Suite.SuiteClasses({})
 public class ComprasTest {
 
-    @BeforeClass
-    public static void setUpClass() throws Exception {
+    public ComprasTest() {
     }
-
-    @AfterClass
-    public static void tearDownClass() throws Exception {
+    @Test
+    public void ventaDebeIngresarCampos(){
+        // Arrange
+        // Preparar los datos de pruebas
+        String concepto = "Venta 1";
+        String fechaEmision ="03/11/2012";
+        String fechaVencimiento = "31/11/2012";
+        double subtotal = 100.00;
+        double igv = 0.0;
+        double total = 0.0;
+        String moneda = "Nuevos Soles";
+        // Act
+        // Ejecutar los métodos a probar
+        Compras venta = new Compras(concepto, fechaEmision, fechaVencimiento, subtotal, igv, total, moneda);
+        // Assert
+        // Comprobar el resultado
+        assertNotNull(venta);
+        assertEquals(concepto, venta.getConcepto());
+        assertEquals(fechaEmision, venta.getFechaEmision());
+        assertEquals(fechaVencimiento, venta.getFechaVencimiento());
+        assertEquals(subtotal, venta.getSubtotal(),0.0);
+        assertEquals(igv, venta.getIgv(), 0.0);
+        assertEquals(total, venta.getTotal(), 0.0);
+        assertEquals(moneda, venta.getMoneda());
     }
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
-    
 }
     
 
