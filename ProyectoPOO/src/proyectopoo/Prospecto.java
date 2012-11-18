@@ -6,7 +6,7 @@ package proyectopoo;
 
 /**
  *
- * @author walterfuentes
+ * @author anyelomenacho
  */
 public class Prospecto {
     
