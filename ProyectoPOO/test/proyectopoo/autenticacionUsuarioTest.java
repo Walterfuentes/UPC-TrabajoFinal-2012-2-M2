@@ -90,8 +90,6 @@ public class autenticacionUsuarioTest {
         
         AutenticacionUsuarios agregar = new AutenticacionUsuarios();
         agregar.registrarUsuario(Nombre, Contrasena);
-        
-        
         String respuestaEsperadaAutenticar1 = "DatosCompletos";        
         String respuestaEsperadaAutenticar2 = "faltaNombre";
         String respuestaEsperadaAutenticar3 = "faltaContrasenia";
@@ -100,6 +98,7 @@ public class autenticacionUsuarioTest {
         agregar.autenticarUsuario(Nombre2, Contrasena2);
         agregar.autenticarUsuario(Nombre3, Contrasena3);
         agregar.autenticarUsuario(Nombre4, Contrasena4);
+        
          
     }
 }

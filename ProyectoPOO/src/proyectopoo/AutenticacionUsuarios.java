@@ -20,8 +20,6 @@ public class AutenticacionUsuarios {
         
     }
 
-  
-
     public String validarCamposUsuario(String nombre, String contrasenia) {
         String respuesta = " ";
 
@@ -60,7 +58,7 @@ public class AutenticacionUsuarios {
     }
     
     public void autenticarUsuario(String nombre, String contrasenia){
-        String respuestaUsuario = " ";  
+        
         if (validarCamposUsuario(nombre, contrasenia).equalsIgnoreCase("DatosCompletos")){
         for(Usuario aux: usuarios){  
             if((aux.getNombre().equalsIgnoreCase(nombre)) && (aux.getContrasenia().equalsIgnoreCase(contrasenia)))
