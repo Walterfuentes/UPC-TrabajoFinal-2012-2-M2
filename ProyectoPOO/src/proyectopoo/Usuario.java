@@ -18,17 +18,10 @@ public class Usuario {
         this.contrasenia = contrasenia;
     }
 
-    public String getContrasenia() {
-        return contrasenia;
-    }
+    public String getContrasenia() { 
+        return contrasenia;}
 
+    public String getNombre() { 
+        return nombre;}
 
-    public String getNombre() {
-        return nombre;
-    }
-
-   
-    
-    
-    
 }

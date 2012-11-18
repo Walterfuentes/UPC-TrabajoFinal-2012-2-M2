@@ -16,9 +16,6 @@ import static org.junit.Assert.*;
  */
 public class autenticacionUsuarioTest {
     
-    public autenticacionUsuarioTest() {
-    }
-
    
     @Test
     public void AgregarUsuario(){
@@ -72,15 +69,16 @@ public class autenticacionUsuarioTest {
         AutenticacionUsuarios agregar = new AutenticacionUsuarios();
         agregar.registrarUsuario(Nombre, Contrasena);
         String respuestaEsperadaAutenticar1 = "DatosCompletos";        
-        String respuestaEsperadaAutenticar2 = "faltaNombre";
+        String respuestaEsperadaAutenticar2 = "FALTANOMBRE";
         String respuestaEsperadaAutenticar3 = "faltaContrasenia";
-        String respuestaEsperadaAutenticar4 = "faltaAmbos";
-        agregar.autenticarUsuario(Nombre, Contrasena);
-        agregar.autenticarUsuario(Nombre2, Contrasena2);
-        agregar.autenticarUsuario(Nombre3, Contrasena3);
-        agregar.autenticarUsuario(Nombre4, Contrasena4);
+        String respuestaEsperadaAutenticar4 = "FaltaAmbos";
+       
         
-        
-         
+        assertEquals(respuestaEsperadaAutenticar1,agregar.validarCamposUsuario(Nombre, Contrasena));
+        assertEquals(respuestaEsperadaAutenticar2,agregar.validarCamposUsuario(Nombre2, Contrasena2));
+        assertEquals(respuestaEsperadaAutenticar3,agregar.validarCamposUsuario(Nombre3, Contrasena3));
+        assertEquals(respuestaEsperadaAutenticar4,agregar.validarCamposUsuario(Nombre4, Contrasena4));
+       
+       
     }
 }
