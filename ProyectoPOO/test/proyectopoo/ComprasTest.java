@@ -19,8 +19,8 @@ public class ComprasTest {
         String fechaEmision ="03/11/2012";
         String fechaVencimiento = "31/11/2012";
         double subtotal = 100.00;
-        double igv = 0.0;
-        double total = 0.0;
+        double igv = 10.00;
+        double total = 110.0;
         String moneda = "Nuevos Soles";
         // Act
         // Ejecutar los métodos a probar
