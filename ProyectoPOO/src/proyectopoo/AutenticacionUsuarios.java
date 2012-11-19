@@ -9,11 +9,11 @@ import java.util.ArrayList;
  *
  * @author walterfuentes
  */
-public class ADMINautenticacionusuarios {
+public class AutenticacionUsuarios {
 
     private ArrayList<Usuario> usuarios;
 
-    public ADMINautenticacionusuarios() {
+    public AutenticacionUsuarios() {
         usuarios = new ArrayList<Usuario>();
 
     }
