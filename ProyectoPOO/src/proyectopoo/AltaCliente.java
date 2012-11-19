@@ -13,10 +13,12 @@ import java.util.ArrayList;
 public class AltaCliente {
     
     private ArrayList<Cliente> AltaClientes;
+    private ArrayList<AltaCliente> AltaAceptadas;
     private boolean Mensaje;
     
      public AltaCliente() {
         AltaClientes = new ArrayList<Cliente>();
+        AltaAceptadas = new ArrayList<AltaCliente>();
     }
 
     public boolean getMensaje() {

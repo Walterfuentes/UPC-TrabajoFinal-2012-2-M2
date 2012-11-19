@@ -11,7 +11,7 @@ public class ComprasTest {
 
     public ComprasTest() {
     }
-    @Test
+    @Test   
     public void ventaDebeIngresarCampos(){
         // Arrange
         // Preparar los datos de pruebas
