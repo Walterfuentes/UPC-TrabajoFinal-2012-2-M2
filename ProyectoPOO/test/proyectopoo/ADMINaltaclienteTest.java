@@ -11,9 +11,9 @@ import static org.junit.Assert.*;
  *
  * @author walterfuentes
  */
-public class AltaClienteTest {
+public class ADMINaltaclienteTest {
     
-    public AltaClienteTest() {
+    public ADMINaltaclienteTest() {
     }
 
     @BeforeClass

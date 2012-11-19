@@ -8,7 +8,7 @@ package proyectopoo;
  *
  * @author walterfuentes
  */
-public class AltaCliente {
+public class ADMINaltacliente {
     
     
 }

@@ -9,11 +9,11 @@ import java.util.ArrayList;
  *
  * @author walterfuentes
  */
-public class AutenticacionUsuarios {
+public class ADMINautenticacionusuarios {
 
     private ArrayList<Usuario> usuarios;
 
-    public AutenticacionUsuarios() {
+    public ADMINautenticacionusuarios() {
         usuarios = new ArrayList<Usuario>();
 
     }
@@ -36,7 +36,6 @@ public class AutenticacionUsuarios {
             System.out.println("Debe Ingresar contraseña");
         }
         return "DatosCompletos";
-
     }
 
     public boolean validarExistenciaUsuario(String nombre) {
@@ -60,7 +59,6 @@ public class AutenticacionUsuarios {
         } else {
             System.out.println("No se Puede Agregar Usuario ya Existe");
         }
-
     }
 
     public void autenticarUsuario(String nombre, String contrasenia) {

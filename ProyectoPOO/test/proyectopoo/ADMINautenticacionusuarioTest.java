@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
  *
  * @author walterfuentes
  */
-public class autenticacionUsuarioTest {
+public class ADMINautenticacionusuarioTest {
     
    
     @Test
@@ -29,7 +29,7 @@ public class autenticacionUsuarioTest {
         String Contrasena4 = "Micontrasena03";
       
       
-      AutenticacionUsuarios agregar = new AutenticacionUsuarios();
+      ADMINautenticacionusuarios agregar = new ADMINautenticacionusuarios();
       agregar.registrarUsuario(Nombre, Contrasena);
       agregar.registrarUsuario(Nombre2, Contrasena2);
       agregar.registrarUsuario(Nombre3, Contrasena3);
@@ -44,7 +44,7 @@ public class autenticacionUsuarioTest {
         String Contrasena = "MiContrasena01";
         String NombreNoexiste = "Walter";
         
-        AutenticacionUsuarios autenticar = new AutenticacionUsuarios();
+        ADMINautenticacionusuarios autenticar = new ADMINautenticacionusuarios();
         autenticar.registrarUsuario(Nombre, Contrasena);
         boolean respuestaEntregada = autenticar.validarExistenciaUsuario(Nombre);
         boolean Respuestadebeser = true;
@@ -66,7 +66,7 @@ public class autenticacionUsuarioTest {
         String Nombre4 = null;
         String Contrasena4 = null; 
         
-        AutenticacionUsuarios agregar = new AutenticacionUsuarios();
+        ADMINautenticacionusuarios agregar = new ADMINautenticacionusuarios();
         agregar.registrarUsuario(Nombre, Contrasena);
         String respuestaEsperadaAutenticar1 = "DatosCompletos";        
         String respuestaEsperadaAutenticar2 = "FALTANOMBRE";
