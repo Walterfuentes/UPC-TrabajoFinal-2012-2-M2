@@ -58,6 +58,12 @@ public class AltaProspecto {
              return busqueda;    
         return null;
     } 
+    
+    public void eliminarProspecto (String dato) {
+        Cliente busqueda=buscarProspecto(dato);
+        if (busqueda != null)
+            altaprospectos.remove(dato);
+    }
  
 }
     
