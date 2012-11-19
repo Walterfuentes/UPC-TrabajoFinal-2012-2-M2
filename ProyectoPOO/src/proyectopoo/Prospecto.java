@@ -12,87 +12,87 @@ import java.util.Date;
  */
 public class Prospecto {
     
-    private String nombre;
+    private String Nombre;
     private String ApellidoPaterno;
     private String ApellidoMaterno;
     private String Correo;
     private String Dni;
-    private String telefonofijo;
-    private String celular;
-    private Date fechaContacto;
+    private String TelefonoFijo;
+    private String Celular;
+    private Date FechaContacto;
 
-    public Prospecto(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular) {
-        this.nombre = nombre;
-        this.ApellidoPaterno = ApellidoPaterno;
-        this.ApellidoMaterno = ApellidoMaterno;
-        this.Correo = Correo;
-        this.Dni = Dni;
-        this.telefonofijo = telefonofijo;
-        this.celular = celular;
-        this.fechaContacto = new Date();
+    public Prospecto(String nombre, String apellidopaterno, String apellidomaterno, String correo, String dni, String telefonofijo, String celular) {
+        this.Nombre = nombre;
+        this.ApellidoPaterno = apellidopaterno;
+        this.ApellidoMaterno = apellidomaterno;
+        this.Correo = correo;
+        this.Dni = dni;
+        this.TelefonoFijo = telefonofijo;
+        this.Celular = celular;
+        this.FechaContacto = new Date();
     }
 
     public String getApellidoMaterno() {
         return ApellidoMaterno;
     }
 
-    public void setApellidoMaterno(String ApellidoMaterno) {
-        this.ApellidoMaterno = ApellidoMaterno;
+    public void setApellidoMaterno(String apellidomaterno) {
+        this.ApellidoMaterno = apellidomaterno;
     }
 
     public String getApellidoPaterno() {
         return ApellidoPaterno;
     }
 
-    public void setApellidoPaterno(String ApellidoPaterno) {
-        this.ApellidoPaterno = ApellidoPaterno;
+    public void setApellidoPaterno(String apellidopaterno) {
+        this.ApellidoPaterno = apellidopaterno;
     }
 
     public String getCorreo() {
         return Correo;
     }
 
-    public void setCorreo(String Correo) {
-        this.Correo = Correo;
+    public void setCorreo(String correo) {
+        this.Correo = correo;
     }
 
     public String getDni() {
         return Dni;
     }
 
-    public void setDni(String Dni) {
-        this.Dni = Dni;
+    public void setDni(String dni) {
+        this.Dni = dni;
     }
 
     public String getCelular() {
-        return celular;
+        return Celular;
     }
 
     public void setCelular(String celular) {
-        this.celular = celular;
+        this.Celular = celular;
     }
 
     public Date getFechaContacto() {
-        return fechaContacto;
+        return FechaContacto;
     }
 
-    public void setFechaIngreso(Date fechaContacto) {
-        this.fechaContacto = fechaContacto;
+    public void setFechaIngreso(Date fechacontacto) {
+        this.FechaContacto = fechacontacto;
     }
 
     public String getNombre() {
-        return nombre;
+        return Nombre;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.Nombre = nombre;
     }
 
     public String getTelefonofijo() {
-        return telefonofijo;
+        return TelefonoFijo;
     }
 
     public void setTelefonofijo(String telefonofijo) {
-        this.telefonofijo = telefonofijo;
+        this.TelefonoFijo = telefonofijo;
     }
 }
