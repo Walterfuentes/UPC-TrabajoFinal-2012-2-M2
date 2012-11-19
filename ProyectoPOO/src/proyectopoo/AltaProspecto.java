@@ -43,24 +43,15 @@ public class AltaProspecto {
     // faltaba retorno
         return " ";
     }//faltaba cerrar el metodo 
+    
 
-    public void crearNuevoProspecto(String nombre, String apellidopaterno, String apellidomaterno, String correo, String dni, String telefonofijo, String celular) {
+    public void registrarProspecto(String nombre, String apellidopaterno, String apellidomaterno, String correo, String dni, String telefonofijo, String celular) {
         validarDatosProspecto(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular);
         Cliente nuevoprospecto=new Cliente(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular);
         altaprospectos.add(nuevoprospecto);  // Se usa la plantilla Cliente para crear Objetos de prospectos nuevos.
     }
     
-    public Cliente buscar (String nombre, String apellidopaterno, String apellidomaterno, String correo, String dni, String telefonofijo, String celular) {
-        for(Cliente busqueda : altaprospectos) {
-            if (busqueda.getNombre().equals(nombre));
-            if (busqueda.getApellidoPaterno().equals(apellidopaterno));
-            if (busqueda.getApellidoMaterno().equals(apellidomaterno));
-            if (busqueda.getCorreo().equals(correo));
-            if (busqueda.getDni().equals(dni));
-            if (busqueda.getTelefonofijo().equals(telefonofijo));
-            if (busqueda.getCelular().equals(celular));
-               return busqueda;
-        }
-        return null;
+ 
     }
+    
 }
