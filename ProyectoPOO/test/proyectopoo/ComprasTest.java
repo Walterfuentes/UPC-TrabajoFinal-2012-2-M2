@@ -4,8 +4,8 @@
  */
 package proyectopoo;
 
-import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class ComprasTest {
 
@@ -15,6 +15,7 @@ public class ComprasTest {
     public void ventaDebeIngresarCampos(){
         // Arrange
         // Preparar los datos de pruebas
+        String factura = "001-00001";
         String concepto = "Venta 1";
         String fechaEmision ="03/11/2012";
         String fechaVencimiento = "31/11/2012";
@@ -24,17 +25,18 @@ public class ComprasTest {
         String moneda = "Nuevos Soles";
         // Act
         // Ejecutar los métodos a probar
-        Compras venta = new Compras(concepto, fechaEmision, fechaVencimiento, subtotal, igv, total, moneda);
+        Compras compra = new Compras(factura, concepto, fechaEmision, fechaVencimiento, subtotal, igv, total, moneda);
         // Assert
         // Comprobar el resultado
-        assertNotNull(venta);
-        assertEquals(concepto, venta.getConcepto());
-        assertEquals(fechaEmision, venta.getFechaEmision());
-        assertEquals(fechaVencimiento, venta.getFechaVencimiento());
-        assertEquals(subtotal, venta.getSubtotal(),0.0);
-        assertEquals(igv, venta.getIgv(), 0.0);
-        assertEquals(total, venta.getTotal(), 0.0);
-        assertEquals(moneda, venta.getMoneda());
+        assertNotNull(compra);
+        assertEquals(factura, compra.getFactura());
+        assertEquals(concepto, compra.getConcepto());
+        assertEquals(fechaEmision, compra.getFechaEmision());
+        assertEquals(fechaVencimiento, compra.getFechaVencimiento());
+        assertEquals(subtotal, compra.getSubtotal(),0.0);
+        assertEquals(igv, compra.getIgv(), 0.0);
+        assertEquals(total, compra.getTotal(), 0.0);
+        assertEquals(moneda, compra.getMoneda());
     }
 }
     
