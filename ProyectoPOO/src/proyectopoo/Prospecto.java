@@ -4,7 +4,7 @@
  */
 package proyectopoo;
 
-import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -12,14 +12,87 @@ import java.util.ArrayList;
  */
 public class Prospecto {
     
-    private ArrayList<Cliente> clientes;
-    
-    public Prospecto() {
-        clientes=new ArrayList<Cliente>();
+    private String nombre;
+    private String ApellidoPaterno;
+    private String ApellidoMaterno;
+    private String Correo;
+    private String Dni;
+    private String telefonofijo;
+    private String celular;
+    private Date fechaContacto;
+
+    public Prospecto(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular) {
+        this.nombre = nombre;
+        this.ApellidoPaterno = ApellidoPaterno;
+        this.ApellidoMaterno = ApellidoMaterno;
+        this.Correo = Correo;
+        this.Dni = Dni;
+        this.telefonofijo = telefonofijo;
+        this.celular = celular;
+        this.fechaContacto = new Date();
     }
 
-    public void obtenerDatosProspecto(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular) {
-        Cliente cliente=new Cliente(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular);
-        clientes.add(cliente);
+    public String getApellidoMaterno() {
+        return ApellidoMaterno;
+    }
+
+    public void setApellidoMaterno(String ApellidoMaterno) {
+        this.ApellidoMaterno = ApellidoMaterno;
+    }
+
+    public String getApellidoPaterno() {
+        return ApellidoPaterno;
+    }
+
+    public void setApellidoPaterno(String ApellidoPaterno) {
+        this.ApellidoPaterno = ApellidoPaterno;
+    }
+
+    public String getCorreo() {
+        return Correo;
+    }
+
+    public void setCorreo(String Correo) {
+        this.Correo = Correo;
+    }
+
+    public String getDni() {
+        return Dni;
+    }
+
+    public void setDni(String Dni) {
+        this.Dni = Dni;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public Date getFechaContacto() {
+        return fechaContacto;
+    }
+
+    public void setFechaIngreso(Date fechaContacto) {
+        this.fechaContacto = fechaContacto;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getTelefonofijo() {
+        return telefonofijo;
+    }
+
+    public void setTelefonofijo(String telefonofijo) {
+        this.telefonofijo = telefonofijo;
     }
 }
