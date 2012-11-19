@@ -44,8 +44,17 @@ public class AltaProspecto {
         return " ";
     }//faltaba cerrar el metodo 
     
+    public int getTotalProspectos() {
+        return altaprospectos.size();
+    }
+    
+    public String validarDuplicidad(String dato) {
+        if (buscarProspecto(dato) !=null) {
+        return " Los datos ya han sido registrados";
+        }    
+        return "";
+    }
   
-
     public void registrarProspecto(String nombre, String apellidopaterno, String apellidomaterno, String correo, String dni, String telefonofijo, String celular) {
         validarDatosProspecto(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular);
         Cliente nuevoprospecto=new Cliente(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular);
