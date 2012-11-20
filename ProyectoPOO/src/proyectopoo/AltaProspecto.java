@@ -54,9 +54,10 @@ public class AltaProspecto {
         }    
         return "";
     }
-  
+   
     public void registrarProspecto(String nombre, String apellidopaterno, String apellidomaterno, String correo, String dni, String telefonofijo, String celular) {
         validarDatosProspecto(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular);
+        validarDuplicidad(dni);
         Cliente nuevoprospecto=new Cliente(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular);
         altaprospectos.add(nuevoprospecto);  // Se usa la plantilla Cliente para crear Objetos de prospectos nuevos.
     }
@@ -73,6 +74,8 @@ public class AltaProspecto {
         if (busqueda != null)
             altaprospectos.remove(dato);
     }
+    
+    
  
 }
     
