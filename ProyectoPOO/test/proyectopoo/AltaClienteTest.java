@@ -26,8 +26,9 @@ public class AltaClienteTest {
         String Dni= "41334980";
         String telefonofijo = "4502183";
         String celular = "994578347";
+        String fecha = "081212";
         
-        Cliente cliente1 = new Cliente(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular);
+        Personas cliente1 = new Personas(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fecha);
         AltaCliente alta01 = new AltaCliente();
         alta01.RegistarAltacliente(cliente1);
         boolean respuestaEsperada = true;
@@ -43,8 +44,9 @@ public class AltaClienteTest {
         String Dni2= "44561980";
         String telefonofijo2 = "3392183";
         String celular2 = "993638347";
+         String fecha2 = "081212";
         
-        Cliente cliente2 = new Cliente(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular);
+        Personas cliente2 = new Personas(nombre2, ApellidoPaterno2, ApellidoMaterno2, Correo2, Dni2, telefonofijo2, celular2, fecha2);
         AltaCliente alta02 = new AltaCliente();
         alta01.RegistarAltacliente(cliente2);
         boolean respuestaEsperada2 = false;
@@ -62,8 +64,9 @@ public class AltaClienteTest {
         String Dni= "41334980";
         String telefonofijo = "4502183";
         String celular = "994578347";
-        
-        Cliente cliente1 = new Cliente(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular);
+         String fecha = "081212";
+         
+        Personas cliente1 = new Personas(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fecha);
         AltaCliente nuevaAlta = new AltaCliente();
         String buscaNombre ="Juan";
         nuevaAlta.buscarProspectos(buscaNombre);

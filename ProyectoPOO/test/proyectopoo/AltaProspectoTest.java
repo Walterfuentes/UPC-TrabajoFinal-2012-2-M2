@@ -32,8 +32,9 @@ public class AltaProspectoTest {
         String correo = "";
         String telefonofijo = "";
         String celular="";
+         String fecha = "081212";
         AltaProspecto admin = new AltaProspecto();        
-        admin.registrarProspecto(dni, apellidoPaterno, apellidoMaterno, nombre, correo, telefonofijo, celular);
+        admin.registrarProspecto(dni, apellidoPaterno, apellidoMaterno, nombre, correo, telefonofijo, celular, fecha);
     }
     @Test
     public void ValidarDuplicidad() {
@@ -45,11 +46,12 @@ public class AltaProspectoTest {
         String correo = "amenacho@atv.com.pe";
         String telefonofijo = "4567890";
         String celular="987654345";
+         String fecha = "081212";
         AltaProspecto admin = new AltaProspecto();
         // Act
-        admin.registrarProspecto(dni, apellidoPaterno, apellidoMaterno, nombre, correo, telefonofijo, celular);
+        admin.registrarProspecto(dni, apellidoPaterno, apellidoMaterno, nombre, correo, telefonofijo, celular,fecha);
          
-        admin.registrarProspecto(dni, apellidoPaterno, apellidoMaterno, nombre, correo, telefonofijo, celular);
+        admin.registrarProspecto(dni, apellidoPaterno, apellidoMaterno, nombre, correo, telefonofijo, celular, fecha);
         // Assert
         // No se necesita comprobacion por que se espera que suceda
         

@@ -5,38 +5,20 @@
 package proyectopoo;
 
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.*;
+
 import static org.junit.Assert.*;
 
 /**
  *
  * @author walterfuentes
  */
-public class ClienteTest {
+public class PersonasTest {
     
 
-    public ClienteTest () {
+    public PersonasTest () {
     }
 
-    @BeforeClass
-    public static void setUpClass() throws Exception {
-    }
-
-    @AfterClass
-    public static void tearDownClass() throws Exception {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+   
 
     public void IngresoClienteTest(){
         String nombre =" Juan ";
@@ -46,8 +28,9 @@ public class ClienteTest {
         String Dni= "41334980";
         String telefonofijo = "4502183";
         String celular = "994578347";
+         String fecha = "081212";
         
-       Cliente cliente1 = new Cliente(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular);
+       Personas cliente1 = new Personas(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fecha);
        
         assertNotNull(cliente1);
         assertEquals(nombre, cliente1.getNombre());        
