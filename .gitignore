@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 *.class
 
 # Package Files #
@@ -14,6 +14,5 @@
 *.war
 *.ear
 /ProyectoPOO/nbproject/private/
->>>>>>> Historia Autenticación de Usuario
 /ProyectoPOO/build/
 /ProyectoPOO/dist/
