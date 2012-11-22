@@ -12,10 +12,10 @@ import java.util.ArrayList;
  */
 public class AltaProspecto {
     
-    private ArrayList<Cliente> altaprospectos;
+    private ArrayList<Personas> altaprospectos;
     
     public AltaProspecto() {
-        altaprospectos=new ArrayList<Cliente>();
+        altaprospectos=new ArrayList<Personas>();
     }
     
     public String validarDatosProspecto (String nombre, String apellidopaterno, String apellidomaterno, String correo, String dni, String telefonofijo, String celular) {
@@ -55,22 +55,22 @@ public class AltaProspecto {
         return "";
     }
    
-    public void registrarProspecto(String nombre, String apellidopaterno, String apellidomaterno, String correo, String dni, String telefonofijo, String celular) {
+    public void registrarProspecto(String nombre, String apellidopaterno, String apellidomaterno, String correo, String dni, String telefonofijo, String celular, String fecha) {
         validarDatosProspecto(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular);
         validarDuplicidad(dni);
-        Cliente nuevoprospecto=new Cliente(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular);
-        altaprospectos.add(nuevoprospecto);  // Se usa la plantilla Cliente para crear Objetos de prospectos nuevos.
+        Personas nuevoprospecto=new Personas(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular, fecha);
+        altaprospectos.add(nuevoprospecto);  // Se usa la plantilla Personas para crear Objetos de prospectos nuevos.
     }
     
-    public Cliente buscarProspecto (String nombre) {
-        for (Cliente busqueda : altaprospectos)
+    public Personas buscarProspecto (String nombre) {
+        for (Personas busqueda : altaprospectos)
              if(busqueda.getNombre().equals(nombre))
              return busqueda;    
         return null;
     } 
     
     public void eliminarProspecto (String dato) {
-        Cliente busqueda=buscarProspecto(dato);
+        Personas busqueda=buscarProspecto(dato);
         if (busqueda != null)
             altaprospectos.remove(dato);
     }

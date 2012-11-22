@@ -1,5 +1,5 @@
 /*
- Historia Cliente Realizado por Walter Fuentes
+ Historia Personas Realizado por Walter Fuentes
  * 
  */
 package proyectopoo;
@@ -12,12 +12,12 @@ import java.util.ArrayList;
  */
 public class AltaCliente {
     
-    private ArrayList<Cliente> AltaClientes;
+    private ArrayList<Personas> AltaClientes;
     private ArrayList<AltaCliente> AltaAceptadas;
     private boolean Mensaje;
     
      public AltaCliente() {
-        AltaClientes = new ArrayList<Cliente>();
+        AltaClientes = new ArrayList<Personas>();
         AltaAceptadas = new ArrayList<AltaCliente>();
     }
 
@@ -31,14 +31,14 @@ public class AltaCliente {
 
     
      
-     public void CrearNuevoCliente(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular){
-        Cliente Nuevo = new Cliente(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular);
+     public void CrearNuevoCliente(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fecha){
+        Personas Nuevo = new Personas(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fecha);
         AltaClientes.add(Nuevo);
     }
      
      public void buscarProspectos(String buscadatos){
         String mensaje = " ";
-        for(Cliente aux : AltaClientes){
+        for(Personas aux : AltaClientes){
             if(buscadatos.equalsIgnoreCase(aux.getNombre()))mensaje=aux.getNombre()+aux.getApellidoPaterno()+aux.getApellidoMaterno()+aux.getDni()+aux.getCorreo()+aux.getTelefonofijo();
             if(buscadatos.equalsIgnoreCase(aux.getApellidoPaterno()))mensaje = aux.getNombre()+aux.getApellidoPaterno()+aux.getApellidoMaterno()+aux.getDni()+aux.getCorreo()+aux.getTelefonofijo();
             if(buscadatos.equalsIgnoreCase(aux.getApellidoMaterno()))mensaje = aux.getNombre()+aux.getApellidoPaterno()+aux.getApellidoMaterno()+aux.getDni()+aux.getCorreo()+aux.getTelefonofijo();
@@ -47,7 +47,7 @@ public class AltaCliente {
         
     }
      
-     public void RegistarAltacliente(Cliente nuevo){
+     public void RegistarAltacliente(Personas nuevo){
         
         if  ((nuevo.getNombre()==null || nuevo.getNombre().isEmpty())&&(nuevo.getCorreo()==null || nuevo.getCorreo().isEmpty())&&(nuevo.getApellidoPaterno()==null || nuevo.getApellidoPaterno().isEmpty())){
         Mensaje = false; 

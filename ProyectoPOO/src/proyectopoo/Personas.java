@@ -9,7 +9,7 @@ package proyectopoo;
  *
  * @author walterfuentes
  */
-public class Cliente {
+public class Personas {
     
     private String nombre;
     private String ApellidoPaterno;
@@ -18,9 +18,9 @@ public class Cliente {
     private String Dni;
     private String telefonofijo;
     private String celular;
-    private java.util.Date fechaIngreso;
+    private String fechaIngreso;
 
-    public Cliente(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular) {
+    public Personas(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fecha) {
         this.nombre = nombre;
         this.ApellidoPaterno = ApellidoPaterno;
         this.ApellidoMaterno = ApellidoMaterno;
@@ -28,7 +28,7 @@ public class Cliente {
         this.Dni = Dni;
         this.telefonofijo = telefonofijo;
         this.celular = celular;
-        this.fechaIngreso = new java.util.Date();
+        this.fechaIngreso = fecha;
     }
 
     public String getApellidoMaterno() {
@@ -71,11 +71,11 @@ public class Cliente {
         this.celular = celular;
     }
 
-    public Date getFechaIngreso() {
+    public String getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(Date fechaIngreso) {
+    public void setFechaIngreso(String fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 
