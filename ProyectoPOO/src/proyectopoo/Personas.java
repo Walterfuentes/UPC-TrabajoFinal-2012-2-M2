@@ -1,11 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package proyectopoo;
 
 import java.util.ArrayList;
- import java.util.Date;
+
 /**
  *
  * @author walterfuentes
@@ -37,6 +34,20 @@ public class Personas {
         this.fechaIngreso = fecha;
     }
 
+    public Personas(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String fechaIngreso, String nombreUsuario, String cargo, String rol, String contrasenia) {
+        this.nombre = nombre;
+        this.ApellidoPaterno = ApellidoPaterno;
+        this.ApellidoMaterno = ApellidoMaterno;
+        this.Correo = Correo;
+        this.Dni = Dni;
+        this.fechaIngreso = fechaIngreso;
+        this.nombreUsuario = nombreUsuario;
+        this.cargo = cargo;
+        this.rol = rol;
+        this.contrasenia = contrasenia;
+    }
+    
+    
     public String getApellidoMaterno() {
         return ApellidoMaterno;
     }
@@ -99,6 +110,22 @@ public class Personas {
 
     public void setTelefonofijo(String telefonofijo) {
         this.telefonofijo = telefonofijo;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public String getContrasenia() {
+        return contrasenia;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public String getRol() {
+        return rol;
     }
     
     
