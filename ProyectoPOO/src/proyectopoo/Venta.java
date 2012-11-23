@@ -27,10 +27,9 @@ public class Venta {
     private int fecha_vencimiento;
     private int fecha_pago;
     private String observaciones;
-    private ArrayList<Venta> items;
-    
+   // private ArrayList<Venta> items;
 
-    public Venta() {
+    public Venta(String concepto, String numero, int fecha_emision, String empresa, double subtotal, double igv, double total, String moneda, int fecha_vencimiento, int fecha_pago, String observaciones) {
         this.concepto = concepto;
         this.numero = numero;
         this.fecha_emision = fecha_emision;
@@ -42,9 +41,10 @@ public class Venta {
         this.fecha_vencimiento = fecha_vencimiento;
         this.fecha_pago = fecha_pago;
         this.observaciones = observaciones;
-
-        items = new ArrayList<Venta>();
     }
+    
+
+   
 
     public String getConcepto() {
         return concepto;
@@ -134,102 +134,102 @@ public class Venta {
         this.total = total;
     }
 
-    public String valida(String concepto, String numero, int fecha_emision, String empresa, double subtotal, double igv, double total, String moneda, int fecha_vencimiento, int fecha_pago, String observaciones) {
-        if (concepto.equals(" ") || numero.equals(" ") || fecha_emision == 0 || subtotal == 0 || igv == 0 || total == 0 || moneda.equals(" ") || fecha_vencimiento == 0 || fecha_pago == 0 || observaciones.equals(" ")) {
-            System.out.println("IMPORTANTE !!! LLENAR TODOS LOS CAMPOS");
-            return ("IMPORTANTE !!! LLENAR TODOS LOS CAMPOS");
-        }
-        if ((fecha_emision > fecha_pago) || (fecha_emision > fecha_vencimiento)) {
-            System.out.println("FECHAS INCOGRUENTES");
-            return ("FECHAS INCOGRUENTES");
-        }
-        return Alta(concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones);
-    }
-
-    public String Alta(String concepto, String numero, int fecha_emision, String empresa, double subtotal, double igv, double total, String moneda, int fecha_vencimiento, int fecha_pago, String observaciones) {
-        Venta AltaVenta = new Venta();
-        AltaVenta.setConcepto(concepto);
-        AltaVenta.setNumero(numero);
-        AltaVenta.setFecha_emision(fecha_emision);
-        AltaVenta.setEmpresa(empresa);
-        AltaVenta.setSubtotal(subtotal);
-        AltaVenta.setIgv(igv);
-        AltaVenta.setTotal(total);
-        AltaVenta.setMoneda(moneda);
-        AltaVenta.setFecha_vencimiento(fecha_vencimiento);
-        AltaVenta.setFecha_pago(fecha_pago);
-        AltaVenta.setObservaciones(observaciones);
-
-        items.add(AltaVenta);
-
-
-        System.out.println(AltaVenta.getConcepto() + " " + AltaVenta.getNumero() + " "
-                + AltaVenta.getFecha_emision() + " " + AltaVenta.getEmpresa() + " "
-                + AltaVenta.getSubtotal() + " " + AltaVenta.getIgv() + " "
-                + AltaVenta.getTotal() + " " + AltaVenta.getMoneda() + " "
-                + AltaVenta.getFecha_vencimiento() + " " + AltaVenta.getFecha_pago() + " "
-                + AltaVenta.getObservaciones()
-                + "   //////// AGREGADO CORRECTAMENTE");
-
-
-        return (AltaVenta.getConcepto() + " " + AltaVenta.getNumero() + " "
-                + AltaVenta.getFecha_emision() + " " + AltaVenta.getEmpresa() + " "
-                + AltaVenta.getSubtotal() + " " + AltaVenta.getIgv() + " "
-                + AltaVenta.getTotal() + " " + AltaVenta.getMoneda() + " "
-                + AltaVenta.getFecha_vencimiento() + " " + AltaVenta.getFecha_pago() + " "
-                + AltaVenta.getObservaciones()
-                + "   //////// AGREGADO CORRECTAMENTE");
-
-   
-    }
-
-    public String validaBusqueda(String concepto, String numero, int fecha_emision, String empresa, int fecha_vencimiento, int fecha_pago) {
-        if (concepto.equals(" ") && numero.equals(" ") && fecha_emision == 0 && empresa.equals(" ") && fecha_vencimiento == 0 && fecha_pago == 0) {
-            System.out.println("LLENAR AL MENOS UN CAMPO PARA BUSCAR");
-            return ("LLENAR AL MENOS UN CAMPO PARA BUSCAR");
-        } else {
-            if (concepto.equals(" ")) {
-            } else {
-                System.out.println(busquedaConcepto(concepto));
-                return (busquedaConcepto(concepto));
-            }
-            if (numero.equals(" ")) {
-            } else {
-                System.out.println(busquedaNumero(numero));
-                return (busquedaNumero(numero));
-
-            }
+//    public String valida(String concepto, String numero, int fecha_emision, String empresa, double subtotal, double igv, double total, String moneda, int fecha_vencimiento, int fecha_pago, String observaciones) {
+//        if (concepto.equals(" ") || numero.equals(" ") || fecha_emision == 0 || subtotal == 0 || igv == 0 || total == 0 || moneda.equals(" ") || fecha_vencimiento == 0 || fecha_pago == 0 || observaciones.equals(" ")) {
+//            System.out.println("IMPORTANTE !!! LLENAR TODOS LOS CAMPOS");
+//            return ("IMPORTANTE !!! LLENAR TODOS LOS CAMPOS");
+//        }
+//        if ((fecha_emision > fecha_pago) || (fecha_emision > fecha_vencimiento)) {
+//            System.out.println("FECHAS INCOGRUENTES");
+//            return ("FECHAS INCOGRUENTES");
+//        }
+//        return Alta(concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones);
+//    }
 //
-//            if (empresa.equals(" ")) {
+//    public String Alta(String concepto, String numero, int fecha_emision, String empresa, double subtotal, double igv, double total, String moneda, int fecha_vencimiento, int fecha_pago, String observaciones) {
+//        Venta AltaVenta = new Venta();
+//        AltaVenta.setConcepto(concepto);
+//        AltaVenta.setNumero(numero);
+//        AltaVenta.setFecha_emision(fecha_emision);
+//        AltaVenta.setEmpresa(empresa);
+//        AltaVenta.setSubtotal(subtotal);
+//        AltaVenta.setIgv(igv);
+//        AltaVenta.setTotal(total);
+//        AltaVenta.setMoneda(moneda);
+//        AltaVenta.setFecha_vencimiento(fecha_vencimiento);
+//        AltaVenta.setFecha_pago(fecha_pago);
+//        AltaVenta.setObservaciones(observaciones);
+//
+//        items.add(AltaVenta);
+//
+//
+//        System.out.println(AltaVenta.getConcepto() + " " + AltaVenta.getNumero() + " "
+//                + AltaVenta.getFecha_emision() + " " + AltaVenta.getEmpresa() + " "
+//                + AltaVenta.getSubtotal() + " " + AltaVenta.getIgv() + " "
+//                + AltaVenta.getTotal() + " " + AltaVenta.getMoneda() + " "
+//                + AltaVenta.getFecha_vencimiento() + " " + AltaVenta.getFecha_pago() + " "
+//                + AltaVenta.getObservaciones()
+//                + "   //////// AGREGADO CORRECTAMENTE");
+//
+//
+//        return (AltaVenta.getConcepto() + " " + AltaVenta.getNumero() + " "
+//                + AltaVenta.getFecha_emision() + " " + AltaVenta.getEmpresa() + " "
+//                + AltaVenta.getSubtotal() + " " + AltaVenta.getIgv() + " "
+//                + AltaVenta.getTotal() + " " + AltaVenta.getMoneda() + " "
+//                + AltaVenta.getFecha_vencimiento() + " " + AltaVenta.getFecha_pago() + " "
+//                + AltaVenta.getObservaciones()
+//                + "   //////// AGREGADO CORRECTAMENTE");
+//
+//   
+//    }
+//
+//    public String validaBusqueda(String concepto, String numero, int fecha_emision, String empresa, int fecha_vencimiento, int fecha_pago) {
+//        if (concepto.equals(" ") && numero.equals(" ") && fecha_emision == 0 && empresa.equals(" ") && fecha_vencimiento == 0 && fecha_pago == 0) {
+//            System.out.println("LLENAR AL MENOS UN CAMPO PARA BUSCAR");
+//            return ("LLENAR AL MENOS UN CAMPO PARA BUSCAR");
+//        } else {
+//            if (concepto.equals(" ")) {
 //            } else {
-//                System.out.println(busquedaEmpresa(empresa));
-//                return (busquedaEmpresa(empresa));
+//                System.out.println(busquedaConcepto(concepto));
+//                return (busquedaConcepto(concepto));
 //            }
-
-        }
-
-        return null;
-    }
-
-    public String busquedaConcepto(String concepto) {
-        for (Venta aux : items) {
-            if (aux.getConcepto().equals(concepto)) {
-                return (aux.getConcepto() + " " + aux.getNumero() + " "
-                        + aux.getFecha_emision() + " " + aux.getEmpresa() + " "
-                        + aux.getFecha_vencimiento() + " " + aux.getFecha_pago());
-            }
-        }
-        return null;
-    }
-
-    public String busquedaNumero(String numero) {
-        for (Venta aux : items) {
-            if (aux.getNumero().equals(numero))
-                return (aux.getConcepto() + " " + aux.getNumero() + " "
-                        + aux.getFecha_emision() + " " + aux.getEmpresa() + " "
-                        + aux.getFecha_vencimiento() + " " + aux.getFecha_pago());
-
-        }
-    return null;
-    }
+//            if (numero.equals(" ")) {
+//            } else {
+//                System.out.println(busquedaNumero(numero));
+//                return (busquedaNumero(numero));
+//
+//            }
+////
+////            if (empresa.equals(" ")) {
+////            } else {
+////                System.out.println(busquedaEmpresa(empresa));
+////                return (busquedaEmpresa(empresa));
+////            }
+//
+//        }
+//
+//        return null;
+//    }
+//
+//    public String busquedaConcepto(String concepto) {
+//        for (Venta aux : items) {
+//            if (aux.getConcepto().equals(concepto)) {
+//                return (aux.getConcepto() + " " + aux.getNumero() + " "
+//                        + aux.getFecha_emision() + " " + aux.getEmpresa() + " "
+//                        + aux.getFecha_vencimiento() + " " + aux.getFecha_pago());
+//            }
+//        }
+//        return null;
+//    }
+//
+//    public String busquedaNumero(String numero) {
+//        for (Venta aux : items) {
+//            if (aux.getNumero().equals(numero))
+//                return (aux.getConcepto() + " " + aux.getNumero() + " "
+//                        + aux.getFecha_emision() + " " + aux.getEmpresa() + " "
+//                        + aux.getFecha_vencimiento() + " " + aux.getFecha_pago());
+//
+//        }
+//    return null;
+//    }
 }
