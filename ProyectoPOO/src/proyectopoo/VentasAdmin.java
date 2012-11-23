@@ -55,9 +55,17 @@ public class VentasAdmin {
             valida(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado);
             getVentas().add(new Venta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado));
             //comparador //
+            Collections.sort(ventas, new Fecha_Vencimiento_Comparator());
     }
 
+class Fecha_Vencimiento_Comparator implements Comparator {
 
+    @Override
+    public int compare(Object o1, Object o2) {
+        Venta v1 = (Venta) o1;
+        Venta v2 = (Venta) o2;
+        return v1.getFecha_vencimiento() - v2.getFecha_vencimiento();
+    }
 }
-
+}
 
