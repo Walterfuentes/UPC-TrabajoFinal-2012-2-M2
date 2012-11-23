@@ -5,64 +5,59 @@
 package proyectopoo;
 
 import java.util.ArrayList;
-
+import java.util.Collections ;
+import java.util.List ;
+import java.util.Comparator;
 /**
  * @author Pedro Balarezo
  */
 public class VentasAdmin {
+
     private ArrayList<Venta> ventas;
+    private ArrayList<Venta> aux;
 
     public VentasAdmin() {
         ventas = new ArrayList<Venta>();
     }
-    public String valida(String concepto, String numero, int fecha_emision, String empresa, double subtotal, double igv, double total, String moneda, int fecha_vencimiento, int fecha_pago, String observaciones) {
-        if (concepto.equals(" ") || numero.equals(" ") || fecha_emision == 0 || subtotal == 0 || igv == 0 || total == 0 || moneda.equals(" ") || fecha_vencimiento == 0 || fecha_pago == 0 || observaciones.equals(" ")) {
-            System.out.println("IMPORTANTE !!! LLENAR TODOS LOS CAMPOS");
-            return ("IMPORTANTE !!! LLENAR TODOS LOS CAMPOS");
+
+    public ArrayList<Venta> getVentas() {
+        return ventas;
+    }
+
+
+    public void valida(String factura_boleta, String concepto, int numero, int fecha_emision, String empresa, double subtotal, double igv, double total, String moneda, int fecha_vencimiento, int fecha_pago, String observaciones, String estado)
+            throws BusinessException {
+        String mensaje ="";
+        if (    factura_boleta==null
+                || concepto == null
+                || numero <= 0
+                || fecha_emision <= 0
+                || subtotal <= 0
+                || igv <= 0
+                || total <= 0
+                || moneda == null
+                || fecha_vencimiento <= 0
+                || fecha_pago <= 0
+                || observaciones == null
+                || estado == null) {
+            mensaje = "IMPORTANTE !!! LLENAR TODOS LOS CAMPOS";
         }
         if ((fecha_emision > fecha_pago) || (fecha_emision > fecha_vencimiento)) {
-            System.out.println("FECHAS INCOGRUENTES");
-            return ("FECHAS INCOGRUENTES");
+            mensaje = ("FECHAS INCOGRUENTES");
         }
-        return Alta(concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones);
-    }
-    
-    public String Alta(String concepto, String numero, int fecha_emision, String empresa, double subtotal, double igv, double total, String moneda, int fecha_vencimiento, int fecha_pago, String observaciones) {
-        Venta AltaVenta = new Venta();
-        AltaVenta.setConcepto(concepto);
-        AltaVenta.setNumero(numero);
-        AltaVenta.setFecha_emision(fecha_emision);
-        AltaVenta.setEmpresa(empresa);
-        AltaVenta.setSubtotal(subtotal);
-        AltaVenta.setIgv(igv);
-        AltaVenta.setTotal(total);
-        AltaVenta.setMoneda(moneda);
-        AltaVenta.setFecha_vencimiento(fecha_vencimiento);
-        AltaVenta.setFecha_pago(fecha_pago);
-        AltaVenta.setObservaciones(observaciones);
+        if(! mensaje.isEmpty())
+        throw new BusinessException(mensaje);
 
-        ventas.add(AltaVenta);
-
-
-        System.out.println(AltaVenta.getConcepto() + " " + AltaVenta.getNumero() + " "
-                + AltaVenta.getFecha_emision() + " " + AltaVenta.getEmpresa() + " "
-                + AltaVenta.getSubtotal() + " " + AltaVenta.getIgv() + " "
-                + AltaVenta.getTotal() + " " + AltaVenta.getMoneda() + " "
-                + AltaVenta.getFecha_vencimiento() + " " + AltaVenta.getFecha_pago() + " "
-                + AltaVenta.getObservaciones()
-                + "   //////// AGREGADO CORRECTAMENTE");
-
-
-        return (AltaVenta.getConcepto() + " " + AltaVenta.getNumero() + " "
-                + AltaVenta.getFecha_emision() + " " + AltaVenta.getEmpresa() + " "
-                + AltaVenta.getSubtotal() + " " + AltaVenta.getIgv() + " "
-                + AltaVenta.getTotal() + " " + AltaVenta.getMoneda() + " "
-                + AltaVenta.getFecha_vencimiento() + " " + AltaVenta.getFecha_pago() + " "
-                + AltaVenta.getObservaciones()
-                + "   //////// AGREGADO CORRECTAMENTE");
-
-   
     }
 
-    
+    public void Alta(String factura_boleta, String concepto, int numero, int fecha_emision, String empresa, double subtotal, double igv, double total, String moneda, int fecha_vencimiento, int fecha_pago, String observaciones, String estado)
+            throws BusinessException {
+            valida(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado);
+            getVentas().add(new Venta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado));
+            //comparador //
+    }
+
+
 }
+
+
