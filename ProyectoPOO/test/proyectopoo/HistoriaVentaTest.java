@@ -13,40 +13,73 @@ import org.junit.Test;
 public class HistoriaVentaTest {
 
     @Test
-    public void validarAltaVenta() {
+    public void validarAltaVenta() throws BusinessException {
 
-    String factura_boleta="0001";
-    String concepto="Libros";
-    int numero=10;
-    int fecha_emision=20121012;
-    String empresa="empresa1";
-    double subtotal=500;
-    double igv=512;
-    double total=5486;
-    String moneda="soles";
-    int fecha_vencimiento=20121512;
-    int fecha_pago=20121612;
-    String estado="bien";
-    String observaciones="provando";
-
-     Venta v = new Venta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, moneda);
-////       VentasAdmin vd = new VentasAdmin();
-//
-////       vd.Alta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, moneda);
-//
-////
-////
+        String factura_boleta = "0001";
+        String concepto = "Libros";
+        int numero = 10;
+        int fecha_emision = 20121012;
+        String empresa = "empresa1";
+        double subtotal = 500;
+        double igv = 512;
+        double total = 5486;
+        String moneda = "soles";
+        int fecha_vencimiento = 20121512;
+        int fecha_pago = 20121612;
+        String estado = "bien";
+        String observaciones = "provando";
         
+        String factura_boleta1="0002";
+    String concepto1="mesa";
+    int numero1=10;
+    int fecha_emision1=20121012;
+    String empresa1="empresa1";
+    double subtotal1=500;
+    double igv1=512;
+    double total1=5486;
+    String moneda1="dolares";
+    int fecha_vencimiento1=20121012;
+    int fecha_pago1=200121012;
+    String observaciones1="provando";
+    String estado1="regular";
+
+    String factura_boleta2="0003";
+    String concepto2="cuadernos";
+    int numero2=10;
+    int fecha_emision2=20120912;
+    String empresa2="empresa1";
+    double subtotal2=500;
+    double igv2=512;
+    double total2=5486;
+    String moneda2="soles";
+    int fecha_vencimiento2=20121112;
+    int fecha_pago2=20121012;
+    String observaciones2="provando";
+    String estado2="mal";
+
+
+        Venta v = new Venta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, moneda);
+        VentasAdmin vd = new VentasAdmin();
+
+        vd.Alta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, moneda);
+
+        vd.Alta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado);
+        vd.Alta(factura_boleta1, concepto1, numero1, fecha_emision1, empresa1, subtotal1, igv1, total1, moneda1, fecha_vencimiento1, fecha_pago1, observaciones1, estado1);
+        vd.Alta(factura_boleta2, concepto2, numero2, fecha_emision2, empresa2, subtotal2, igv2, total2, moneda2, fecha_vencimiento2, fecha_pago2, observaciones2, estado2);
+
+        //vd.BuscarConcepto("soles");
+
+
         assertNotNull(v);
         assertEquals(factura_boleta, v.getFactura_boleta());
         assertEquals(concepto, v.getConcepto());
         assertEquals(fecha_emision, v.getFecha_emision());
         assertEquals(fecha_vencimiento, v.getFecha_vencimiento());
-        assertEquals(subtotal, v.getSubtotal(),0.0);
+        assertEquals(subtotal, v.getSubtotal(), 0.0);
         assertEquals(igv, v.getIgv(), 0.0);
         assertEquals(total, v.getTotal(), 0.0);
         assertEquals(moneda, v.getMoneda());
         assertEquals(observaciones, v.getObservaciones());
-        
+
     }
 }
