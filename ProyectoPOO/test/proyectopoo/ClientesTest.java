@@ -11,11 +11,10 @@ import static org.junit.Assert.*;
  *
  * @author walterfuentes
  */
-public class AltaClienteTest {
+public class ClientesTest {
     
-    public AltaClienteTest() {
+    public ClientesTest() {
     }
-
 
     @Test
     public void VerificaAltaTest() {
@@ -29,7 +28,7 @@ public class AltaClienteTest {
         String fecha = "081212";
         
         Personas cliente1 = new Personas(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fecha);
-        AltaCliente alta01 = new AltaCliente();
+        Clientes alta01 = new Clientes();
         alta01.RegistarAltacliente(cliente1);
         boolean respuestaEsperada = true;
         boolean respuestaRetornada = alta01.getMensaje();
@@ -47,7 +46,7 @@ public class AltaClienteTest {
          String fecha2 = "081212";
         
         Personas cliente2 = new Personas(nombre2, ApellidoPaterno2, ApellidoMaterno2, Correo2, Dni2, telefonofijo2, celular2, fecha2);
-        AltaCliente alta02 = new AltaCliente();
+        Clientes alta02 = new Clientes();
         alta01.RegistarAltacliente(cliente2);
         boolean respuestaEsperada2 = false;
         boolean respuestaRetornada2 = alta02.getMensaje();
@@ -67,12 +66,11 @@ public class AltaClienteTest {
          String fecha = "081212";
          
         Personas cliente1 = new Personas(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fecha);
-        AltaCliente nuevaAlta = new AltaCliente();
+        Clientes nuevaAlta = new Clientes();
         String buscaNombre ="Juan";
-        nuevaAlta.buscarProspectos(buscaNombre);
+        nuevaAlta.buscarClientes(buscaNombre);
         
         
         
     }
-    }
-
+}

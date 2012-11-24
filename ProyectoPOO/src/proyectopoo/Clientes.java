@@ -10,15 +10,15 @@ import java.util.ArrayList;
  *
  * @author walterfuentes
  */
-public class AltaCliente {
+public class Clientes {
     
-    private ArrayList<Personas> AltaClientes;
-    private ArrayList<AltaCliente> AltaAceptadas;
+    private ArrayList<Personas> AlmacenaClientes;
+    private ArrayList<Clientes> AltaAceptadas;
     private boolean Mensaje;
     
-     public AltaCliente() {
-        AltaClientes = new ArrayList<Personas>();
-        AltaAceptadas = new ArrayList<AltaCliente>();
+     public Clientes() {
+        AlmacenaClientes = new ArrayList<Personas>();
+        AltaAceptadas = new ArrayList<Clientes>();
     }
 
     public boolean getMensaje() {
@@ -33,12 +33,12 @@ public class AltaCliente {
      
      public void CrearNuevoCliente(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fecha){
         Personas Nuevo = new Personas(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fecha);
-        AltaClientes.add(Nuevo);
+        AlmacenaClientes.add(Nuevo);
     }
      
-     public void buscarProspectos(String buscadatos){
+     public void buscarClientes(String buscadatos){
         String mensaje = " ";
-        for(Personas aux : AltaClientes){
+        for(Personas aux : AlmacenaClientes){
             if(buscadatos.equalsIgnoreCase(aux.getNombre()))mensaje=aux.getNombre()+aux.getApellidoPaterno()+aux.getApellidoMaterno()+aux.getDni()+aux.getCorreo()+aux.getTelefonofijo();
             if(buscadatos.equalsIgnoreCase(aux.getApellidoPaterno()))mensaje = aux.getNombre()+aux.getApellidoPaterno()+aux.getApellidoMaterno()+aux.getDni()+aux.getCorreo()+aux.getTelefonofijo();
             if(buscadatos.equalsIgnoreCase(aux.getApellidoMaterno()))mensaje = aux.getNombre()+aux.getApellidoPaterno()+aux.getApellidoMaterno()+aux.getDni()+aux.getCorreo()+aux.getTelefonofijo();
