@@ -21,7 +21,6 @@ public class AltaProspecto {
         almacenaprospecto=new ArrayList<Personas>();
     }
     
-    
     public int getTotalProspectos() {
         return almacenaprospecto.size();
     }

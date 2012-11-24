@@ -32,7 +32,7 @@ public class AltaProspectoTest {
         String correo = "";
         String telefonofijo = "";
         String celular="";
-         String fecha = "081212";
+        String fecha = "081212";
         AltaProspecto admin = new AltaProspecto();        
         admin.registrarProspecto(dni, apellidoPaterno, apellidoMaterno, nombre, correo, telefonofijo, celular, fecha);
     }

@@ -131,6 +131,7 @@ public class Personas {
     
     public String validarDatosProspecto (Personas validar) {
         
+        
         if(validar.getNombre()==null || validar.getNombre().isEmpty())
             return "Debe Ingresar Nombre";
         
