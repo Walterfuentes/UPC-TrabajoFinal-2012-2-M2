@@ -59,7 +59,7 @@ public class AltaProspecto {
         validarDatosProspecto(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular);
         validarDuplicidad(dni);
         Personas nuevoprospecto=new Personas(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular, fecha);
-        altaprospectos.add(nuevoprospecto);  // Se usa la plantilla Personas para crear Objetos de prospectos nuevos.
+        altaprospectos.add(nuevoprospecto);  
     }
     
     public Personas buscarProspecto (String nombre) {
