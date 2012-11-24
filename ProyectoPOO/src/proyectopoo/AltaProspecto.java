@@ -12,15 +12,18 @@ import java.util.ArrayList;
  */
 public class AltaProspecto {
     
-    private ArrayList<Personas> altaprospectos;
+    private String idProspecto;
+    private String fechaProspecto;
+    
+    private ArrayList<Personas> almacenaprospecto;
     
     public AltaProspecto() {
-        altaprospectos=new ArrayList<Personas>();
+        almacenaprospecto=new ArrayList<Personas>();
     }
     
     
     public int getTotalProspectos() {
-        return altaprospectos.size();
+        return almacenaprospecto.size();
     }
     
     public String validarDuplicidad(String dato) {
