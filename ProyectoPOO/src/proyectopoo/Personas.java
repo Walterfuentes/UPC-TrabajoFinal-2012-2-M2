@@ -1,4 +1,3 @@
-
 package proyectopoo;
 
 import java.util.ArrayList;
@@ -17,10 +16,7 @@ public class Personas {
     protected String telefonofijo;
     protected String celular;
     protected String fechaIngreso;
-    protected String nombreUsuario;
-    protected String rol;
-    protected String cargo;
-    protected String contrasenia;
+  
     
 
     public Personas(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fecha) {
@@ -34,18 +30,6 @@ public class Personas {
         this.fechaIngreso = fecha;
     }
 
-    public Personas(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String fechaIngreso, String nombreUsuario, String cargo, String rol, String contrasenia) {
-        this.nombre = nombre;
-        this.ApellidoPaterno = ApellidoPaterno;
-        this.ApellidoMaterno = ApellidoMaterno;
-        this.Correo = Correo;
-        this.Dni = Dni;
-        this.fechaIngreso = fechaIngreso;
-        this.nombreUsuario = nombreUsuario;
-        this.cargo = cargo;
-        this.rol = rol;
-        this.contrasenia = contrasenia;
-    }
     
     
     public String getApellidoMaterno() {
