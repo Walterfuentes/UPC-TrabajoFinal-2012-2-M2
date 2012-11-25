@@ -33,6 +33,8 @@ public class Clientes extends Personas{
         int aux = 0; //iD autocliente se autoinicia;
        
         Personas nueva = new Clientes(aux, nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso, transacciones);
+        if(nueva.validarDatosProspecto(nueva) == null)
+        if(BuscaCliente(nombre) ==null)
         AlmacenaClientes.add(aux, nueva);
         aux++;
  }
