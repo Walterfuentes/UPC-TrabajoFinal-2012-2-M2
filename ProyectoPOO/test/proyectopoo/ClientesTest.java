@@ -27,14 +27,6 @@ public class ClientesTest {
         String celular = "994578347";
         String fecha = "081212";
         
-        Personas cliente1 = new Personas(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fecha);
-        Clientes alta01 = new Clientes();
-        alta01.RegistarAltacliente(cliente1);
-        boolean respuestaEsperada = true;
-        boolean respuestaRetornada = alta01.getMensaje();
-        assertEquals(respuestaEsperada,respuestaRetornada);
-        
-        
         
         String nombre2 =" Carlos ";
         String ApellidoPaterno2 = null;
@@ -45,12 +37,7 @@ public class ClientesTest {
         String celular2 = "993638347";
          String fecha2 = "081212";
         
-        Personas cliente2 = new Personas(nombre2, ApellidoPaterno2, ApellidoMaterno2, Correo2, Dni2, telefonofijo2, celular2, fecha2);
-        Clientes alta02 = new Clientes();
-        alta01.RegistarAltacliente(cliente2);
-        boolean respuestaEsperada2 = false;
-        boolean respuestaRetornada2 = alta02.getMensaje();
-        assertEquals(respuestaEsperada,respuestaRetornada);
+        
         
     }
     
@@ -63,14 +50,8 @@ public class ClientesTest {
         String Dni= "41334980";
         String telefonofijo = "4502183";
         String celular = "994578347";
-         String fecha = "081212";
+        String fecha = "081212";
          
-        Personas cliente1 = new Personas(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fecha);
-        Clientes nuevaAlta = new Clientes();
-        String buscaNombre ="Juan";
-        nuevaAlta.buscarClientes(buscaNombre);
-        
-        
         
     }
 }
