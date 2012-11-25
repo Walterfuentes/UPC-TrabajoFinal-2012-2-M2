@@ -29,18 +29,18 @@ public class AltaProspecto {
         if (buscarProspecto(dato) !=null) {
         return " Los datos ya han sido registrados";
         }    
-        return "";
+        return ""; 
     }
    
     public void registrarProspecto(String nombre, String apellidopaterno, String apellidomaterno, String correo, String dni, String telefonofijo, String celular, String fecha) {
         validarDatosProspecto(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular);
         validarDuplicidad(dni);
         Personas nuevoprospecto=new Personas(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular, fecha);
-        altaprospectos.add(nuevoprospecto);  
+        almacenaprospecto.add(nuevoprospecto);  
     }
     
     public Personas buscarProspecto (String nombre) {
-        for (Personas busqueda : altaprospectos)
+        for (Personas busqueda : almacenaprospecto)
              if(busqueda.getNombre().equals(nombre))
              return busqueda;    
         return null;
@@ -49,7 +49,7 @@ public class AltaProspecto {
     public void eliminarProspecto (String dato) {
         Personas busqueda=buscarProspecto(dato);
         if (busqueda != null)
-            altaprospectos.remove(dato);
+            almacenaprospecto.remove(dato);
     }
     
     
