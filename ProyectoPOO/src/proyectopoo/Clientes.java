@@ -38,8 +38,7 @@ public class Clientes extends Personas{
         AlmacenaClientes.add(aux, nueva);
         aux++;
  }
- 
- 
+
  public void ImprimelistadeClientes() {
         for (Personas aux : AlmacenaClientes) {
             System.out.println(aux.getNombre());
