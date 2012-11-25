@@ -100,22 +100,7 @@ public class Personas {
         this.telefonofijo = telefonofijo;
     }
 
-    public String getCargo() {
-        return cargo;
-    }
-
-    public String getContrasenia() {
-        return contrasenia;
-    }
-
-    public String getNombreUsuario() {
-        return nombreUsuario;
-    }
-
-    public String getRol() {
-        return rol;
-    }
-    
+   
     
     public String validarDatosProspecto (Personas validar) {
         

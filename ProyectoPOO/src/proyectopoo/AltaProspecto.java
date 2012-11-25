@@ -32,12 +32,7 @@ public class AltaProspecto {
         return ""; 
     }
    
-    public void registrarProspecto(String nombre, String apellidopaterno, String apellidomaterno, String correo, String dni, String telefonofijo, String celular, String fecha) {
-        validarDatosProspecto(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular);
-        validarDuplicidad(dni);
-        Personas nuevoprospecto=new Personas(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular, fecha);
-        almacenaprospecto.add(nuevoprospecto);  
-    }
+   
     
     public Personas buscarProspecto (String nombre) {
         for (Personas busqueda : almacenaprospecto)
