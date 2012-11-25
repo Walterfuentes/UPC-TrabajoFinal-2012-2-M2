@@ -30,6 +30,10 @@ public class Personas {
         this.fechaIngreso = fecha;
     }
 
+    public Personas(){
+
+    }
+
     
     
     public String getApellidoMaterno() {
