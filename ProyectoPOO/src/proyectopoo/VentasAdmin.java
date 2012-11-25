@@ -54,9 +54,30 @@ public class VentasAdmin {
             throws BusinessException {
             valida(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado);
             getVentas().add(new Venta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado));
-            //comparador //
+            //comparador  y ordena//
             Collections.sort(ventas, new Fecha_Vencimiento_Comparator());
     }
+    
+
+public void BuscarConcepto (String concepto){
+    for (Venta v: ventas){
+        if (v.getConcepto().equals(concepto))
+        {System.out.println(v.getFactura_boleta()+" "+
+                            v.getConcepto()+" "+
+                            v.getEmpresa()+" "+
+                            v.getEstado()+" "+
+                            v.getMoneda()+
+                            v.getObservaciones()+" "+
+                            v.getIgv()+" "+
+                            v.getNumero()+" "+
+                            v.getSubtotal()+" "+
+                            v.getTotal()+" "+
+                            v.getFecha_emision()+" "+
+                            v.getFecha_pago()+" "+
+                            v.getFecha_vencimiento()+"\n");}  
+    }
+}
+}
 
 class Fecha_Vencimiento_Comparator implements Comparator {
 
@@ -67,5 +88,3 @@ class Fecha_Vencimiento_Comparator implements Comparator {
         return v1.getFecha_vencimiento() - v2.getFecha_vencimiento();
     }
 }
-}
-
