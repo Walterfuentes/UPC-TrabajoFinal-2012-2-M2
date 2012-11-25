@@ -1,4 +1,3 @@
-
 /*
  * Historia de Usuario: ComprasAdmin
  * Desarrollado: Carlos Ricaldi
@@ -61,4 +60,5 @@ public class ComprasAdmin {
                 return compras;
         return null;
     }
+    
 }
