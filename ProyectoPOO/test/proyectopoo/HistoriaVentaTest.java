@@ -67,7 +67,7 @@ public class HistoriaVentaTest {
         vd.Alta(factura_boleta1, concepto1, numero1, fecha_emision1, empresa1, subtotal1, igv1, total1, moneda1, fecha_vencimiento1, fecha_pago1, observaciones1, estado1);
         vd.Alta(factura_boleta2, concepto2, numero2, fecha_emision2, empresa2, subtotal2, igv2, total2, moneda2, fecha_vencimiento2, fecha_pago2, observaciones2, estado2);
 
-        //vd.BuscarConcepto("soles");
+        vd.BuscarConcepto("soles");
 
 
         assertNotNull(v);
