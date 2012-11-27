@@ -6,20 +6,20 @@ import java.util.ArrayList;
  *
  * @author walterfuentes
  */
-public class Personas {
+public class Cliente {
     
-    protected String nombre;
-    protected String ApellidoPaterno;
-    protected String ApellidoMaterno;
-    protected String Correo;
-    protected String Dni;
-    protected String telefonofijo;
-    protected String celular;
-    protected String fechaIngreso;
+    private String nombre;
+    private String ApellidoPaterno;
+    private String ApellidoMaterno;
+    private String Correo;
+    private String Dni;
+    private String telefonofijo;
+    private String celular;
+    private String fechaIngreso;
   
     
 
-    public Personas(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fecha) {
+    public Cliente(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fecha) {
         this.nombre = nombre;
         this.ApellidoPaterno = ApellidoPaterno;
         this.ApellidoMaterno = ApellidoMaterno;
@@ -30,7 +30,7 @@ public class Personas {
         this.fechaIngreso = fecha;
     }
 
-    public Personas(){
+    public Cliente(){
 
     }
 
@@ -102,40 +102,6 @@ public class Personas {
 
    
     
-    public String validarDatosProspecto (Personas validar) {
-        
-        
-        if(validar.getNombre()==null || validar.getNombre().isEmpty())
-            return "Debe Ingresar Nombre";
-        
-        if(validar.getApellidoPaterno()==null || validar.getApellidoPaterno().isEmpty()) 
-            return "Debe Ingresar Apellido Paterno";
-        
-        if(validar.getApellidoMaterno()==null || validar.getApellidoMaterno().isEmpty()) 
-            return "Debe Ingresar Apellido Materno";
-        
-        if(validar.getCorreo()==null || validar.getCorreo().isEmpty()) 
-            return "Debe Ingresar algun correo";
-        
-        if(validar.getDni()==null || validar.getDni().isEmpty()) 
-            return "Debe Ingresar DNI";
-        
-        if(validar.getTelefonofijo()==null || validar.getTelefonofijo().isEmpty()) 
-            return "Debe Ingresar algun Telefono";
-        
-        if(validar.getCelular()==null || validar.getCelular().isEmpty()) 
-            return "Debe Ingresar algun Celular";  
-        
-        return null;
-    }
-   
-
-public Personas BuscarDatos(ArrayList<Personas> nuevo, String datoEncontrar){
-    for (Personas aux: nuevo)
-        if(aux.getNombre().equals(datoEncontrar))
-            return aux;
-        
-    return null;
-}
+    
    
 }

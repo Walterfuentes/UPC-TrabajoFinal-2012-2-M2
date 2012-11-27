@@ -12,10 +12,10 @@ import static org.junit.Assert.*;
  *
  * @author walterfuentes
  */
-public class PersonasTest {
+public class ClienteTest {
     
 
-    public PersonasTest () {
+    public ClienteTest () {
     }
 
    
@@ -30,7 +30,7 @@ public class PersonasTest {
         String celular = "994578347";
          String fecha = "081212";
         
-       Personas cliente1 = new Personas(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fecha);
+       Cliente cliente1 = new Cliente(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fecha);
        
         assertNotNull(cliente1);
         assertEquals(nombre, cliente1.getNombre());        

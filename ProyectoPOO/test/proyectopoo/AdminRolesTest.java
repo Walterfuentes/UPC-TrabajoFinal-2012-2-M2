@@ -13,7 +13,7 @@ import org.junit.runners.Suite;
 
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({proyectopoo.HistoriaVentaTest.class, proyectopoo.PersonasTest.class, proyectopoo.ComprasTest.class, proyectopoo.AltaProspectoTest.class, proyectopoo.RolesTest.class, proyectopoo.AdminUsuarioTest.class, proyectopoo.ProspectoTest.class, proyectopoo.ClientesTest.class})
+@Suite.SuiteClasses({proyectopoo.HistoriaVentaTest.class, proyectopoo.ClienteTest.class, proyectopoo.ComprasTest.class, proyectopoo.AltaProspectoTest.class, proyectopoo.RolesTest.class, proyectopoo.AdminUsuarioTest.class, proyectopoo.ProspectoTest.class, proyectopoo.ClientesTest.class})
 public class AdminRolesTest {
 
     @BeforeClass

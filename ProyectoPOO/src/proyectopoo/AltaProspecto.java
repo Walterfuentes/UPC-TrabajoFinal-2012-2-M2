@@ -7,13 +7,13 @@ package proyectopoo;
 import java.util.ArrayList;
 
 
-public class AltaProspecto extends Personas{
+public class AltaProspecto extends Cliente{
     
     private String idProspecto;
     private String fechaProspecto;
     
    
-    private ArrayList<Personas> almacenaprospecto;
+    private ArrayList<Cliente> almacenaprospecto;
     
     public String getIdProspecto() {
         return idProspecto;
@@ -31,18 +31,18 @@ public class AltaProspecto extends Personas{
         this.fechaProspecto=fechaprospecto;
     }
     public AltaProspecto() {
-        almacenaprospecto=new ArrayList<Personas>();
+        almacenaprospecto=new ArrayList<Cliente>();
     }
     
-    public void registrarProspecto(String idProspecto, String nombre, String apellidopaterno, String apellidomaterno, String correo, String dni, String telefonofijo, String celular, String fechaingreso) {
-    Personas nuevoprospecto;
-    Personas validarprospecto;
-    validarprospecto.validarDatosProspecto(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular, fechaingreso);
-    validarDuplicidad(dni);
-    nuevoprospecto=new Personas(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular, fechaingreso);
-    almacenaprospecto.add(nuevoprospecto);
-    }
-    
+//    public void registrarProspecto(String idProspecto, String nombre, String apellidopaterno, String apellidomaterno, String correo, String dni, String telefonofijo, String celular, String fechaingreso) {
+//    Cliente nuevoprospecto;
+//    Cliente validarprospecto;
+//    validarprospecto.validarDatosProspecto(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular, fechaingreso);
+//    validarDuplicidad(dni);
+//    nuevoprospecto=new Cliente(nombre, apellidopaterno, apellidomaterno, correo, dni, telefonofijo, celular, fechaingreso);
+//    almacenaprospecto.add(nuevoprospecto);
+//    }
+//    
     public int getTotalProspectos() {
         return almacenaprospecto.size();
     }
@@ -54,21 +54,21 @@ public class AltaProspecto extends Personas{
         return ""; 
     }
    
-    public Personas buscarProspecto (String nombre) {
-        for (Personas busqueda : almacenaprospecto)
+    public Cliente buscarProspecto (String nombre) {
+        for (Cliente busqueda : almacenaprospecto)
              if(busqueda.getNombre().equals(nombre))
              return busqueda;
         return null;
     } 
     
     public void eliminarProspecto (String dato) {
-        Personas busqueda=buscarProspecto(dato);
+        Cliente busqueda=buscarProspecto(dato);
         if (busqueda != null)
             almacenaprospecto.remove(dato);
     }
     
     public void mostrarGrilla() {
-        for (Personas mostrar : almacenaprospecto) 
+        for (Cliente mostrar : almacenaprospecto) 
          System.out.println(mostrar.getNombre() + " | " + mostrar.getApellidoPaterno() + " | " + mostrar.getApellidoMaterno() + " | " + mostrar.getCorreo() + " | " + mostrar.getDni() + " | " + mostrar.getTelefonofijo() + " | " + mostrar.getCelular() + " | " + mostrar.getFechaIngreso());
          
     }
