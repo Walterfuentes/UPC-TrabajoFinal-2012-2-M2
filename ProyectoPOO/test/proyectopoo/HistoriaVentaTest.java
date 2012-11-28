@@ -70,6 +70,7 @@ public class HistoriaVentaTest {
 
        vd.BuscarConcepto("libros");
        vd.BuscarNumero(10);
+       vd.BuscarEmpresa("empresa3");
 
         assertNotNull(v);
         assertEquals(factura_boleta, v.getFactura_boleta());
