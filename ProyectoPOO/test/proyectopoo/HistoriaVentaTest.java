@@ -73,6 +73,7 @@ public class HistoriaVentaTest {
        vd.BuscarEmpresa("empresa3");
        vd.BuscarEstado("mal");
        vd.BuscarFechaEmision(20121210);
+       vd.BuscarFechaVencimiento(fecha_vencimiento2);
 
         assertNotNull(v);
         assertEquals(factura_boleta, v.getFactura_boleta());
