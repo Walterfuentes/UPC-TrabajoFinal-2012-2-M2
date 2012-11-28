@@ -125,6 +125,7 @@ public class VentasAdmin {
 
 
     }
+  
    public void BuscarEstado(String estado) {
         for (Venta v : ventas) {
             if (v.getEstado().equals(estado))
@@ -147,6 +148,33 @@ public class VentasAdmin {
 
 
     }
+
+public void BuscarFechaEmision (int fechaEmision) {
+        for (Venta v : ventas) {
+            if (v.getFecha_emision() == fechaEmision) {
+                System.out.println(v.getFactura_boleta() + " "
+                        + v.getConcepto() + " "
+                        + v.getNumero() + " "
+                        + v.getFecha_emision() + " "
+                        + v.getEmpresa() + " "
+                        + v.getSubtotal() + " "
+                        + v.getIgv() + " "
+                        + v.getTotal() + " "
+                        + v.getMoneda() + " "
+                        + v.getFecha_vencimiento() + " "
+                        + v.getFecha_pago() + " "
+                        + v.getObservaciones() + " "
+                        + v.getEstado() + " " + " \n");
+            }
+        }
+
+
+    }
+
+
+
+
+
 }
 
 class Fecha_Vencimiento_Comparator implements Comparator {
