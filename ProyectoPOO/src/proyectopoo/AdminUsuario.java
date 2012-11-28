@@ -53,15 +53,8 @@ public class AdminUsuario {
         return respuesta;
     }
 
-//    public void registrarUsuario(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String fechaIngreso, String nombreUsuario, String cargo, String rol, String contrasenia ) {
-//        if (validarExistenciaUsuario(nombre) == false) {
-//            Clientes nuevoUsuario = new Clientes(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, fechaIngreso, nombreUsuario, cargo, rol, contrasenia);
-//            Almacenausuarios.add(nuevoUsuario);
-//        } else {
-//            System.out.println("No se Puede Agregar Usuario ya Existe");
-//        }
-//    }
-    public Usuarios Buscar(String dni) {
+
+  public Usuarios Buscar(String dni) {
         for (Usuarios u : usuarios) {
             if (u.getDni().equals(u)) {
                 return u;
