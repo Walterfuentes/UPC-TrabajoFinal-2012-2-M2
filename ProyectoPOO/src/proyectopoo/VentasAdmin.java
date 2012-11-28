@@ -191,6 +191,27 @@ public class VentasAdmin {
 
     }
     
+    public void BuscarFechaPago(int fechaPago) {
+        for (Venta v : ventas) {
+            if (v.getFecha_pago() == fechaPago) {
+                System.out.println(v.getFactura_boleta() + " "
+                        + v.getConcepto() + " "
+                        + v.getNumero() + " "
+                        + v.getFecha_emision() + " "
+                        + v.getEmpresa() + " "
+                        + v.getSubtotal() + " "
+                        + v.getIgv() + " "
+                        + v.getTotal() + " "
+                        + v.getMoneda() + " "
+                        + v.getFecha_vencimiento() + " "
+                        + v.getFecha_pago() + " "
+                        + v.getObservaciones() + " "
+                        + v.getEstado() + " " + " \n");
+            }
+        }
+
+
+    }
     
     
 }
