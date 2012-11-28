@@ -11,11 +11,11 @@ import java.util.ArrayList;
  */
 public class AdminUsuario {
 
-    private ArrayList<Cliente> Almacenausuarios;
+    private ArrayList<Clientes> Almacenausuarios;
     private ArrayList<Usuarios> usuarios;
 
     public AdminUsuario() {
-        Almacenausuarios = new ArrayList<Cliente>();
+        Almacenausuarios = new ArrayList<Clientes>();
         usuarios = new ArrayList<Usuarios>();
     }
 
@@ -42,7 +42,7 @@ public class AdminUsuario {
     public boolean validarExistenciaUsuario(String nombre) {
         boolean respuesta = false;
 
-        for (Cliente aux : Almacenausuarios) {
+        for (Clientes aux : Almacenausuarios) {
             if (aux.getNombre().equalsIgnoreCase(nombre)) {
                 respuesta = true;
             }
@@ -55,7 +55,7 @@ public class AdminUsuario {
 
 //    public void registrarUsuario(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String fechaIngreso, String nombreUsuario, String cargo, String rol, String contrasenia ) {
 //        if (validarExistenciaUsuario(nombre) == false) {
-//            Cliente nuevoUsuario = new Cliente(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, fechaIngreso, nombreUsuario, cargo, rol, contrasenia);
+//            Clientes nuevoUsuario = new Clientes(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, fechaIngreso, nombreUsuario, cargo, rol, contrasenia);
 //            Almacenausuarios.add(nuevoUsuario);
 //        } else {
 //            System.out.println("No se Puede Agregar Usuario ya Existe");

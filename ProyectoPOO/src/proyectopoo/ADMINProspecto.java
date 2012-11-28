@@ -7,7 +7,7 @@ package proyectopoo;
 import java.util.ArrayList;
 
 
-public class AltaProspecto extends Cliente{
+public class AdminProspecto extends Cliente{
     
     private String idProspecto;
     private String fechaProspecto;
@@ -30,7 +30,7 @@ public class AltaProspecto extends Cliente{
     public void setFechaProspecto(String fechaprospecto) {
         this.fechaProspecto=fechaprospecto;
     }
-    public AltaProspecto() {
+    public AdminProspecto() {
         almacenaprospecto=new ArrayList<Cliente>();
     }
     

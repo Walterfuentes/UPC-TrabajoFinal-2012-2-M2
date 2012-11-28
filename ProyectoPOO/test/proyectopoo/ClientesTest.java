@@ -4,7 +4,8 @@
  */
 package proyectopoo;
 
-import org.junit.*;
+
+
 import static org.junit.Assert.*;
 
 /**
@@ -13,11 +14,13 @@ import static org.junit.Assert.*;
  */
 public class ClientesTest {
     
-    public ClientesTest() {
+
+    public ClientesTest () {
     }
 
-    @Test
-    public void VerificaAltaTest() {
+   
+
+    public void IngresoClienteTest(){
         String nombre =" Juan ";
         String ApellidoPaterno = "Flores";
         String ApellidoMaterno = "Jimenez";
@@ -25,33 +28,19 @@ public class ClientesTest {
         String Dni= "41334980";
         String telefonofijo = "4502183";
         String celular = "994578347";
-        String fecha = "081212";
+         String fecha = "081212";
         
-        
-        String nombre2 =" Carlos ";
-        String ApellidoPaterno2 = null;
-        String ApellidoMaterno2 = "Lopez";
-        String Correo2 = null;
-        String Dni2= "44561980";
-        String telefonofijo2 = "3392183";
-        String celular2 = "993638347";
-         String fecha2 = "081212";
-        
-        
-        
+       Clientes cliente1 = new Clientes(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fecha);
+       
+        assertNotNull(cliente1);
+        assertEquals(nombre, cliente1.getNombre());        
+        assertEquals(ApellidoPaterno, cliente1.getApellidoPaterno());
+        assertEquals(ApellidoMaterno, cliente1.getApellidoMaterno());
+        assertEquals(Correo, cliente1.getCorreo());
+        assertEquals(Dni, cliente1.getDni());
+        assertEquals(telefonofijo, cliente1.getTelefonofijo());
+        assertEquals(celular, cliente1.getCelular());
+       
     }
-    
-    @Test
-    public void VerificaBusquedaDatos() {
-        String nombre ="Juan";
-        String ApellidoPaterno = "Flores";
-        String ApellidoMaterno = "Jimenez";
-        String Correo = "micorreo@correo.com";
-        String Dni= "41334980";
-        String telefonofijo = "4502183";
-        String celular = "994578347";
-        String fecha = "081212";
-         
-        
-    }
+
 }

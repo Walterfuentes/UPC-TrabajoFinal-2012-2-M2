@@ -1,82 +1,107 @@
-/*
- Historia Cliente Realizado por Walter Fuentes
- * 
- */
 package proyectopoo;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  *
  * @author walterfuentes
  */
-public class Clientes extends Cliente{
+public class Clientes {
     
-   private ArrayList<Cliente> AlmacenaClientes;
-   private int idCliente;
-   private int transacciones;
-   private Cliente persona;
-   
-   
-    public Clientes(int idCliente, String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fechaIngreso, int transacciones) {
-        super(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso);
-        this.idCliente = idCliente;
-        this.transacciones = transacciones;
-    }
+    private String nombre;
+    private String ApellidoPaterno;
+    private String ApellidoMaterno;
+    private String Correo;
+    private String Dni;
+    private String telefonofijo;
+    private String celular;
+    private String fechaIngreso;
+  
     
-    public Clientes(){
-        AlmacenaClientes = new ArrayList<Cliente>(); 
-    }
-    
- public void IngresaClientesSinProspecto(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fechaIngreso, int transacciones) {
-        int aux = 0; //iD autocliente se autoinicia;
-       
-        Cliente nueva = new Clientes(aux, nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso, transacciones);
-//        if(nueva.validarDatosProspecto(nueva) == null)
-//        if(BuscaCliente(nombre) ==null)
-//        AlmacenaClientes.add(aux, nueva);
-//        aux++;
- }
 
- public void ImprimelistadeClientes() {
-        for (Cliente aux : AlmacenaClientes) {
-            System.out.println(aux.getNombre());
-        }
+    public Clientes(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fecha) {
+        this.nombre = nombre;
+        this.ApellidoPaterno = ApellidoPaterno;
+        this.ApellidoMaterno = ApellidoMaterno;
+        this.Correo = Correo;
+        this.Dni = Dni;
+        this.telefonofijo = telefonofijo;
+        this.celular = celular;
+        this.fechaIngreso = fecha;
     }
- 
- public Cliente BuscaCliente(String Dato) { //Ingresar DNI, nombre o Apellido
-        for (Cliente aux : AlmacenaClientes) 
-        if ((Dato.equalsIgnoreCase(aux.getNombre())) || (Dato.equalsIgnoreCase(aux.getApellidoPaterno())) || (Dato.equalsIgnoreCase(aux.getDni()))) 
-                return aux;
-             return null;
-}
-        
-// 
-// public boolean MetodoBuscaryAgregarCliente(String Dato){
-//        String Mensaje = " ";
-//        boolean respuesta;
-//        
-//        BuscaCliente(Dato);
-//        if(BuscaCliente(Dato)== (null)){
-//        respuesta = true;   
-//        Scanner mensaje = new Scanner(System.in);
-//        Mensaje = " Desea Ingresar cliente";
-//        String cadena = mensaje.nextLine();
-////        if(cadena.equalsIgnoreCase("Si"))
-////        IngresaClientesSinProspecto(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso, transacciones);
-////        
-////        }else{
-////           respuesta = false;
-////        }
-//        return respuesta;
-//    }
-// 
-////  public void IngresaProspecto(Cliente prospecto) {
-////        AlmacenaClientes.add(prospecto);
-////
-////    }
-//// }
-// }}
- 
+
+    public Clientes(){
+
+    }
+
+    
+    
+    public String getApellidoMaterno() {
+        return ApellidoMaterno;
+    }
+
+    public void setApellidoMaterno(String ApellidoMaterno) {
+        this.ApellidoMaterno = ApellidoMaterno;
+    }
+
+    public String getApellidoPaterno() {
+        return ApellidoPaterno;
+    }
+
+    public void setApellidoPaterno(String ApellidoPaterno) {
+        this.ApellidoPaterno = ApellidoPaterno;
+    }
+
+    public String getCorreo() {
+        return Correo;
+    }
+
+    public void setCorreo(String Correo) {
+        this.Correo = Correo;
+    }
+
+    public String getDni() {
+        return Dni;
+    }
+
+    public void setDni(String Dni) {
+        this.Dni = Dni;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public String getFechaIngreso() {
+        return fechaIngreso;
+    }
+
+    public void setFechaIngreso(String fechaIngreso) {
+        this.fechaIngreso = fechaIngreso;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getTelefonofijo() {
+        return telefonofijo;
+    }
+
+    public void setTelefonofijo(String telefonofijo) {
+        this.telefonofijo = telefonofijo;
+    }
+
+   
+    
+    
+   
 }

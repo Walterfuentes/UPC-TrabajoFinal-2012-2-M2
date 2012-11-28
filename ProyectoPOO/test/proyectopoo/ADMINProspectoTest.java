@@ -16,9 +16,9 @@ import org.junit.BeforeClass;
  *
  * @author pcsiecon
  */
-public class AltaProspectoTest {
+public class AdminProspectoTest {
     
-    public AltaProspectoTest() {
+    public AdminProspectoTest() {
     }
     
 //   
