@@ -102,34 +102,10 @@ public class VentasAdmin {
 
 
     }
-    
-  public void BuscarEmpresa(String empresa) {
-        for (Venta v : ventas) {
-            if (v.getEmpresa().equals(empresa))
-             {
-                System.out.println(v.getFactura_boleta() + " "
-                        + v.getConcepto() + " "
-                        + v.getNumero() + " "
-                        + v.getFecha_emision() + " "
-                        + v.getEmpresa() + " "
-                        + v.getSubtotal() + " "
-                        + v.getIgv() + " "
-                        + v.getTotal() + " "
-                        + v.getMoneda() + " "
-                        + v.getFecha_vencimiento() + " "
-                        + v.getFecha_pago() + " "
-                        + v.getObservaciones() + " "
-                        + v.getEstado() + " " + " \n");
-            }
-        }
 
-
-    }
-  
-   public void BuscarEstado(String estado) {
+    public void BuscarEmpresa(String empresa) {
         for (Venta v : ventas) {
-            if (v.getEstado().equals(estado))
-             {
+            if (v.getEmpresa().equals(empresa)) {
                 System.out.println(v.getFactura_boleta() + " "
                         + v.getConcepto() + " "
                         + v.getNumero() + " "
@@ -149,7 +125,29 @@ public class VentasAdmin {
 
     }
 
-public void BuscarFechaEmision (int fechaEmision) {
+    public void BuscarEstado(String estado) {
+        for (Venta v : ventas) {
+            if (v.getEstado().equals(estado)) {
+                System.out.println(v.getFactura_boleta() + " "
+                        + v.getConcepto() + " "
+                        + v.getNumero() + " "
+                        + v.getFecha_emision() + " "
+                        + v.getEmpresa() + " "
+                        + v.getSubtotal() + " "
+                        + v.getIgv() + " "
+                        + v.getTotal() + " "
+                        + v.getMoneda() + " "
+                        + v.getFecha_vencimiento() + " "
+                        + v.getFecha_pago() + " "
+                        + v.getObservaciones() + " "
+                        + v.getEstado() + " " + " \n");
+            }
+        }
+
+
+    }
+
+    public void BuscarFechaEmision(int fechaEmision) {
         for (Venta v : ventas) {
             if (v.getFecha_emision() == fechaEmision) {
                 System.out.println(v.getFactura_boleta() + " "
@@ -171,10 +169,30 @@ public void BuscarFechaEmision (int fechaEmision) {
 
     }
 
+    public void BuscarFechaVencimiento(int fechaVencimiento) {
+        for (Venta v : ventas) {
+            if (v.getFecha_vencimiento() == fechaVencimiento) {
+                System.out.println(v.getFactura_boleta() + " "
+                        + v.getConcepto() + " "
+                        + v.getNumero() + " "
+                        + v.getFecha_emision() + " "
+                        + v.getEmpresa() + " "
+                        + v.getSubtotal() + " "
+                        + v.getIgv() + " "
+                        + v.getTotal() + " "
+                        + v.getMoneda() + " "
+                        + v.getFecha_vencimiento() + " "
+                        + v.getFecha_pago() + " "
+                        + v.getObservaciones() + " "
+                        + v.getEstado() + " " + " \n");
+            }
+        }
 
 
-
-
+    }
+    
+    
+    
 }
 
 class Fecha_Vencimiento_Comparator implements Comparator {
@@ -186,6 +204,3 @@ class Fecha_Vencimiento_Comparator implements Comparator {
         return v1.getFecha_vencimiento() - v2.getFecha_vencimiento();
     }
 }
-
-
-
