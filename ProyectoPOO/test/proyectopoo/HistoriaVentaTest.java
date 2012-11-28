@@ -27,7 +27,7 @@ public class HistoriaVentaTest {
     double total=5486;
     String moneda="soles";
     int fecha_vencimiento=20121214;
-    int fecha_pago=20121216;
+    int fecha_pago=20121213;
     String estado="bien";
     String observaciones="provando";
 
@@ -41,7 +41,7 @@ public class HistoriaVentaTest {
     double total1=5486;
     String moneda1="dolares";
     int fecha_vencimiento1=20121212;
-    int fecha_pago1=200121213;
+    int fecha_pago1=200121217;
     String observaciones1="provando";
     String estado1="regular";
 
@@ -68,12 +68,13 @@ public class HistoriaVentaTest {
        vd.Alta(factura_boleta1, concepto1, numero1, fecha_emision1, empresa1, subtotal1, igv1, total1, moneda1, fecha_vencimiento1, fecha_pago1, observaciones1, estado1);
        vd.Alta(factura_boleta2, concepto2, numero2, fecha_emision2, empresa2, subtotal2, igv2, total2, moneda2, fecha_vencimiento2, fecha_pago2, observaciones2, estado2);
 
-       vd.BuscarConcepto("libros");
+       vd.BuscarConcepto("mesa");
        vd.BuscarNumero(10);
        vd.BuscarEmpresa("empresa3");
        vd.BuscarEstado("mal");
-       vd.BuscarFechaEmision(20121210);
-       vd.BuscarFechaVencimiento(fecha_vencimiento2);
+      vd.BuscarFechaEmision(20121210);
+      vd.BuscarFechaVencimiento(fecha_vencimiento2);
+       vd.BuscarFechaPago(20121217);
 
         assertNotNull(v);
         assertEquals(factura_boleta, v.getFactura_boleta());
