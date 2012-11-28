@@ -103,7 +103,28 @@ public class VentasAdmin {
 
     }
     
-    
+  public void BuscarEmpresa(String empresa) {
+        for (Venta v : ventas) {
+            if (v.getEmpresa().equals(empresa))
+             {
+                System.out.println(v.getFactura_boleta() + " "
+                        + v.getConcepto() + " "
+                        + v.getNumero() + " "
+                        + v.getFecha_emision() + " "
+                        + v.getEmpresa() + " "
+                        + v.getSubtotal() + " "
+                        + v.getIgv() + " "
+                        + v.getTotal() + " "
+                        + v.getMoneda() + " "
+                        + v.getFecha_vencimiento() + " "
+                        + v.getFecha_pago() + " "
+                        + v.getObservaciones() + " "
+                        + v.getEstado() + " " + " \n");
+            }
+        }
+
+
+    }
 }
 
 class Fecha_Vencimiento_Comparator implements Comparator {
