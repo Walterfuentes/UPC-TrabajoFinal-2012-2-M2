@@ -4,31 +4,24 @@
  */
 package proyectopoo;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-@RunWith(Suite.class)
-@Suite.SuiteClasses({proyectopoo.HistoriaVentaTest.class, proyectopoo.ClienteTest.class, proyectopoo.ComprasTest.class, proyectopoo.AltaProspectoTest.class, proyectopoo.AdminUsuarioTest.class, proyectopoo.ProspectoTest.class, proyectopoo.ClientesTest.class})
 public class RolesTest {
 
-    @BeforeClass
-    public static void setUpClass() throws Exception {
+    public RolesTest() {
     }
-
-    @AfterClass
-    public static void tearDownClass() throws Exception {
-    }
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
+    
+    @Test
+    public void rolesDebeCrearseConNombreYDescripcion(){
+        String nombre = "Administrador";
+        String descripcion = "Role asignado al Administrador";
+        
+        Roles rol = new Roles(nombre, descripcion);
+        
+        assertNotNull(rol);
+        assertEquals(nombre, rol.getNombre());
+        assertEquals(descripcion, rol.getDescripcion());
     }
     
 }
