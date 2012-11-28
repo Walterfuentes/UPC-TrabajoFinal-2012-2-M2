@@ -1,5 +1,5 @@
 /*
- //Agregando autenticación de usuario WalterFuentes
+ //Agregando autenticación de usuario AnyeloMenacho
  */
 package proyectopoo;
 
