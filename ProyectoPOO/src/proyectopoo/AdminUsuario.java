@@ -11,13 +11,14 @@ import java.util.ArrayList;
  */
 public class AdminUsuario {
 
-    
     private ArrayList<Cliente> Almacenausuarios;
+    private ArrayList<Usuarios> usuarios;
 
     public AdminUsuario() {
         Almacenausuarios = new ArrayList<Cliente>();
+        usuarios = new ArrayList<Usuarios>();
     }
-    
+
     public String validarCamposUsuario(String nombre, String contrasenia) {
 
         if ((nombre == null || nombre.isEmpty()) && (contrasenia == null || contrasenia.isEmpty())) {
@@ -37,9 +38,8 @@ public class AdminUsuario {
         }
         return "DatosCompletos";
     }
-    
-    
-     public boolean validarExistenciaUsuario(String nombre) {
+
+    public boolean validarExistenciaUsuario(String nombre) {
         boolean respuesta = false;
 
         for (Cliente aux : Almacenausuarios) {
@@ -61,8 +61,13 @@ public class AdminUsuario {
 //            System.out.println("No se Puede Agregar Usuario ya Existe");
 //        }
 //    }
-    
-    public void Buscar(String usuario) {
+    public Usuarios Buscar(String dni) {
+        for (Usuarios u : usuarios) {
+            if (u.getDni().equals(u)) {
+                return u;
+            }
+        }
+        return null;
     }
 
     public void Adicionar() {
@@ -72,8 +77,5 @@ public class AdminUsuario {
     }
 
     public void Eliminar() {
-    }
-
-    public void ValidarUsuario() {
     }
 }
