@@ -14,7 +14,7 @@ import java.*;
  */
 public class AutentificacionUsuarioTest {
     
-   @Test
+   @Test 
    public void AutentificarUsuarioContrasenia() {
         AutentificacionUsuario usuario=new AutentificacionUsuario("anyelo", "campeones");
         Assert.assertEquals("anyelo", usuario.getNombre());
@@ -22,5 +22,5 @@ public class AutentificacionUsuarioTest {
         
    }
     
-   
+  
 }
