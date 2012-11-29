@@ -10,24 +10,37 @@ import java.util.ArrayList;
  *
  * @author AnyeloMenacho
  */
-public class AutentificacionUsuarios {
+public class AutentificacionUsuario {
     
     private ArrayList<Usuarios> usuarios;
+    private String nombre;
+    private String contrasenia;
 
     /*public AutentificacionUsuarios(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, String rol, String contrasenia) {
         super(dni, nombre, apellidoPaterno, apellidoMaterno, usuario, correo, fechaIngreso, cargo, rol, contrasenia);
     }
     *
     */
-    public AutentificacionUsuarios() {
+    public AutentificacionUsuario() {
         usuarios = new ArrayList<Usuarios>();
     }
     
     
-    public boolean AdicionarUsuario(Usuarios usuario) {
-        boolean mensaje=false;
-        return mensaje;
+    public AutentificacionUsuario(String nombre, String contrasenia) {
+        this.nombre = nombre;
+        this.contrasenia = contrasenia;
     }
+
+    public String getContrasenia() {
+        return contrasenia;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+    
+    
+    
     
     public String ValidarCamposMandatorios(Usuarios usuario) {
         if((usuario.getDni()==null) || (usuario.getDni().isEmpty())) 
@@ -51,5 +64,15 @@ public class AutentificacionUsuarios {
         if((usuario.getContrasenia()==null || (usuario.getContrasenia().isEmpty())));
             return "El campo Contraseña no puede ser vacio o nulo";
      }
+    
+     public String ValidarAutentificacionUsuario(String nombre, String contrasenia) {
+        return "Datos completos";
+     }
+     
+     
+     
+     
+     
+     
     
 }
