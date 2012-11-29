@@ -29,5 +29,8 @@ public class AutentificacionUsuarios {
         return mensaje;
     }
     
+    public boolean ValidarCamposMandatorios(Usuarios usuario) {
+        return true;
+    }
     
 }
