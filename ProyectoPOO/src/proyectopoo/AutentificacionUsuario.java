@@ -65,14 +65,19 @@ public class AutentificacionUsuario {
             return "El campo Contraseña no puede ser vacio o nulo";
      }
     
-     public String ValidarAutentificacionUsuario(String nombre, String contrasenia) {
+     public String AutentificacionUsuario(String nombre, String contrasenia) {
+        if ((nombre==null || nombre.isEmpty() && (contrasenia==null || contrasenia.isEmpty()))) {
+            System.out.println("Debe ingresar Usuario y contraseña");
+            return "Faltan ambos campos";
+        }
+        if ((nombre==null || nombre.isEmpty() && (contrasenia !=null))) {
+            System.out.println("Dene ingresar Nombre");
+            return "Falta Nombre";
+        }
+        if ((nombre !=null && (contrasenia==null || contrasenia.isEmpty()))) {
+            System.out.println("Debe ingresar contraseña");
+            return "Falta Contraseña";
+        }
         return "Datos completos";
      }
-     
-     
-     
-     
-     
-     
-    
 }

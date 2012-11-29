@@ -36,7 +36,7 @@ public class AdminUsuario {
         if ((nombre != null) && (contrasenia != null)) {
             System.out.println("Debe Ingresar contraseña");
         }
-        return "DatosCompletos";
+        return "Datos Completos";
     }
 
     public boolean validarExistenciaUsuario(String nombre) {
