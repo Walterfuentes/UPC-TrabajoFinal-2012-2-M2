@@ -24,6 +24,10 @@ public class AutentificacionUsuarios {
     }
     
     
+    public boolean AdicionarUsuario(Usuarios usuario) {
+        boolean mensaje=false;
+        return mensaje;
+    }
     
     
 }
