@@ -23,33 +23,45 @@ public class AdminProspecto {
     }
     
     public String agregarProspecto(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fechaIngreso){
-        String codigoProspecto = String.format("P"+"%04d", ++aumentaNumeroProspecto); 
+        String codigoProspecto = "nada"; 
+        
+        if(validarDatos(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso).equalsIgnoreCase("OK")){
+        codigoProspecto = String.format("P"+"%04d", ++aumentaNumeroProspecto);
         Prospecto nuevo = new Prospecto(codigoProspecto,nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso);
-        return codigoProspecto;
+        AlmacenaProspectos.add(nuevo);
+        }else{
+            codigoProspecto = validarDatos(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso);
+        }
+        return  codigoProspecto;
     }
     
     public String validarDatos (String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fechaIngreso){
         
-        if (nombre == null || nombre.isEmpty())  {
-            
-            return "Falta Nombre";
-        }
-        if (ApellidoPaterno == null || ApellidoPaterno.isEmpty()) {
-           
-            return "Falta Apellido Paterno";
-        }
-        if (ApellidoMaterno== null || ApellidoMaterno.isEmpty()) {
-            
-            return "Falta Apellido Materno";
-        }
+        String Respuesta = "OK";
         
-        if (Correo== null || Correo.isEmpty()) {
-           
-            return "Falta Correo";
-        }
+        if (nombre == null || nombre.isEmpty())
+            
+            Respuesta = "Falta Nombre";
         
-        return "DatosCompletos";
+        if (ApellidoPaterno == null || ApellidoPaterno.isEmpty())
+           
+            Respuesta = "Falta Apellido Paterno";
+        
+        if (ApellidoMaterno== null || ApellidoMaterno.isEmpty()) 
+            
+            Respuesta = "Falta Apellido Materno";
+        
+        
+        if (Correo== null || Correo.isEmpty()) 
+            Respuesta = "Falta Correo";
+        
+        
+        return Respuesta;
     }
+    
+    
+    
+    
     }
     
     

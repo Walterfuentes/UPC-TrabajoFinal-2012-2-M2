@@ -109,6 +109,22 @@ public class AdminProspectoTest {
     
    
     @Test
+    public void NoAgregarNuevoProspecto(){
+        String nombre =" Juan ";
+        String ApellidoPaterno = null;
+        String ApellidoMaterno = "Jimenez";
+        String Correo = "mmsms@test.com";
+        String Dni= "41334980";
+        String telefonofijo = "4502183";
+        String celular = "994578347";
+        String fechaIngreso = "081212";
+        
+        AdminProspecto prospecto = new AdminProspecto(); 
+        Assert.assertEquals(prospecto.validarDatos(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso), prospecto.agregarProspecto(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso));
+        }
+    
+    
+    @Test
     public void ValidarAltaProspecto(){
         
     }
