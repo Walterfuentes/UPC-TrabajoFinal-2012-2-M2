@@ -53,9 +53,8 @@ public class AdminUsuario {
         return respuesta;
     }
 
-
-  public Usuarios Buscar(String dni) {
-        for (Usuarios  elemento: usuarios) {
+    public Usuarios Buscar(String dni) {
+        for (Usuarios elemento : usuarios) {
             if (elemento.getDni().equals(dni)) {
                 return elemento;
             }
@@ -63,22 +62,24 @@ public class AdminUsuario {
         return null;
     }
 
-    public void Adicionar(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, String rol, String contrasenia) 
-    {
-             if (validarExistenciaUsuario(dni)==false){
-            Usuarios nuevo= new Usuarios(dni, nombre, apellidoPaterno, apellidoMaterno, usuario, correo, fechaIngreso, cargo, rol, contrasenia);
+    public void Adicionar(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, String rol, String contrasenia) {
+        if (validarExistenciaUsuario(dni) == false) {
+            Usuarios nuevo = new Usuarios(dni, nombre, apellidoPaterno, apellidoMaterno, usuario, correo, fechaIngreso, cargo, rol, contrasenia);
             usuarios.add(nuevo);
-             }
+        }
     }
 
     public void Editar(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, String rol, String contrasenia) {
     }
 
     public void Eliminar(String dni) {
+        Usuarios elemento = Buscar(dni);
+        if (elemento != null) {
+            usuarios.remove(elemento);
+        }
     }
-    
-    public int getTotalUsuarios(){
+
+    public int getTotalUsuarios() {
         return usuarios.size();
     }
-    
 }
