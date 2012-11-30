@@ -70,6 +70,23 @@ public class AdminUsuario {
     }
 
     public void Editar(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, String rol, String contrasenia) {
+        Usuarios elemento = Buscar(dni);
+        if (elemento != null) {
+            elemento.setDni(dni);
+            elemento.setNombre(nombre);
+            elemento.setApellidoPaterno(apellidoPaterno);
+            elemento.setApellidoMaterno(apellidoMaterno);
+            elemento.setUsuario(usuario);
+            elemento.setCorreo(correo);
+            elemento.setFechaIngreso(fechaIngreso);
+            elemento.setCargo(cargo);
+            elemento.setRol(rol);
+            elemento.setContrasenia(contrasenia);
+
+        }
+
+
+
     }
 
     public void Eliminar(String dni) {
