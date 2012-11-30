@@ -96,8 +96,8 @@ public class AdminUsuarioTest {
         adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia);        
     
         adminUsuario.Eliminar(Dni);
-        int totalRetornado = adminUsuario.getTotalUsuarios();
-        assertEquals(totalRetornado, 1);
+        Usuarios elemento= adminUsuario.Buscar(Dni);
+        assertNull(elemento);
         
         
         
