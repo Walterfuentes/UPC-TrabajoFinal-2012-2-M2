@@ -55,9 +55,9 @@ public class AdminUsuario {
 
 
   public Usuarios Buscar(String dni) {
-        for (Usuarios u : usuarios) {
-            if (u.getDni().equals(u)) {
-                return u;
+        for (Usuarios  elemento: usuarios) {
+            if (elemento.getDni().equals(dni)) {
+                return elemento;
             }
         }
         return null;
