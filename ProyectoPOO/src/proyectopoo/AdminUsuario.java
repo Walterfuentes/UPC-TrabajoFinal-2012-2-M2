@@ -39,19 +39,7 @@ public class AdminUsuario {
         return "Datos Completos";
     }
 
-    public boolean validarExistenciaUsuario(String nombre) {
-        boolean respuesta = false;
-
-        for (Clientes aux : Almacenausuarios) {
-            if (aux.getNombre().equalsIgnoreCase(nombre)) {
-                respuesta = true;
-            }
-        }
-        if (respuesta == true) {
-            System.out.println("Usuario Ya Existe");
-        }
-        return respuesta;
-    }
+    
 
 
   public Usuarios Buscar(String dni) {
@@ -65,10 +53,9 @@ public class AdminUsuario {
 
     public void Adicionar(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, String rol, String contrasenia) 
     {
-        if (validarExistenciaUsuario(dni)==false){
             Usuarios nuevo= new Usuarios(dni, nombre, apellidoPaterno, apellidoMaterno, usuario, correo, fechaIngreso, cargo, rol, contrasenia);
             usuarios.add(nuevo);
-         }
+         
     }
 
     public void Editar() {
