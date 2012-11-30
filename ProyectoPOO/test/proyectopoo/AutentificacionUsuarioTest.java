@@ -14,12 +14,38 @@ import java.*;
  */
 public class AutentificacionUsuarioTest {
     
-   @Test 
-   public void AutentificarNombreContrasenia() {
-          String nombre=null;
-          String contrasenia="campeon";
+   public AutentificacionUsuarioTest() {
        
-          AutentificacionUsuario test =new AutentificacionUsuario();
-          Assert.assertEquals("Falta el campo Nombre", test.AutentificarUsuario(nombre, contrasenia));
    }
- }
+    
+   @Test 
+   public void validarNombreContrasenia() {
+       
+          String nombre = "Anyelo";
+          String contrasenia = "campeon";
+       
+          AutentificacionUsuario test = new AutentificacionUsuario();
+          Assert.assertEquals("Datos correctos", test.validarCamposDeAcceso(nombre, contrasenia));
+   }
+   
+   @Test
+   public void validarCampoNombre() {
+          
+          String nombre = null;
+          String contrasenia = "asieslavida";
+          
+          AutentificacionUsuario test = new AutentificacionUsuario();
+          Assert.assertEquals("Ingrese Nombre", test.validarCamposDeAcceso(nombre, contrasenia));
+   }
+   
+   @Test
+   public void validarCampoContrasenia() {
+          
+          String nombre = "Carlos";
+          String contrasenia = null;
+          
+          AutentificacionUsuario test = new AutentificacionUsuario();
+          Assert.assertEquals("Ingrese Contraseña", test.validarCamposDeAcceso(nombre, contrasenia));
+   }
+}
+      

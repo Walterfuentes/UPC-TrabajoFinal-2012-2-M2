@@ -20,6 +20,10 @@ public class AutentificacionUsuario {
         usuarios = new ArrayList<Usuarios>();
     }
     
+    public ArrayList<Usuarios> getUsuarios() {
+        return usuarios;
+    }
+    
     public AutentificacionUsuario(String nombre, String contrasenia) {
         this.nombre = nombre;
         this.contrasenia = contrasenia;
@@ -34,21 +38,26 @@ public class AutentificacionUsuario {
     }
     
     
-    public String AutentificarUsuario(String nombre, String contrasenia) {
-        if ((nombre==null || nombre.isEmpty() && (contrasenia==null || contrasenia.isEmpty()))) {
-            System.out.println("Debe ingresar Usuario y contraseña");
-            return "Faltan ambos datos";
-        }
-        if ((nombre==null || nombre.isEmpty() && (contrasenia !=null))) {
-            System.out.println("Debe ingresar Nombre");
-            return "Falta Nombre";
-        }
+    public String validarCamposDeAcceso(String nombre, String contrasenia) {
+        
+        String mensaje= "Correcto";
+        
+        if (nombre==null || nombre.isEmpty())
+            
+            mensaje= "Debe ingresar Nombre";
+        
+        if (contrasenia==null || contrasenia.isEmpty()) 
+           
+            mensaje= "Debe ingresar Contraseña";
+           
+        if ((nombre==null || nombre.isEmpty() && (contrasenia !=null))) 
+         
+            mensaje= "Falta Nombre";
+        
         if ((nombre !=null && (contrasenia==null || contrasenia.isEmpty()))) {
-            System.out.println("Debe ingresar contraseña");
-            return "Falta Contraseña";
+         
+            mensaje= "Falta Contraseña";
         }
-        return "Datos completos";
+        return mensaje; 
      }
-     
-     
 }
