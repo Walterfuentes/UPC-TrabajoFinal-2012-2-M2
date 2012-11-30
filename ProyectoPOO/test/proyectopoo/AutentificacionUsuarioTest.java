@@ -19,13 +19,23 @@ public class AutentificacionUsuarioTest {
    }
     
    @Test 
-   public void validarNombreContrasenia() {
+   public void validarCamposNombreContrasenia() {
        
           String nombre = "Anyelo";
           String contrasenia = "campeon";
        
           AutentificacionUsuario test = new AutentificacionUsuario();
-          Assert.assertEquals("Datos correctos", test.validarCamposDeAcceso(nombre, contrasenia));
+          Assert.assertN("Datos correctos", test.validarCamposDeAcceso(nombre, contrasenia));
+   }
+   
+   @Test
+   public void validarCamposContraseniaNombre() {
+          
+          String nombre = null;
+          String contrasenia = null;
+       
+          AutentificacionUsuario test = new AutentificacionUsuario();
+          Assert.assertNotNull("Ingrese Nombre y Contrasenia", test.validarCamposDeAcceso(nombre, contrasenia));
    }
    
    @Test
@@ -35,7 +45,7 @@ public class AutentificacionUsuarioTest {
           String contrasenia = "asieslavida";
           
           AutentificacionUsuario test = new AutentificacionUsuario();
-          Assert.assertEquals("Ingrese Nombre", test.validarCamposDeAcceso(nombre, contrasenia));
+          Assert.assertNotNull("Ingrese Nombre", test.validarCamposDeAcceso(nombre, contrasenia));
    }
    
    @Test
@@ -45,7 +55,7 @@ public class AutentificacionUsuarioTest {
           String contrasenia = null;
           
           AutentificacionUsuario test = new AutentificacionUsuario();
-          Assert.assertEquals("Ingrese Contraseña", test.validarCamposDeAcceso(nombre, contrasenia));
+          Assert.assertNotNull("Ingrese Contraseña", test.validarCamposDeAcceso(nombre, contrasenia));
    }
 }
       
