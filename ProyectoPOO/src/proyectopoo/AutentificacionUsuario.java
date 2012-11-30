@@ -20,7 +20,6 @@ public class AutentificacionUsuario {
         usuarios = new ArrayList<Usuarios>();
     }
     
-    
     public AutentificacionUsuario(String nombre, String contrasenia) {
         this.nombre = nombre;
         this.contrasenia = contrasenia;
@@ -35,7 +34,7 @@ public class AutentificacionUsuario {
     }
     
     
-    public String AutentificacionUsuario(String nombre, String contrasenia) {
+    public String AutentificarUsuario(String nombre, String contrasenia) {
         if ((nombre==null || nombre.isEmpty() && (contrasenia==null || contrasenia.isEmpty()))) {
             System.out.println("Debe ingresar Usuario y contraseña");
             return "Faltan ambos datos";
