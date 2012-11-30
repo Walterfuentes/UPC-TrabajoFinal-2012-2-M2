@@ -122,10 +122,9 @@ public class AdminUsuarioTest {
         String Nombre_Editado = "Claudia";
     
         AdminUsuario adminUsuario = new AdminUsuario ();
-        adminUsuario.Editar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia);
+        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia);
         
         Usuarios elemento = adminUsuario.Buscar(Dni);
-        assertNotNull(elemento);
         assertEquals(Dni, elemento.getDni());
         assertEquals(Nombre, elemento.getNombre());
         assertEquals(ApellidoPaterno, elemento.getApellidoPaterno());
@@ -141,7 +140,6 @@ public class AdminUsuarioTest {
         adminUsuario.Editar(Dni, Nombre_Editado, ApellidoPaterno, ApellidoMaterno, Usuario, Correo_Editado, FechaIngreso_Editado, Cargo, Rol, Contrasenia);
         
         Usuarios elemento_Editado = adminUsuario.Buscar(Dni);
-        assertNotNull(elemento);
         assertEquals(Dni, elemento_Editado.getDni());
         assertEquals(Nombre_Editado, elemento_Editado.getNombre());
         assertEquals(ApellidoPaterno, elemento_Editado.getApellidoPaterno());
