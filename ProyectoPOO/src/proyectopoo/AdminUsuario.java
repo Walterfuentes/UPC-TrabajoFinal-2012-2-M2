@@ -71,10 +71,10 @@ public class AdminUsuario {
              }
     }
 
-    public void Editar() {
+    public void Editar(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, String rol, String contrasenia) {
     }
 
-    public void Eliminar() {
+    public void Eliminar(String dni) {
     }
     
     public int getTotalUsuarios(){
