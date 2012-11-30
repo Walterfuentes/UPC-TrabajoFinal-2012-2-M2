@@ -103,4 +103,55 @@ public class AdminUsuarioTest {
         
         
     } 
+    
+    @Test 
+    public void deveriaEditar (){
+        String Dni = "123456789";
+        String Nombre = "Gianina";
+        String ApellidoPaterno = "Quispe";
+        String ApellidoMaterno = "Rosas";
+        String Usuario = "u0001";
+        String Correo = "123@gmail.com";
+        String FechaIngreso = "10/10/2012";
+        String Cargo = "jefe";
+        String Rol = "rol1";
+        String Contrasenia = "1234";
+        
+        String Correo_Editado = "789@gmail.com";
+        String FechaIngreso_Editado = "19/11/2012";
+        String Nombre_Editado = "Claudia";
+    
+        AdminUsuario adminUsuario = new AdminUsuario ();
+        adminUsuario.Editar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia);
+        
+        Usuarios elemento = adminUsuario.Buscar(Dni);
+        assertNotNull(elemento);
+        assertEquals(Dni, elemento.getDni());
+        assertEquals(Nombre, elemento.getNombre());
+        assertEquals(ApellidoPaterno, elemento.getApellidoPaterno());
+        assertEquals(ApellidoMaterno, elemento.getApellidoMaterno());
+        assertEquals(Usuario, elemento.getUsuario());
+        assertEquals(Correo, elemento.getCorreo());
+        assertEquals(FechaIngreso, elemento.getFechaIngreso());
+        assertEquals(Cargo, elemento.getCargo());
+        assertEquals(Rol, elemento.getRol());
+        assertEquals(Contrasenia, elemento.getContrasenia());
+        
+                
+        adminUsuario.Editar(Dni, Nombre_Editado, ApellidoPaterno, ApellidoMaterno, Usuario, Correo_Editado, FechaIngreso_Editado, Cargo, Rol, Contrasenia);
+        
+        Usuarios elemento_Editado = adminUsuario.Buscar(Dni);
+        assertNotNull(elemento);
+        assertEquals(Dni, elemento_Editado.getDni());
+        assertEquals(Nombre_Editado, elemento_Editado.getNombre());
+        assertEquals(ApellidoPaterno, elemento_Editado.getApellidoPaterno());
+        assertEquals(ApellidoMaterno, elemento_Editado.getApellidoMaterno());
+        assertEquals(Usuario, elemento_Editado.getUsuario());
+        assertEquals(Correo_Editado, elemento_Editado.getCorreo());
+        assertEquals(FechaIngreso_Editado, elemento_Editado.getFechaIngreso());
+        assertEquals(Cargo, elemento_Editado.getCargo());
+        assertEquals(Rol, elemento_Editado.getRol());
+        assertEquals(Contrasenia, elemento_Editado.getContrasenia());
+    
+    }
 }
