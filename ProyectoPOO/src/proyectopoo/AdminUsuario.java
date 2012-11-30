@@ -63,7 +63,12 @@ public class AdminUsuario {
         return null;
     }
 
-    public void Adicionar() {
+    public void Adicionar(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, String rol, String contrasenia) 
+    {
+        if (validarExistenciaUsuario(dni)==false){
+            Usuarios nuevo= new Usuarios(dni, nombre, apellidoPaterno, apellidoMaterno, usuario, correo, fechaIngreso, cargo, rol, contrasenia);
+            usuarios.add(nuevo);
+         }
     }
 
     public void Editar() {
