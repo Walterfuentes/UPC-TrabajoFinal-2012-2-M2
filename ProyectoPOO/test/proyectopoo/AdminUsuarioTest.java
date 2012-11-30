@@ -98,9 +98,7 @@ public class AdminUsuarioTest {
         adminUsuario.Eliminar(Dni);
         Usuarios elemento= adminUsuario.Buscar(Dni);
         assertNull(elemento);
-        
-        
-        
+               
         
     } 
     
@@ -151,5 +149,47 @@ public class AdminUsuarioTest {
         assertEquals(Rol, elemento_Editado.getRol());
         assertEquals(Contrasenia, elemento_Editado.getContrasenia());
     
+    }
+    
+    @Test 
+    public void Buscar (){
+        String Dni = "123456789";
+        String Nombre = "Gianina";
+        String ApellidoPaterno = "Quispe";
+        String ApellidoMaterno = "Rosas";
+        String Usuario = "u0001";
+        String Correo = "123@gmail.com";
+        String FechaIngreso = "10/10/2012";
+        String Cargo = "jefe";
+        String Rol = "rol1";
+        String Contrasenia = "1234";
+
+        String Dni1 = "98765432";
+        String Nombre1 = "Jorge";
+        String ApellidoPaterno1 = "Mamani";
+        String ApellidoMaterno1 = "Shereiber";
+        String Usuario1 = "u0002";
+        String Correo1 = "rew@gmail.com";
+        String FechaIngreso1 = "10/09/2012";
+        String Cargo1 = "lider";
+        String Rol1 = "rol2";
+        String Contrasenia1 = "1564";
+        
+        AdminUsuario adminUsuario = new AdminUsuario();
+        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia);
+        adminUsuario.Adicionar(Dni1, Nombre1, ApellidoPaterno1, ApellidoMaterno1, Usuario1, Correo1, FechaIngreso1, Cargo1, Rol1, Contrasenia1);
+        
+        Usuarios elemento = adminUsuario.Buscar(Dni);
+        assertEquals(Dni, elemento.getDni());
+        assertEquals(Nombre, elemento.getNombre());
+        assertEquals(ApellidoPaterno, elemento.getApellidoPaterno());
+        assertEquals(ApellidoMaterno, elemento.getApellidoMaterno());
+        assertEquals(Usuario, elemento.getUsuario());
+        assertEquals(Correo, elemento.getCorreo());
+        assertEquals(FechaIngreso, elemento.getFechaIngreso());
+        assertEquals(Cargo, elemento.getCargo());
+        assertEquals(Rol, elemento.getRol());
+        assertEquals(Contrasenia, elemento.getContrasenia());
+        
     }
 }
