@@ -19,7 +19,7 @@ public class AdminProspectoTest {
     }
 
     @Test
-    public void AgregarNuevoProspecto(){
+    public void DarAltaProspecto(){
         String nombre =" Juan ";
         String ApellidoPaterno = "Flores";
         String ApellidoMaterno = "Jimenez";
@@ -27,7 +27,7 @@ public class AdminProspectoTest {
         String Dni= "41334980";
         String telefonofijo = "4502183";
         String celular = "994578347";
-        String fechaIngreso = "081212";
+        String fechaIngreso = "08/12/2012";
         
         String nombre2 =" Mario ";
         String ApellidoPaterno2 = "Gonzales";
@@ -36,7 +36,7 @@ public class AdminProspectoTest {
         String Dni2= "41334340";
         String telefonofijo2 = "2118800";
         String celular2 = "994578347";
-        String fechaIngreso2 = "091212";
+        String fechaIngreso2 = "08/12/2012";
          
         
         AdminProspecto nuevo = new AdminProspecto(); 
@@ -53,7 +53,7 @@ public class AdminProspectoTest {
         String Dni= "41334980";
         String telefonofijo = "4502183";
         String celular = "994578347";
-        String fechaIngreso = "081212";  
+        String fechaIngreso = "08/12/2012";  
         AdminProspecto nuevo = new AdminProspecto(); 
         
         Assert.assertEquals("Falta Nombre", nuevo.validarDatos(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso));
@@ -68,7 +68,7 @@ public class AdminProspectoTest {
         String Dni= "41334980";
         String telefonofijo = "4502183";
         String celular = "994578347";
-        String fechaIngreso = "081212";  
+        String fechaIngreso = "08/12/2012";  
         AdminProspecto nuevo = new AdminProspecto(); 
         
         Assert.assertEquals("Falta Apellido Paterno", nuevo.validarDatos(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso));
@@ -86,7 +86,7 @@ public class AdminProspectoTest {
         String Dni= "41334980";
         String telefonofijo = "4502183";
         String celular = "994578347";
-        String fechaIngreso = "081212";  
+        String fechaIngreso = "08/12/2012";  
         AdminProspecto nuevo = new AdminProspecto(); 
 
         Assert.assertEquals("Falta Apellido Materno", nuevo.validarDatos(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso));
@@ -94,14 +94,14 @@ public class AdminProspectoTest {
     
      @Test
     public void ValidaCampoEmail(){
-        String nombre =" Juan ";
+        String nombre ="Juan";
         String ApellidoPaterno = "Cammio";
         String ApellidoMaterno = "Jimenez";
         String Correo = null;
         String Dni= "41334980";
         String telefonofijo = "4502183";
         String celular = "994578347";
-        String fechaIngreso = "081212";  
+        String fechaIngreso = "08/12/2012";  
         AdminProspecto nuevo = new AdminProspecto(); 
         
         Assert.assertEquals("Falta Correo", nuevo.validarDatos(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso));
@@ -109,15 +109,15 @@ public class AdminProspectoTest {
     
    
     @Test
-    public void NoAgregarNuevoProspecto(){
-        String nombre =" Juan ";
+    public void NoDarAltaDeProspecto(){
+        String nombre ="Juan";
         String ApellidoPaterno = null;
         String ApellidoMaterno = "Jimenez";
         String Correo = "mmsms@test.com";
         String Dni= "41334980";
         String telefonofijo = "4502183";
         String celular = "994578347";
-        String fechaIngreso = "081212";
+        String fechaIngreso = "08/12/2012";
         
         AdminProspecto prospecto = new AdminProspecto(); 
         Assert.assertEquals(prospecto.validarDatos(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso), prospecto.agregarProspecto(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso));
@@ -125,35 +125,144 @@ public class AdminProspectoTest {
     
     
     @Test
-    public void ValidarAltaProspecto(){
+    public void validaBusquedadeProspecto(){
+        String nombre ="Juan";
+        String ApellidoPaterno = "Flores";
+        String ApellidoMaterno = "Jimenez";
+        String Correo = "micorreo@correo.com";
+        String Dni= "41334980";
+        String telefonofijo = "4502183";
+        String celular = "994578347";
+        String fechaIngreso = "08/12/2012";
         
+        String nombre2 =" Mario ";
+        String ApellidoPaterno2 = "Gonzales";
+        String ApellidoMaterno2 = "Perez";
+        String Correo2 = "micorreo2@correo.com";
+        String Dni2= "41334340";
+        String telefonofijo2 = "2118800";
+        String celular2 = "994578347";
+        String fechaIngreso2 = "08/12/2012";
+         
+        String nombre3 ="Juan";
+        String ApellidoPaterno3 = "Perez";
+        String ApellidoMaterno3 = "Jimenez";
+        String Correo3 = "micorreo@correo.com";
+        String Dni3= "41334980";
+        String telefonofijo3 = "4502183";
+        String celular3 = "994578347";
+        String fechaIngreso3 = "08/12/2012";
+         
+        
+        AdminProspecto nuevo = new AdminProspecto(); 
+        nuevo.agregarProspecto(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso);
+        nuevo.agregarProspecto(nombre2, ApellidoPaterno2, ApellidoMaterno2, Correo2, Dni2, telefonofijo2, celular2, fechaIngreso2);
+        nuevo.agregarProspecto(nombre3, ApellidoPaterno3, ApellidoMaterno3, Correo3, Dni3, telefonofijo3, celular3, fechaIngreso3);
+        
+        Assert.assertNotNull(nuevo.buscaProspectos("Juan"));
     }
     
+    
     @Test
-    public void ValidarNoAltaProspecto(){
+    public void validaBusquedadeProspectoNoExistente(){
+        String nombre ="Juan";
+        String ApellidoPaterno = "Flores";
+        String ApellidoMaterno = "Jimenez";
+        String Correo = "micorreo@correo.com";
+        String Dni= "41334980";
+        String telefonofijo = "4502183";
+        String celular = "994578347";
+        String fechaIngreso = "08/12/2012";
         
-    }
-    
-    @Test
-    public void validaBusquedadeClienteExistente(){
+        String nombre2 ="Mario";
+        String ApellidoPaterno2 = "Gonzales";
+        String ApellidoMaterno2 = "Perez";
+        String Correo2 = "micorreo2@correo.com";
+        String Dni2= "41334340";
+        String telefonofijo2 = "2118800";
+        String celular2 = "994578347";
+        String fechaIngreso2 = "08/12/2012";
         
-    }
-    
-    
-    @Test
-    public void validaBusquedadeClienteNoExistente(){
+        
+        AdminProspecto nuevo = new AdminProspecto(); 
+        nuevo.agregarProspecto(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso);
+        nuevo.agregarProspecto(nombre2, ApellidoPaterno2, ApellidoMaterno2, Correo2, Dni2, telefonofijo2, celular2, fechaIngreso2);
+        Assert.assertNull(nuevo.buscaProspectos("Pedro"));
         
     }
     
     @Test
     public void ValidaDatosClienteExistente(){
-        
+        AdminProspecto nuevo = new AdminProspecto(); 
+        nuevo.listarProspectos();
     }
     
     @Test
     public void ValidarEliminacionProspecto(){
+        String nombre ="Juan";
+        String ApellidoPaterno = "Flores";
+        String ApellidoMaterno = "Jimenez";
+        String Correo = "micorreo@correo.com";
+        String Dni= "41334980";
+        String telefonofijo = "4502183";
+        String celular = "994578347";
+        String fechaIngreso = "08/12/2012";
         
+        String nombre2 ="Mario";
+        String ApellidoPaterno2 = "Gonzales";
+        String ApellidoMaterno2 = "Perez";
+        String Correo2 = "micorreo2@correo.com";
+        String Dni2= "41334340";
+        String telefonofijo2 = "2118800";
+        String celular2 = "994578347";
+        String fechaIngreso2 = "08/12/2012";
+         
+        
+        AdminProspecto nuevo = new AdminProspecto(); 
+        nuevo.agregarProspecto(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso);
+        nuevo.agregarProspecto(nombre2, ApellidoPaterno2, ApellidoMaterno2, Correo2, Dni2, telefonofijo2, celular2, fechaIngreso2);
+        Assert.assertEquals(2, nuevo.cantidadProspectos());
+        Assert.assertTrue(nuevo.eliminaProspectos("Juan"));
+        Assert.assertEquals(1,nuevo.cantidadProspectos());
     }
     
+    @Test
+    public void ValidarListaProspectos(){
+        String nombre =" Juan ";
+        String ApellidoPaterno = "Flores";
+        String ApellidoMaterno = "Jimenez";
+        String Correo = "micorreo@correo.com";
+        String Dni= "41334980";
+        String telefonofijo = "4502183";
+        String celular = "994578347";
+        String fechaIngreso = "08/12/2012";
+        
+        String nombre2 =" Mario ";
+        String ApellidoPaterno2 = "Gonzales";
+        String ApellidoMaterno2 = "Perez";
+        String Correo2 = "micorreo2@correo.com";
+        String Dni2= "41334340";
+        String telefonofijo2 = "2118800";
+        String celular2 = "994578347";
+        String fechaIngreso2 = "08/12/2012";
+         
+        
+        AdminProspecto nuevo = new AdminProspecto(); 
+        nuevo.agregarProspecto(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso);
+        nuevo.agregarProspecto(nombre2, ApellidoPaterno2, ApellidoMaterno2, Correo2, Dni2, telefonofijo2, celular2, fechaIngreso2);
+        Assert.assertTrue(nuevo.listarProspectos());   
+    }
+        
+    @Test
+    public void ValidarNoListaProspectos(){
+      AdminProspecto nuevo = new AdminProspecto(); 
+      Assert.assertFalse(nuevo.listarProspectos());   
+    }
+    
+    @Test
+    public void validarOrdenarPorFecha(){
+        AdminProspecto nuevo = new AdminProspecto(); 
+        Assert.assertTrue(nuevo.listarProspectos());
+    }
     
 }

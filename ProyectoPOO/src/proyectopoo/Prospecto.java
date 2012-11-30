@@ -4,6 +4,9 @@
  */
 package proyectopoo;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author walterfuentes
@@ -18,10 +21,12 @@ public class Prospecto {
     private String Dni;
     private String telefonofijo;
     private String celular;
-    private String fechaIngreso;
+    private Date fechaIngreso;
 
     public Prospecto( String codigoProspecto, String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fechaIngreso) {
-        this.codigoProspecto = " ";
+        try {
+            
+            this.codigoProspecto = " ";
         this.nombre = nombre;
         this.ApellidoPaterno = ApellidoPaterno;
         this.ApellidoMaterno = ApellidoMaterno;
@@ -29,7 +34,10 @@ public class Prospecto {
         this.Dni = Dni;
         this.telefonofijo = telefonofijo;
         this.celular = celular;
-        this.fechaIngreso = fechaIngreso;
+        this.fechaIngreso =  new SimpleDateFormat("dd/MM/yyyy").parse(fechaIngreso);
+        } catch (Exception e) {
+        }
+        
     }
 
     public String getCodigoProspecto() {
@@ -61,7 +69,7 @@ public class Prospecto {
         return celular;
     }
 
-    public String getFechaIngreso() {
+    public Date getFechaIngreso() {
         return fechaIngreso;
     }
 
@@ -73,5 +81,6 @@ public class Prospecto {
         return telefonofijo;
     }
     
+   
     
 }
