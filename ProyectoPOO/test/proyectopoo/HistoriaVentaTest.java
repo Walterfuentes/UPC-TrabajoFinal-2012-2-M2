@@ -41,7 +41,7 @@ public class HistoriaVentaTest {
     double total1=5486;
     String moneda1="dolares";
     int fecha_vencimiento1=20121212;
-    int fecha_pago1=200121217;
+    int fecha_pago1=20121217;
     String observaciones1="provando";
     String estado1="regular";
 
