@@ -20,6 +20,7 @@ public class AutentificacionUsuarioTest {
         AutentificacionUsuario usuario2=new AutentificacionUsuario("marlon", "asieslavida");
         AutentificacionUsuario usuario3=new AutentificacionUsuario("wilmer", "comotuninguna");
         AutentificacionUsuario usuario4=new AutentificacionUsuario("eber", "unparmas");
+        
         Assert.assertEquals("anyelo", usuario1.getNombre());
         Assert.assertEquals("campeon", usuario1.getContrasenia());
         System.out.println("Nombre y contraseña de usuario1 correctas");
@@ -34,7 +35,7 @@ public class AutentificacionUsuarioTest {
         
         Assert.assertNotSame("ss", usuario4.getNombre());
         Assert.assertNotSame("ss", usuario4.getContrasenia());
-        System.out.println("Nombre y Contraseña de usuario4 incorrectas");
+        System.out.println("Nombre y Contraseña de usuario4 incorrectas"); //las salidas deben ser del mismo metodo usado no ponerlas, El test valida datos no los genera
         
    }
  
