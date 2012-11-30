@@ -78,4 +78,29 @@ public class AdminUsuarioTest {
         assertEquals(totalRetornado,1);
         
     }
+    
+    @Test
+    public void deberiaEliminarUsuario(){
+        String Dni = "123456789";
+        String Nombre = "Gianina";
+        String ApellidoPaterno = "Quispe";
+        String ApellidoMaterno = "Rosas";
+        String Usuario = "u0001";
+        String Correo = "123@gmail.com";
+        String FechaIngreso = "10/10/2012";
+        String Cargo = "jefe";
+        String Rol = "rol1";
+        String Contrasenia = "1234";
+        
+        AdminUsuario adminUsuario = new AdminUsuario();
+        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia);        
+    
+        adminUsuario.Eliminar(Dni);
+        int totalRetornado = adminUsuario.getTotalUsuarios();
+        assertEquals(totalRetornado, 1);
+        
+        
+        
+        
+    } 
 }
