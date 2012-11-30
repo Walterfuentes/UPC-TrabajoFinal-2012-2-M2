@@ -16,11 +16,6 @@ public class AutentificacionUsuario {
     private String nombre;
     private String contrasenia;
 
-    /*public AutentificacionUsuarios(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, String rol, String contrasenia) {
-        super(dni, nombre, apellidoPaterno, apellidoMaterno, usuario, correo, fechaIngreso, cargo, rol, contrasenia);
-    }
-    *
-    */
     public AutentificacionUsuario() {
         usuarios = new ArrayList<Usuarios>();
     }
@@ -31,6 +26,16 @@ public class AutentificacionUsuario {
         this.contrasenia = contrasenia;
     }
 
+    public AutentificacionUsuario(String nombre) {
+        this.nombre = nombre;
+    }
+
+    //public AutentificacionUsuario(String contrasenia) {
+    //    this.contrasenia = contrasenia;
+    //}
+    
+    
+
     public String getContrasenia() {
         return contrasenia;
     }
@@ -38,8 +43,6 @@ public class AutentificacionUsuario {
     public String getNombre() {
         return nombre;
     }
-    
-    
     
     
     public String ValidarCamposMandatorios(Usuarios usuario) {
@@ -68,10 +71,10 @@ public class AutentificacionUsuario {
      public String AutentificacionUsuario(String nombre, String contrasenia) {
         if ((nombre==null || nombre.isEmpty() && (contrasenia==null || contrasenia.isEmpty()))) {
             System.out.println("Debe ingresar Usuario y contraseña");
-            return "Faltan ambos campos";
+            return "Faltan ambos datos";
         }
         if ((nombre==null || nombre.isEmpty() && (contrasenia !=null))) {
-            System.out.println("Dene ingresar Nombre");
+            System.out.println("Debe ingresar Nombre");
             return "Falta Nombre";
         }
         if ((nombre !=null && (contrasenia==null || contrasenia.isEmpty()))) {
@@ -80,4 +83,6 @@ public class AutentificacionUsuario {
         }
         return "Datos completos";
      }
+     
+     
 }
