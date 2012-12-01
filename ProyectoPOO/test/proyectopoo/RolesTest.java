@@ -53,4 +53,9 @@ public class RolesTest {
         assertEquals(nombre, rol.getNombre());
         assertEquals(descripcion, rol.getDescripcion());
     }
+    
+    @Test
+    public void rolesDebeEditarModuloYAutorizacion(){
+        
+    }
 }
