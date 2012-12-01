@@ -44,6 +44,10 @@ public class RolesTest {
     
     @Test
     public void rolesDebeEditarNombreYDescripcion(){
+        String nombre = "Admin";
+        String descripcion = "Role asignado al Administrador";
+        
+        Roles rol = new Roles(nombre, descripcion);
         
     }
 }
