@@ -4,6 +4,8 @@
  */
 package proyectopoo;
 
+import java.util.ArrayList;
+
 public class AdminRoles {
     
 }
