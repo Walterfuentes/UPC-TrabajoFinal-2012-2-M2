@@ -60,5 +60,6 @@ public class RolesTest {
         boolean acceso = true;
         boolean adicionar = true;
         boolean editar = true;
+        boolean eliminar = true;
     }
 }
