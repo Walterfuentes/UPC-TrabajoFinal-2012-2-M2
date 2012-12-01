@@ -49,5 +49,6 @@ public class RolesTest {
         
         Roles rol = new Roles(nombre, descripcion);
         
+        assertNotNull(rol);
     }
 }
