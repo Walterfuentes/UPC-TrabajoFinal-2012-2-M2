@@ -51,6 +51,6 @@ public class RolesTest {
         
         assertNotNull(rol);
         assertEquals(nombre, rol.getNombre());
-        
+        assertEquals(descripcion, rol.getDescripcion());
     }
 }
