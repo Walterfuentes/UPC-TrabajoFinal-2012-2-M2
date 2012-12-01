@@ -42,7 +42,7 @@ public class AdminCompras {
     
     private void validarDuplicidad(String factura)throws BusinessException{
         if(buscar(factura) != null){
-            String msg = "La factura "+ factura + " ya existe";
+            String msg = "El Nro de Factura "+ factura + " ya existe";
             throw new BusinessException(msg);
         }
     }
