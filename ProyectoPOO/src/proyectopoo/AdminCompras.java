@@ -33,7 +33,7 @@ public class AdminCompras {
         if(igv <=0 )
             msg += "El IGV presenta inconsistencia en su calculo";
         if(total <=0 )
-            msg += "El total no puede ser menor a 0";
+            msg += "El calculo del Total presenta inconsistencia";
         if(moneda == null || moneda.isEmpty())
             msg += "La moneda no puede ser vacio o nulo";
         if(! msg.isEmpty())
