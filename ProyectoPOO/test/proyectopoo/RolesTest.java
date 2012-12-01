@@ -57,6 +57,6 @@ public class RolesTest {
     @Test
     public void rolesDebeEditarModuloYAutorizacion(){
         String modulo = "Compras";
-        
+        boolean acceso = true;
     }
 }
