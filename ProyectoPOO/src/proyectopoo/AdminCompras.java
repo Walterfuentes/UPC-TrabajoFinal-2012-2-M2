@@ -23,7 +23,7 @@ public class AdminCompras {
         if(factura == null || factura.isEmpty())
             msg = "Debe ingresar el Nro de Factura";
         if(concepto == null || concepto.isEmpty())
-            msg = "El concepto no puede ser vacio o nulo";
+            msg = "Debe ingresar el Concepto de la Factura";
         if(fechaEmision == null || fechaEmision.isEmpty())
             msg += "La fecha de Emision no puede ser vacio o nulo";
         if(fechaVencimiento == null || fechaVencimiento.isEmpty())
