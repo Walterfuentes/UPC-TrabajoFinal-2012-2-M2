@@ -41,4 +41,9 @@ public class RolesTest {
         assertFalse("No tiene permiso para editar", rol.isEditar());
         assertFalse("No tiene permiso para eliminar", rol.isEliminar());
     }
+    
+    @Test
+    public void rolesDebeEditarNombreYDescripcion(){
+        
+    }
 }
