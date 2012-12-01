@@ -25,7 +25,7 @@ public class AdminCompras {
         if(concepto == null || concepto.isEmpty())
             msg = "Debe ingresar el Concepto de la Factura";
         if(fechaEmision == null || fechaEmision.isEmpty())
-            msg += "La fecha de Emision no puede ser vacio o nulo";
+            msg += "Debe ingresar la Fecha de Emisión de la Factura";
         if(fechaVencimiento == null || fechaVencimiento.isEmpty())
             msg += "La fecha de Vencimiento no puede ser vacio o nulo";
         if(subtotal <=0)
