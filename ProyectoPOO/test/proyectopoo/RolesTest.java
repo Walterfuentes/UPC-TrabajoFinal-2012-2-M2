@@ -61,5 +61,9 @@ public class RolesTest {
         boolean adicionar = true;
         boolean editar = true;
         boolean eliminar = true;
+        
+        Roles rol = new Roles(modulo, acceso, adicionar, editar, eliminar);
+        
+        
     }
 }
