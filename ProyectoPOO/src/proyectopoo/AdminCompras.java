@@ -35,7 +35,7 @@ public class AdminCompras {
         if(total <=0 )
             msg += "El calculo del Total presenta inconsistencia";
         if(moneda == null || moneda.isEmpty())
-            msg += "La moneda no puede ser vacio o nulo";
+            msg += "Debe asignar un tipo de moneda";
         if(! msg.isEmpty())
             throw new BusinessException(msg);
     }
