@@ -31,7 +31,7 @@ public class AdminCompras {
         if(subtotal <=0)
             msg += "El subtotal presenta inconsistencia en su calculo";
         if(igv <=0 )
-            msg += "El IGV no puede ser menor a 0";
+            msg += "El IGV presenta inconsistencia en su calculo";
         if(total <=0 )
             msg += "El total no puede ser menor a 0";
         if(moneda == null || moneda.isEmpty())
