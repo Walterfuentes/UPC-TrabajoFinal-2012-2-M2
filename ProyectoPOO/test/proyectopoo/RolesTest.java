@@ -65,6 +65,7 @@ public class RolesTest {
         Roles rol = new Roles(modulo, acceso, adicionar, editar, eliminar);
         
         assertNotNull(rol);
+        assertEquals(modulo,rol.getModulo());
         
     }
 }
