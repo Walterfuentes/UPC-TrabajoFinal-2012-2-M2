@@ -21,7 +21,7 @@ public class AdminCompras {
                 throws BusinessException{
         String msg = "";
         if(factura == null || factura.isEmpty())
-            msg = "El Nro de Factura no puede ser vacio o nulo";
+            msg = "La Factura no puede ser vacio o nulo";
         if(concepto == null || concepto.isEmpty())
             msg = "El concepto no puede ser vacio o nulo";
         if(fechaEmision == null || fechaEmision.isEmpty())
