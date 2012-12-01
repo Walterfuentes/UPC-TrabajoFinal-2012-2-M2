@@ -29,7 +29,7 @@ public class AdminCompras {
         if(fechaVencimiento == null || fechaVencimiento.isEmpty())
             msg += "Debe ingresar la Fecha de Vencimiento";
         if(subtotal <=0)
-            msg += "El subtotal no puede ser menor a 0";
+            msg += "El subtotal presenta inconsistencia en su calculo";
         if(igv <=0 )
             msg += "El IGV no puede ser menor a 0";
         if(total <=0 )
