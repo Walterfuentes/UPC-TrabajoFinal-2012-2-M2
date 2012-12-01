@@ -58,5 +58,7 @@ public class RolesTest {
     public void rolesDebeEditarModuloYAutorizacion(){
         String modulo = "Compras";
         boolean acceso = true;
+        boolean adicionar = true;
+        boolean editar = true;
     }
 }
