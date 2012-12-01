@@ -68,6 +68,9 @@ public class RolesTest {
         assertEquals(modulo,rol.getModulo());
         assertFalse("No tiene permiso para acceder", rol.isAcceso());
         assertFalse("No tiene permiso para adicionar", rol.isAdicionar());
-        
+        assertFalse("No tiene permiso para editar", rol.isEditar());
+        assertFalse("No tiene permiso para eliminar", rol.isEliminar());
     }
+    
+    
 }
