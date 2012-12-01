@@ -55,9 +55,9 @@ public class AdminCompras {
     }
     
     public Compras buscar(String factura){
-        for(Compras compras : getCompras())
-            if(compras.getFactura().equals(factura))
-                return compras;
+        for(Compras lstcompras : getCompras())
+            if(lstcompras.getFactura().equals(factura))
+                return lstcompras;
         return null;
     }
 }
