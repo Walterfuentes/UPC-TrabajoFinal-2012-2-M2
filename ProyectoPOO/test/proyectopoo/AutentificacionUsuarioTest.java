@@ -24,16 +24,16 @@ public class AutentificacionUsuarioTest {
           String contrasenia = "campeon";
         
           AutentificacionUsuario test = new AutentificacionUsuario();
-          Assert.assertEquals("Datos correctos", test.validarCamposDeAcceso(nombre, contrasenia));
+          Assert.assertEquals(true, test.validarCamposDeAcceso(nombre, contrasenia));
    }
    
    @Test
-   public void TestvalidarCamposContraseniaNombre() {
+   public void validarCamposContraseniaNombre() {
           String nombre = null;
           String contrasenia = null;
        
           AutentificacionUsuario test = new AutentificacionUsuario();
-          Assert.assertEquals("Falta Ambos", test.validarCamposDeAcceso(nombre, contrasenia));
+          Assert.assertEquals(false, test.validarCamposDeAcceso(nombre, contrasenia));
    }                                                                                           
    
    @Test
@@ -52,5 +52,22 @@ public class AutentificacionUsuarioTest {
           
           AutentificacionUsuario test = new AutentificacionUsuario();
           Assert.assertEquals("Falta Contraseña", test.validarCamposDeAcceso(nombre, contrasenia));
+   }
+   
+   @Test
+   public void validarExistenciaDeUsuario() {
+          AutentificacionUsuario test = new AutentificacionUsuario();
+          
+          
+   }
+   
+   @Test
+   public void validarPermitirAcceso() {
+          String nombre = "Jorge";
+          String contrasenia = "comotuninguna"; 
+          
+          AutentificacionUsuario test = new AutentificacionUsuario();
+          Assert.assertEquals(test.permitirAcceso(nombre, contrasenia), true);
+          
    }
 }      

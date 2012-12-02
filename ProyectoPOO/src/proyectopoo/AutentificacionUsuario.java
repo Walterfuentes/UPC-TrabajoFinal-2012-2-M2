@@ -38,6 +38,7 @@ public class AutentificacionUsuario {
     }
     
     public boolean validarExistenciaDeUusario(String nombre) {
+        
         boolean respuesta=false;
         
         for(Usuarios aux : usuarios) {
@@ -54,6 +55,7 @@ public class AutentificacionUsuario {
     public String validarCamposDeAcceso(String nombre, String contrasenia) {
         
      String mensaje= "Correcto";
+     
       if (validarExistenciaDeUusario(nombre)==true) {
             
          if (nombre==null || nombre.isEmpty())
@@ -74,9 +76,22 @@ public class AutentificacionUsuario {
          }
          
       }else{
-         System.out.println("Nombre de Usuario no existe en el sistema");
+         System.out.println("Usuario no existe en el sistema");
          
       }
      return mensaje; 
+    }
+    
+    public boolean permitirAcceso(String nombre, String contrasenia) {
+        
+         boolean respuesta=false;
+         
+         for(Usuarios aux : usuarios) {
+             if(aux.getNombre().equalsIgnoreCase(nombre) && aux.getContrasenia().equalsIgnoreCase(contrasenia)) {
+                 respuesta=true;
+                 break;
+             }
+         }
+         return respuesta;
     }
 }
