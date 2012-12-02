@@ -53,6 +53,10 @@ public class AdmGrupoEstudio {
         return mensaje;
     }
     
+    public int obtenerCantidadGrupoDeEstudio() {
+        return almacenagrupoestudio.size();
+    }
+    
 
  
     
