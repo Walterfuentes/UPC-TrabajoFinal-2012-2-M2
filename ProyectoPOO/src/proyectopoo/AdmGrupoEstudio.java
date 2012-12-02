@@ -92,6 +92,7 @@ public class AdmGrupoEstudio {
         GrupoEstudio mensaje = null;
         for(GrupoEstudio dato : almacenagrupoestudio) {
             if(dato.getNombreGrupo().equalsIgnoreCase(nombreGrupo)) {
+                System.out.println("Datos Encontrados: " + dato.getNombreGrupo());
                 mensaje=dato;
                 break;
             }
@@ -99,10 +100,13 @@ public class AdmGrupoEstudio {
         return mensaje;
     }
     
-    //public boolean eliminarGrupoEstudio() {
-    //    boolean mensaje = false;
-        
-    //}
+    public boolean eliminarGrupoEstudio(String nombreGrupo) {
+        boolean mensaje = false;
+        GrupoEstudio dato = buscarGrupoEstudio(nombreGrupo);
+        almacenagrupoestudio.remove(dato);
+        System.out.println("Datos Eliminados");
+        return true;
+    }
 
  
     
