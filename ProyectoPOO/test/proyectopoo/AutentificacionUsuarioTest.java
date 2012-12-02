@@ -20,52 +20,37 @@ public class AutentificacionUsuarioTest {
     
    @Test 
    public void validarCamposNombreContrasenia() {
-       
           String nombre = "Anyelo";
           String contrasenia = "campeon";
-       
+        
           AutentificacionUsuario test = new AutentificacionUsuario();
           Assert.assertEquals("Datos correctos", test.validarCamposDeAcceso(nombre, contrasenia));
    }
    
    @Test
-   public void validarCamposContraseniaNombre() {
-          
+   public void TestvalidarCamposContraseniaNombre() {
           String nombre = null;
           String contrasenia = null;
        
           AutentificacionUsuario test = new AutentificacionUsuario();
-          Assert.assertEquals("Ingrese Nombre y Contrasenia", test.validarCamposDeAcceso(nombre, contrasenia));
+          Assert.assertEquals("Falta Ambos", test.validarCamposDeAcceso(nombre, contrasenia));
    }                                                                                           
    
    @Test
    public void validarCampoNombre() { 
-          
           String nombre = null;
           String contrasenia = "asieslavida";
           
           AutentificacionUsuario test = new AutentificacionUsuario();
-          Assert.assertEquals("Ingrese Nombre", test.validarCamposDeAcceso(nombre, contrasenia));
+          Assert.assertEquals("Falta Nombre", test.validarCamposDeAcceso(nombre, contrasenia));
    }
    
    @Test
    public void validarCampoContrasenia() {
-          
           String nombre = "Carlos";
           String contrasenia = null;
           
           AutentificacionUsuario test = new AutentificacionUsuario();
-          Assert.assertEquals("Ingrese Contraseña", test.validarCamposDeAcceso(nombre, contrasenia));
+          Assert.assertEquals("Falta Contraseña", test.validarCamposDeAcceso(nombre, contrasenia));
    }
-   
-   @Test
-  public void TESTERvalidarCamposContraseniaNombre() {
-       String nombre = "Usuario";
-       String contrasenia = null;  
-       
-     AutentificacionUsuario test = new AutentificacionUsuario();
-     Assert.assertEquals("Falta Contraseña", test.validarCamposDeAcceso(nombre, contrasenia));
-   
-  
-}
 }      

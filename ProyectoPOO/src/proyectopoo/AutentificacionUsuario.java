@@ -37,27 +37,46 @@ public class AutentificacionUsuario {
         return nombre;
     }
     
+    public boolean validarExistenciaDeUusario(String nombre) {
+        boolean respuesta=false;
+        
+        for(Usuarios aux : usuarios) {
+            if(aux.getNombre().equalsIgnoreCase(nombre)) {
+                respuesta=true;
+            }
+        }
+            if(respuesta==true) {
+                System.out.println("Usuario Existe");
+            }
+        return respuesta;    
+    }
     
     public String validarCamposDeAcceso(String nombre, String contrasenia) {
         
-        String mensaje= "Correcto";
-        
-        if (nombre==null || nombre.isEmpty())
+     String mensaje= "Correcto";
+      if (validarExistenciaDeUusario(nombre)==true) {
+            
+         if (nombre==null || nombre.isEmpty())
             
             mensaje= "Debe ingresar Nombre";
         
-        if (contrasenia==null || contrasenia.isEmpty()) 
+         if (contrasenia==null || contrasenia.isEmpty()) 
            
             mensaje= "Debe ingresar Contraseña";
            
-        if ((nombre==null || nombre.isEmpty() && (contrasenia !=null))) 
+         if ((nombre==null || nombre.isEmpty() && (contrasenia !=null))) 
          
             mensaje= "Falta Nombre";
         
-        if ((nombre !=null && (contrasenia==null || contrasenia.isEmpty()))) {
+         if ((nombre !=null && (contrasenia==null || contrasenia.isEmpty()))) {
          
             mensaje= "Falta Contraseña";
-        }
-        return mensaje; 
-     }
+         }
+         
+      }else{
+         System.out.println("Nombre de Usuario no existe en el sistema");
+         
+      }
+     return mensaje; 
+    }
 }
