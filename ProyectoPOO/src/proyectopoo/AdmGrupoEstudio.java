@@ -5,10 +5,12 @@
 package proyectopoo;
 
 import java.util.ArrayList;
+import java.util.*;
+import java.text.*;
 
 /**
  *
- * @author SoporteTI
+ * @author AnyeloMenacho
  */
 public class AdmGrupoEstudio {
     
@@ -22,7 +24,6 @@ public class AdmGrupoEstudio {
     private String coodenadas;
 
     public AdmGrupoEstudio() {
-        almacenagrupoestudio = new ArrayList<GrupoEstudio>(); 
         this.correlativo=0;
         this.descripcion = descripcion;
         this.instructor = instructor;
@@ -101,16 +102,26 @@ public class AdmGrupoEstudio {
     }
     
     public boolean eliminarGrupoEstudio(String nombreGrupo) {
+        
         boolean mensaje = false;
         GrupoEstudio dato = buscarGrupoEstudio(nombreGrupo);
+        if(dato != null)
         almacenagrupoestudio.remove(dato);
         System.out.println("Datos Eliminados");
         return true;
     }
 
- 
-    
-    
-    
-    
+    public void listarGrupoEstudio() {
+       
+        for(GrupoEstudio dato : almacenagrupoestudio) {
+            System.out.println(dato.getNombreGrupo() + " | "
+                             + dato.getAcademia() + " | "
+                             + dato.getCurso() + " | "
+                             + dato.getFechaInicio() + " | "
+                             + dato.getFechaFin() + " | "
+                             + dato.getEstado());
+         return;         
+        }
+     
+    }
 }

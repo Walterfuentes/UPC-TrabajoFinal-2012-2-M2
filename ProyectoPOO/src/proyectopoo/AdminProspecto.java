@@ -80,7 +80,6 @@ public class AdminProspecto {
         if (nuevo == null)
         System.out.println("Desea ingresar un nuevo prospecto");
         return nuevo;
-        
     }
     
     public boolean eliminaProspectos(String Nombre){

@@ -6,9 +6,10 @@ package proyectopoo;
 import java.util.*;
 import java.text.*;
 
+
 /**
  *
- * @author SoporteTI
+ * @author AnyeloMenacho
  */
 public class GrupoEstudio {
     
@@ -21,7 +22,6 @@ public class GrupoEstudio {
     private String estado;
 
     public GrupoEstudio(String codigoGrupo, String nombreGrupo, String academia, String curso, String fechaInicio, String fechaFin, String estado) {
-        try {
         this.codigoGrupo = codigoGrupo;
         this.nombreGrupo = nombreGrupo;
         this.academia = academia;
@@ -29,9 +29,6 @@ public class GrupoEstudio {
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.estado = estado;
-        } catch (Exception e) {
-            
-        }
     }
 
     public String getNombreGrupo() {
