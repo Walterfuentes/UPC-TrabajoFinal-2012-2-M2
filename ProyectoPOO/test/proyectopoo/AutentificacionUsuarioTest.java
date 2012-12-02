@@ -67,7 +67,7 @@ public class AutentificacionUsuarioTest {
           String contrasenia = "comotuninguna"; 
           
           AutentificacionUsuario test = new AutentificacionUsuario();
-          Assert.assertEquals(test.permitirAcceso(nombre, contrasenia), true);
+          Assert.assertEquals(test.permitirAcceso("Jorge", "comotuninguna"), true);
           
    }
 }      
