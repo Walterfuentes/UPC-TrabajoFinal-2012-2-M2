@@ -33,6 +33,10 @@ public class GrupoEstudio {
             
         }
     }
+
+    public String getNombreGrupo() {
+        return nombreGrupo;
+    }
     
     public String getAcademia() {
         return academia;

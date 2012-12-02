@@ -57,6 +57,32 @@ public class AdmGrupoEstudio {
         return almacenagrupoestudio.size();
     }
     
+    public boolean existeNombreGrupo(String nombreGrupo) {
+        
+        boolean mensaje = false;
+        for(GrupoEstudio aux : almacenagrupoestudio) {
+            if(aux.getNombreGrupo().equalsIgnoreCase(nombreGrupo)) {
+                mensaje = true;
+                break;
+            }
+        }
+        return mensaje;
+    }   
+    
+    public boolean existeNombreGrupo(GrupoEstudio grupoe, String nombreGrupo) {
+        
+        boolean mensaje = false;
+        for(GrupoEstudio aux : almacenagrupoestudio) {
+             if(!grupoe.equals(aux)) {
+                 if(aux.getNombreGrupo().equalsIgnoreCase(nombreGrupo)) {
+                     mensaje = true;
+                     break;
+                 }
+             }
+        }
+        return mensaje;
+    }
+    
 
  
     
