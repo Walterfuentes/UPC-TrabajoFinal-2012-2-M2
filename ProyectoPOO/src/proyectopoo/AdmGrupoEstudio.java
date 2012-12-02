@@ -57,32 +57,52 @@ public class AdmGrupoEstudio {
         return almacenagrupoestudio.size();
     }
     
-    public boolean existeNombreGrupo(String nombreGrupo) {
+    public boolean existeGrupoEstudio(String nombreGrupo) {
         
         boolean mensaje = false;
-        for(GrupoEstudio aux : almacenagrupoestudio) {
-            if(aux.getNombreGrupo().equalsIgnoreCase(nombreGrupo)) {
+        for(GrupoEstudio dato : almacenagrupoestudio) {
+            if(dato.getNombreGrupo().equalsIgnoreCase(nombreGrupo)) {
                 mensaje = true;
                 break;
             }
-        }
+        }if(mensaje==true) {
+            System.out.println("Grupo de Estudio ya Existe");
+         }   
         return mensaje;
     }   
     
-    public boolean existeNombreGrupo(GrupoEstudio grupoe, String nombreGrupo) {
+    public boolean existeGrupoEstudio(GrupoEstudio grupoe, String nombreGrupo) {
         
         boolean mensaje = false;
-        for(GrupoEstudio aux : almacenagrupoestudio) {
-             if(!grupoe.equals(aux)) {
-                 if(aux.getNombreGrupo().equalsIgnoreCase(nombreGrupo)) {
+        for(GrupoEstudio dato : almacenagrupoestudio) {
+             if(!grupoe.equals(dato)) {
+                 if(dato.getNombreGrupo().equalsIgnoreCase(nombreGrupo)) {
                      mensaje = true;
                      break;
                  }
              }
+        }if(mensaje==true) {
+            System.out.println("Grupo de Estudio ya Existe");
         }
         return mensaje;
     }
     
+    public GrupoEstudio buscarGrupoEstudio(String nombreGrupo) {
+        
+        GrupoEstudio mensaje = null;
+        for(GrupoEstudio dato : almacenagrupoestudio) {
+            if(dato.getNombreGrupo().equalsIgnoreCase(nombreGrupo)) {
+                mensaje=dato;
+                break;
+            }
+        }
+        return mensaje;
+    }
+    
+    //public boolean eliminarGrupoEstudio() {
+    //    boolean mensaje = false;
+        
+    //}
 
  
     
