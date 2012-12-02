@@ -9,5 +9,6 @@ package proyectopoo;
  * @author SoporteTI
  */
 public class AdmGrupoEstudio {
+    private String 
     
 }
