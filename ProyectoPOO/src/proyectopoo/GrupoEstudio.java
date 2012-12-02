@@ -16,8 +16,8 @@ public class GrupoEstudio {
     private String nombreGrupo;
     private String academia;
     private String curso;
-    private Date fechaInicio;
-    private Date fechaFin;
+    private String fechaInicio;
+    private String fechaFin;
     private String estado;
 
     public GrupoEstudio(String codigoGrupo, String nombreGrupo, String academia, String curso, String fechaInicio, String fechaFin, String estado) {
@@ -26,8 +26,8 @@ public class GrupoEstudio {
         this.nombreGrupo = nombreGrupo;
         this.academia = academia;
         this.curso = curso;
-        this.fechaInicio = new SimpleDateFormat("dd/MM/yyyy").parse(fechaInicio);
-        this.fechaFin = new SimpleDateFormat("dd/MM/yyyy").parse(fechaInicio);
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
         this.estado = estado;
         } catch (Exception e) {
             
@@ -54,11 +54,11 @@ public class GrupoEstudio {
         return estado;
     }
 
-    public Date getFechaFin() {
+    public String getFechaFin() {
         return fechaFin;
     }
 
-    public Date getFechaInicio() {
+    public String getFechaInicio() {
         return fechaInicio;
     }
     
