@@ -37,6 +37,21 @@ public class AdmGrupoEstudio {
         return almacenagrupoestudio;
     }
     
+    public String validarDatosMandatorios(String codigoGrupo, String nombreGrupo, String academia, String curso, String fechaInicio, String fechaFin, String estado) {
+        
+        String mensaje="correcto";
+        
+        if(nombreGrupo==null || nombreGrupo.isEmpty())
+            mensaje = "Debe Ingresar Nombre de Grupo";
+        
+        if(fechaInicio==null || fechaFin.isEmpty())
+            mensaje = "Debe Ingresar Fecha de Inicio";
+        
+        if(fechaFin==null || fechaFin.isEmpty())
+            mensaje = "Debe ingresar Fecha Final";
+        
+        return mensaje;
+    }
     
 
  
