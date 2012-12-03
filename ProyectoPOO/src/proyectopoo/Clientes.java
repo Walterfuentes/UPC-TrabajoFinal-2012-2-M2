@@ -8,6 +8,7 @@ import java.util.ArrayList;
  */
 public class Clientes {
     
+    private String codigoCliente;
     private String nombre;
     private String ApellidoPaterno;
     private String ApellidoMaterno;
@@ -16,10 +17,12 @@ public class Clientes {
     private String telefonofijo;
     private String celular;
     private String fechaIngreso;
+    private int transacciones;
   
     
 
-    public Clientes(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fecha) {
+    public Clientes(String codigoCliente, String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fecha, int transacciones) {
+        this.codigoCliente = codigoCliente;
         this.nombre = nombre;
         this.ApellidoPaterno = ApellidoPaterno;
         this.ApellidoMaterno = ApellidoMaterno;
@@ -28,14 +31,26 @@ public class Clientes {
         this.telefonofijo = telefonofijo;
         this.celular = celular;
         this.fechaIngreso = fecha;
+        this.transacciones = transacciones;
     }
 
-    public Clientes(){
-
+    public String getCodigoCliente() {
+        return codigoCliente;
     }
 
-    
-    
+    public void setCodigoCliente(String codigoCliente) {
+        this.codigoCliente = codigoCliente;
+    }
+
+    public int getTransacciones() {
+        return transacciones;
+    }
+
+    public void setTransacciones(int transacciones) {
+        this.transacciones = transacciones;
+    }
+
+   
     public String getApellidoMaterno() {
         return ApellidoMaterno;
     }

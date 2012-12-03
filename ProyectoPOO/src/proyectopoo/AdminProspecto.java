@@ -80,10 +80,10 @@ public class AdminProspecto {
         return AlmacenaProspectos.size();
     }
 
-    public Prospecto buscaProspectos(String Nombre) {
+    public Prospecto buscaProspectos(String Dato) {
         Prospecto nuevo = null;
         for (Prospecto aux : AlmacenaProspectos) {
-            if (Nombre.equalsIgnoreCase(aux.getNombre())) {
+            if ((Dato.equalsIgnoreCase(aux.getNombre())) || (Dato.equalsIgnoreCase(aux.getApellidoPaterno())) || (Dato.equalsIgnoreCase(aux.getDni()))) {
                 System.out.println("nombre Encontrado " + aux.getNombre() + " " + aux.getApellidoPaterno());
                 nuevo = aux;
             }
