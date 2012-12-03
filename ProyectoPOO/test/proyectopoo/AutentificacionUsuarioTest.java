@@ -34,7 +34,7 @@ public class AutentificacionUsuarioTest {
        
           AutentificacionUsuario test = new AutentificacionUsuario();
           Assert.assertEquals(false, test.validarCamposDeAcceso(nombre, contrasenia));
-   }                                                                                           
+   }                                                                                            
    
    @Test
    public void validarCampoNombre() { 
