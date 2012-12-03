@@ -52,33 +52,35 @@ public class AutenticacionUsuario {
         return respuesta;    
     }
     
-    public boolean validarCamposDeAcceso(Usuarios aux) {
+    
+    public String validarCamposDeAcceso(String usuario, String contrasenia) {
 
          String mensaje="Correcto";
      
-      if (validarExistenciaDeUusario(aux.getUsuario())==true) {
+      if (validarExistenciaDeUusario(usuario)==true) {
             
-         if (aux.getUsuario()==null || aux.getContrasenia().isEmpty())
+         if (usuario ==null || usuario.isEmpty())
             
             mensaje= "Debe ingresar Usuario";
         
-         if (aux.getContrasenia()==null || aux.getContrasenia().isEmpty()) 
+         if (contrasenia ==null || contrasenia.isEmpty()) 
            
             mensaje= "Debe ingresar Contraseña";
            
-         if ((aux.getUsuario()==null || aux.getUsuario().isEmpty() && (aux.getContrasenia() !=null))) 
+         if ((usuario==null || usuario.isEmpty() && (contrasenia !=null))) 
          
             mensaje= "Debe ingresar Usuario";
         
-         if ((aux.getUsuario() !=null && (aux.getContrasenia()==null || aux.getContrasenia().isEmpty()))) 
+         if ((usuario !=null && (contrasenia ==null || contrasenia.isEmpty()))) 
          
             mensaje= "Debe ingresae Contraseña";   
       }else{
          System.out.println("Usuario no existe en el sistema");
          
       }
-     return true; 
+     return mensaje; 
     }
+    
     
     public boolean permitirAcceso(String usuario, String contrasenia) {
         
