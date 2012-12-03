@@ -5,8 +5,8 @@
 package proyectopoo;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 
 /**
  *
@@ -28,81 +28,98 @@ public class AdminProspecto {
         return AlmacenaProspectos;
     }
      
-    public String agregarProspecto(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fechaIngreso){
-        String codigoProspecto = "nada"; 
-        
-        if(validarDatos(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso).equalsIgnoreCase("OK")){
-        codigoProspecto = String.format("P"+"%04d", ++aumentaNumeroProspecto);
-        Prospecto nuevo = new Prospecto(codigoProspecto,nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso);
-        AlmacenaProspectos.add(nuevo);
-        }else{
-            codigoProspecto = validarDatos(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso);
-        }
-        return  codigoProspecto;
+    public String GeneraSecuencia(){
+        return String.format("P" + "%04d", ++aumentaNumeroProspecto);
     }
     
-    public String validarDatos (String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fechaIngreso){
-        
+    
+    public String agregarProspecto(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fechaIngreso) 
+             {
+            
+            String codigoProspecto = "nada";
+
+            if (validarDatos(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni).equalsIgnoreCase("OK")){
+            codigoProspecto = GeneraSecuencia();
+            Prospecto nuevo = new Prospecto(codigoProspecto, nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso);
+            AlmacenaProspectos.add(nuevo);
+            }else{
+                codigoProspecto = validarDatos(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni);
+            }
+        return codigoProspecto;
+    }
+
+    public String validarDatos(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni){
+            
         String Respuesta = "OK";
-        
-        if (nombre == null || nombre.isEmpty())
-            
+
+        if (nombre == null || nombre.isEmpty()) {
             Respuesta = "Falta Nombre";
-        
-        if (ApellidoPaterno == null || ApellidoPaterno.isEmpty())
-           
+        }
+
+        if (ApellidoPaterno == null || ApellidoPaterno.isEmpty()) {
             Respuesta = "Falta Apellido Paterno";
-        
-        if (ApellidoMaterno== null || ApellidoMaterno.isEmpty()) 
-            
+        }
+
+        if (ApellidoMaterno == null || ApellidoMaterno.isEmpty()) {
             Respuesta = "Falta Apellido Materno";
-        
-        
-        if (Correo== null || Correo.isEmpty()) 
+        }
+
+        if (Dni == null || Dni.isEmpty()) {
+            Respuesta = "Falta DNI";
+        }
+
+        if (Correo == null || Correo.isEmpty()) {
             Respuesta = "Falta Correo";
-        
+        }
         
         return Respuesta;
+
     }
-    
-    
-    public int cantidadProspectos(){
+
+    public int cantidadProspectos() {
         return AlmacenaProspectos.size();
     }
-    
-    
-    public Prospecto buscaProspectos(String Nombre){
+
+    public Prospecto buscaProspectos(String Nombre) {
         Prospecto nuevo = null;
-        for (Prospecto aux: AlmacenaProspectos){
-            if(Nombre.equalsIgnoreCase(aux.getNombre())){
-                System.out.println("nombre Encontrado " +aux.getNombre()+" "+aux.getApellidoPaterno());
-                nuevo = aux;}}
-        if (nuevo == null)
+        for (Prospecto aux : AlmacenaProspectos) {
+            if (Nombre.equalsIgnoreCase(aux.getNombre())) {
+                System.out.println("nombre Encontrado " + aux.getNombre() + " " + aux.getApellidoPaterno());
+                nuevo = aux;
+            }
+        }
+        if (nuevo == null) {
+            System.out.println("No se encontraron Resgistros para los filtros ingresados");
+        }
+
         System.out.println("Desea ingresar un nuevo prospecto");
         return nuevo;
+
     }
-    
-    public boolean eliminaProspectos(String Nombre){
+
+    public boolean eliminaProspectos(String Nombre) {
         Prospecto aux = buscaProspectos(Nombre);
-        AlmacenaProspectos.remove(aux);  
+        AlmacenaProspectos.remove(aux);
         return true;
     }
-    
-    public boolean listarProspectos(){
+
+    public boolean listarProspectos() {
         boolean respuesta = false;
-        
-       for(Prospecto nuevo: AlmacenaProspectos){
-        System.out.println(nuevo.getFechaIngreso());
+        Collections.sort(AlmacenaProspectos, new ProspectoFechaContactoComparator());
+        for (Prospecto nuevo : AlmacenaProspectos) {
+            System.out.println(nuevo.getFechaIngreso());
             respuesta = true;
-       }
+        }
         return respuesta;
     }
-    
-    public void imprimeTest(String nombre){
-        for (Prospecto aux: AlmacenaProspectos)
-            if(nombre.equalsIgnoreCase(aux.getNombre()))
-            System.out.println(aux.getNombre());
-            }
+}
+
+class ProspectoFechaContactoComparator implements Comparator<Prospecto> {
+
+    @Override
+    public int compare(Prospecto uno, Prospecto dos) {
+        return uno.getFechaIngreso().compareTo(dos.getFechaIngreso());
+    }
     
    
     
