@@ -30,11 +30,12 @@ public class AdminClientes {
         return String.format("C" + "%04d", ++aumentaNumeroProspecto);
     }
     
-    public void IngresaClientesSinProspecto(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fechaIngreso, int transacciones) {
+    public String IngresaClientesSinProspecto(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fechaIngreso, int transacciones) {
 
         String codigoCliente = GeneraSecuencia();
         Clientes nueva = new Clientes(codigoCliente, nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso, transacciones);
-
+        
+        return codigoCliente;
     }
 
     public Boolean ImprimelistadeClientes() {
@@ -51,6 +52,18 @@ public class AdminClientes {
                 return aux;
             }
         }
+        return null;
+    }
+    
+    public int cantidaddeClientes(){
+        return 0;
+    }
+    
+    public void eliminarClientes(String dato){
+        
+    }
+    
+    public String DarBajaaCliente(String nombre){
         return null;
     }
 
