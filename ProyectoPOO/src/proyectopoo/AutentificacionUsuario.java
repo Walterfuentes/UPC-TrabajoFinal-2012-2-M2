@@ -33,7 +33,7 @@ public class AutentificacionUsuario {
         return contrasenia;
     }
 
-    public String getNombre() {
+public String getNombre() {
         return nombre;
     }
     
