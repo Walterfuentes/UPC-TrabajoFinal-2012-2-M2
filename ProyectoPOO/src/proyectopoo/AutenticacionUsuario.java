@@ -10,13 +10,13 @@ import java.util.ArrayList;
  *
  * @author AnyeloMenacho
  */
-public class AutentificacionUsuario {
+public class AutenticacionUsuario {
     
     private ArrayList<Usuarios> usuarios;
     private String usuario;
     private String contrasenia;
 
-    public AutentificacionUsuario() {
+    public AutenticacionUsuario() {
         usuarios = new ArrayList<Usuarios>();
     }
     
@@ -24,7 +24,7 @@ public class AutentificacionUsuario {
         return usuarios;
     }
     
-    public AutentificacionUsuario(String usuario, String contrasenia) {
+    public AutenticacionUsuario(String usuario, String contrasenia) {
         this.usuario = usuario;
         this.contrasenia = contrasenia;
     }

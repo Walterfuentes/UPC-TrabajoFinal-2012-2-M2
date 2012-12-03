@@ -12,9 +12,9 @@ import java.*;
  *
  * @author AnyeloMenacho
  */
-public class AutentificacionUsuarioTest {
+public class AutenticacionUsuarioTest {
     
-   public AutentificacionUsuarioTest() {
+   public AutenticacionUsuarioTest() {
        
    }
     
@@ -54,7 +54,7 @@ public class AutentificacionUsuarioTest {
           AdminUsuario nuevo = new AdminUsuario();
           nuevo.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Roll, Contrasenia);
           
-          AutentificacionUsuario test = new AutentificacionUsuario();
+          AutenticacionUsuario test = new AutenticacionUsuario();
           Assert.assertEquals(test.permitirAcceso("jcastro", "123456"), true);
     }
    
