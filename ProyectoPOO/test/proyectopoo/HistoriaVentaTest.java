@@ -56,9 +56,44 @@ public class HistoriaVentaTest {
         vd.Alta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado);
 
 }
+    
     @Test
     public void validarAltaVenta() throws BusinessException {
 
+        String factura_boleta = "0001";
+        String concepto = "libros";
+        int numero = 100;
+        int fecha_emision = 20121210;
+        String empresa = "empresa1";
+        double subtotal = 500;
+        double igv = 512;
+        double total = 5486;
+        String moneda = "soles";
+        int fecha_vencimiento = 20121214;
+        int fecha_pago = 20121213;
+        String estado = "bien";
+        String observaciones = "provando";
+
+        Venta v = new Venta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado);
+        VentasAdmin vd = new VentasAdmin();
+
+        vd.Alta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado);
+        
+        assertNotNull(v);
+        assertEquals(factura_boleta, v.getFactura_boleta());
+        assertEquals(concepto, v.getConcepto());
+        assertEquals(fecha_emision, v.getFecha_emision());
+        assertEquals(fecha_vencimiento, v.getFecha_vencimiento());
+        assertEquals(subtotal, v.getSubtotal(), 0.0);
+        assertEquals(igv, v.getIgv(), 0.0);
+        assertEquals(total, v.getTotal(), 0.0);
+        assertEquals(moneda, v.getMoneda());
+        assertEquals(observaciones, v.getObservaciones());
+
+
+    }
+    @Test
+    public void VisualizarBusquedaFiltros()throws BusinessException{
         String factura_boleta = "0001";
         String concepto = "libros";
         int numero = 100;
@@ -116,17 +151,6 @@ public class HistoriaVentaTest {
         vd.BuscarFechaVencimiento(fecha_vencimiento2);
         vd.BuscarFechaPago(20121217);
 
-        assertNotNull(v);
-        assertEquals(factura_boleta, v.getFactura_boleta());
-        assertEquals(concepto, v.getConcepto());
-        assertEquals(fecha_emision, v.getFecha_emision());
-        assertEquals(fecha_vencimiento, v.getFecha_vencimiento());
-        assertEquals(subtotal, v.getSubtotal(), 0.0);
-        assertEquals(igv, v.getIgv(), 0.0);
-        assertEquals(total, v.getTotal(), 0.0);
-        assertEquals(moneda, v.getMoneda());
-        assertEquals(observaciones, v.getObservaciones());
-
-
     }
+    
 }
