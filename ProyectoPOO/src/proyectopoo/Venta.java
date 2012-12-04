@@ -3,9 +3,6 @@
  * and open the template in the editor.
  */
 package proyectopoo;
-
-
-
 /**
  *
  * @author Pedro BALAREZO
