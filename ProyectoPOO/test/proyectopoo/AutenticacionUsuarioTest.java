@@ -48,7 +48,7 @@ public class AutenticacionUsuarioTest {
           String Contrasenia = "123456";
           AutenticacionUsuario nuevo = new AutenticacionUsuario();
           nuevo.CrearUsuario(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Roll, Contrasenia);
-          Assert.assertTrue(nuevo.permitirAcceso(Usuario, Contrasenia));
+          Assert.assertTrue(nuevo.permitirAcceso("jcastro", "123456"));
     }
    
     @Test

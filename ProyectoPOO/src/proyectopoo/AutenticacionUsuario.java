@@ -35,7 +35,6 @@ public class AutenticacionUsuario {
     }
     
     public boolean CrearUsuario(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, String rol, String contrasenia){
-        if(validarCamposDeAcceso(usuario, contrasenia)!= "Correcto");
         usuarionuevo.Adicionar(dni, nombre, apellidoPaterno, apellidoMaterno, usuario, correo, fechaIngreso, cargo, rol, contrasenia);
         return true;
     }
@@ -58,7 +57,6 @@ public class AutenticacionUsuario {
         
      return mensaje; 
     }
-    
     
     public boolean permitirAcceso(String usuario, String contrasenia) {
         
