@@ -14,7 +14,26 @@ public class HistoriaVentaTest {
 
     @Test 
     public void validarCamposVacions ()throws BusinessException{
-        }
+        String factura_boleta = "0001";
+        String concepto = "libros";
+        int numero = 100;
+        int fecha_emision = 20121220;
+        String empresa = "empresa1";
+        double subtotal = 500;
+        double igv = 512;
+        double total = 5486;
+        String moneda = "soles";
+        int fecha_vencimiento = 20121214;
+        int fecha_pago = 20121213;
+        String estado = "bien";
+        String observaciones = "provando";
+        
+        Venta v = new Venta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado);
+        VentasAdmin vd = new VentasAdmin();
+
+        vd.Alta(factura_boleta, null, numero, 0, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado);
+
+    }
     @Test 
     public void validarFechasIncongruentes ()throws BusinessException{
     String factura_boleta = "0001";
