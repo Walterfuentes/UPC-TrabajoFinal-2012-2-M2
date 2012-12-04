@@ -81,19 +81,17 @@ public class AdminProspecto {
     }
 
     public Prospecto buscaProspectos(String Dato) {
-        Prospecto nuevo = null;
+        
         for (Prospecto aux : AlmacenaProspectos) {
             if ((Dato.equalsIgnoreCase(aux.getNombre())) || (Dato.equalsIgnoreCase(aux.getApellidoPaterno())) || (Dato.equalsIgnoreCase(aux.getDni()))) {
                 System.out.println("nombre Encontrado " + aux.getNombre() + " " + aux.getApellidoPaterno());
-                nuevo = aux;
+                return aux;
             }
-        }
-        if (nuevo == null) {
-            System.out.println("No se encontraron Resgistros para los filtros ingresados");
-        }
-
+           }
+        System.out.println("No se encontraron Resgistros para los filtros ingresados");
         System.out.println("Desea ingresar un nuevo prospecto");
-        return nuevo;
+        
+        return null;
 
     }
 
