@@ -11,33 +11,19 @@ import java.util.ArrayList;
  */
 public class AdminUsuario {
 
-    private ArrayList<Clientes> Almacenausuarios;
+//    private ArrayList<Clientes> Almacenausuarios;
     private ArrayList<Usuarios> usuarios;
 
     public AdminUsuario() {
-        Almacenausuarios = new ArrayList<Clientes>();
+//        Almacenausuarios = new ArrayList<Clientes>();
         usuarios = new ArrayList<Usuarios>();
     }
 
-    public String validarCamposUsuario(String nombre, String contrasenia) {
-
-        if ((nombre == null || nombre.isEmpty()) && (contrasenia == null || contrasenia.isEmpty())) {
-            System.out.println("Debe Ingresar Usuario y contraseña");
-            return "FaltaAmbos";
-        }
-        if ((nombre == null || nombre.isEmpty()) && (contrasenia != null)) {
-            System.out.println("Debe Ingresar Nombre");
-            return "FALTANOMBRE";
-        }
-        if ((nombre != null) && (contrasenia == null || contrasenia.isEmpty())) {
-            System.out.println("Debe Ingresar contraseña");
-            return "faltaContrasenia";
-        }
-        if ((nombre != null) && (contrasenia != null)) {
-            System.out.println("Debe Ingresar contraseña");
-        }
-        return "Datos Completos";
+    public ArrayList<Usuarios> getUsuarios() {
+        return usuarios;
     }
+
+    
 
     public boolean validarExistenciaUsuario(String dni) {
         boolean respuesta = false;

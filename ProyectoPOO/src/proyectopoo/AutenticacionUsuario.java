@@ -12,17 +12,16 @@ import java.util.ArrayList;
  */
 public class AutenticacionUsuario {
     
-    private ArrayList<Usuarios> usuarios;
+    
     private String usuario;
+    private AdminUsuario usuarionuevo;
     private String contrasenia;
 
     public AutenticacionUsuario() {
-        usuarios = new ArrayList<Usuarios>();
+       usuarionuevo = new AdminUsuario();
     }
     
-    public ArrayList<Usuarios> getUsuarios() {
-        return usuarios;
-    }
+   
     
     public AutenticacionUsuario(String usuario, String contrasenia) {
         this.usuario = usuario;
@@ -37,29 +36,22 @@ public class AutenticacionUsuario {
         return usuario;
     }
     
-    public boolean validarExistenciaDeUusario(String usuario) {
+    public boolean CrearUsuario(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, String rol, String contrasenia){
         
-        boolean respuesta=false;
-        
-        for(Usuarios aux : usuarios) {
-            if(aux.getUsuario().equalsIgnoreCase(usuario)) {
-                respuesta=true;
-            }
-        }
-            if(respuesta==true) {
-                System.out.println("Usuario Existe");
-            }
-        return respuesta;    
+        usuarionuevo.Adicionar(dni, nombre, apellidoPaterno, apellidoMaterno, usuario, correo, fechaIngreso, cargo, rol, contrasenia);
+        return true;
     }
+    
+    
     
     
     public String validarCamposDeAcceso(String usuario, String contrasenia) {
 
          String mensaje="Correcto";
      
-      if (validarExistenciaDeUusario(usuario)==true) {
+      
             
-         if (usuario ==null || usuario.isEmpty())
+         if (usuario == null || usuario.isEmpty())
             
             mensaje= "Debe ingresar Usuario";
         
@@ -67,17 +59,10 @@ public class AutenticacionUsuario {
            
             mensaje= "Debe ingresar Contraseña";
            
-         if ((usuario==null || usuario.isEmpty() && (contrasenia !=null))) 
+         if ((usuario==null || usuario.isEmpty() && (contrasenia == null || contrasenia.isEmpty()))) 
          
-            mensaje= "Debe ingresar Usuario";
+            mensaje= "Debe ingresar Usuario y contraseña";
         
-         if ((usuario !=null && (contrasenia ==null || contrasenia.isEmpty()))) 
-         
-            mensaje= "Debe ingresae Contraseña";   
-      }else{
-         System.out.println("Usuario no existe en el sistema");
-         
-      }
      return mensaje; 
     }
     
@@ -86,12 +71,12 @@ public class AutenticacionUsuario {
         
          boolean respuesta=false;
          
-         for(Usuarios aux : usuarios) {
-             if(aux.getUsuario().equalsIgnoreCase(usuario) && aux.getContrasenia().equalsIgnoreCase(contrasenia)) {
-                 respuesta=true;
-                 break;
-             }
-         }
+//         for(Usuarios aux : usuarios) {
+//             if(aux.getUsuario().equalsIgnoreCase(usuario) && aux.getContrasenia().equalsIgnoreCase(contrasenia)) {
+//                 respuesta=true;
+//                 break;
+//             }
+//         }
          return respuesta;
     }
 

@@ -157,7 +157,7 @@ public class AdminClientesTest {
         nuevocliente.IngresaClientesSinProspecto(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fecha, transacciones);
         nuevocliente.IngresaClientesSinProspecto(nombre2, ApellidoPaterno2, ApellidoMaterno2, Correo2, Dni2, telefonofijo2, celular2, fecha2, transacciones2);
         Assert.assertEquals(2, nuevocliente.cantidaddeClientes());
-        nuevocliente.eliminarClientes("Carlos");
+        nuevocliente.eliminarClientes("CaRlos");
         Assert.assertEquals(1, nuevocliente.cantidaddeClientes());
     }
     
@@ -314,7 +314,6 @@ public class AdminClientesTest {
         Assert.assertEquals("P0001", nuevo.AgregaProspecto(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fecha));
         Assert.assertEquals("P0002", nuevo.AgregaProspecto(nombre2, ApellidoPaterno2, ApellidoMaterno2, Correo2, Dni2, telefonofijo2, celular2, fecha2));
         Assert.assertNotNull(nuevo.BusquedaProspectos("Carlos"));
-        
-    }
+         }
 
 }

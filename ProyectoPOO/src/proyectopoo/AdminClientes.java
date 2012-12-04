@@ -34,7 +34,7 @@ public class AdminClientes {
     public String IngresaClientesSinProspecto(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fechaIngreso, int transacciones) {
         
         String codigoCliente = "nada";
-        if (ValidaCamposObligartorios(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni).equalsIgnoreCase("OK")){
+        if ((ValidaCamposObligartorios(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni).equalsIgnoreCase("OK"))&& (verificaDuplicidadCliente(nombre, celular, Dni)== true)){
         codigoCliente = GeneraSecuencia();
         Clientes nueva = new Clientes(codigoCliente, nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso, transacciones);
         AlmacenaClientes.add(nueva);
@@ -107,6 +107,14 @@ public class AdminClientes {
 }
 }
     
+    public boolean verificaDuplicidadCliente(String nombre, String Apellido, String DNI){
+        for (Clientes aux : AlmacenaClientes){
+            if((nombre.equalsIgnoreCase(aux.getNombre())) && (Apellido.equalsIgnoreCase(aux.getApellidoPaterno())) && (DNI.equalsIgnoreCase(aux.getDni())))
+                return false;
+        }
+        
+        return true;
+    }
     
     
     public String DarBajaaCliente(String Dato){
