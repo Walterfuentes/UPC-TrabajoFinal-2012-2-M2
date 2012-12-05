@@ -12,7 +12,7 @@ import java.text.*;
  *
  * @author AnyeloMenacho
  */
-public class AdmGrupoEstudio {
+public class AdminGrupoEstudio {
     
     ArrayList<GrupoEstudio> almacenagrupoestudio;
     private int correlativo;
@@ -23,7 +23,7 @@ public class AdmGrupoEstudio {
     private String aula;
     private String coodenadas;
 
-    public AdmGrupoEstudio() {
+    public AdminGrupoEstudio() {
         this.correlativo=0;
         this.descripcion = descripcion;
         this.instructor = instructor;
