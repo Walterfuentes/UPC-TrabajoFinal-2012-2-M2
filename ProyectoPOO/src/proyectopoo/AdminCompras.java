@@ -50,14 +50,14 @@ public class AdminCompras {
     public void registrarCompra(String factura, String concepto, String fechaEmision, String fechaVencimiento, double subtotal, double igv, double total, String moneda)
            throws BusinessException{
         validarDatosIncompletos(factura, concepto, fechaEmision, fechaVencimiento, subtotal, igv, total, moneda);
-        validarDuplicidad(concepto);
+        validarDuplicidad(factura);
         getCompras().add(new Compras(factura, concepto, fechaEmision, fechaVencimiento, subtotal, igv, total, moneda));
     }
     
     public void editarCompra(String factura, String concepto, String fechaEmision, String fechaVencimiento, double subtotal, double igv, double total, String moneda)
            throws BusinessException{
         validarDatosIncompletos(factura, concepto, fechaEmision, fechaVencimiento, subtotal, igv, total, moneda);
-        validarDuplicidad(concepto);
+        validarDuplicidad(factura);
         getCompras().add(new Compras(factura, concepto, fechaEmision, fechaVencimiento, subtotal, igv, total, moneda));
     }
     
