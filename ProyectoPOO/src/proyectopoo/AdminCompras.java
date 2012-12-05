@@ -4,9 +4,7 @@
  */
 package proyectopoo;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class AdminCompras {
      private ArrayList<Compras> compras;
@@ -61,6 +59,12 @@ public class AdminCompras {
         validarDatosIncompletos(factura, concepto, fechaEmision, fechaVencimiento, subtotal, igv, total, moneda);
         validarDuplicidad(concepto);
         getCompras().add(new Compras(factura, concepto, fechaEmision, fechaVencimiento, subtotal, igv, total, moneda));
+    }
+    
+    public boolean eliminaCompra(String factura) {
+        Compras aux = buscar(factura);
+        compras.remove(aux);
+        return true;
     }
     
     public Compras buscar(String factura){
