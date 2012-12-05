@@ -7,10 +7,7 @@ import java.util.*;
 import java.text.*;
 
 
-/**
- *
- * @author AnyeloMenacho
- */
+
 public class GrupoEstudio {
     
     private String codigoGrupo;

@@ -21,22 +21,24 @@ public class AdminGrupoEstudio {
     private String linkSyllabus;
     private String local;
     private String aula;
-    private String coodenadas;
+    private String coordenadas;
 
-    public AdminGrupoEstudio() {
-        this.correlativo=0;
+    public AdminGrupoEstudio(int correlativo, String descripcion, String instructor, String linkSyllabus, String local, String aula, String coordenadas) {
+        almacenagrupoestudio = new ArrayList<GrupoEstudio>();
+        this.correlativo = correlativo;
         this.descripcion = descripcion;
         this.instructor = instructor;
         this.linkSyllabus = linkSyllabus;
         this.local = local;
         this.aula = aula;
-        this.coodenadas = coodenadas;
-        
+        this.coordenadas = coordenadas;
     }
 
     public ArrayList<GrupoEstudio> getAlmacenagrupoestudio() {
         return almacenagrupoestudio;
     }
+    
+    
     
     public String validarDatosMandatorios(String codigoGrupo, String nombreGrupo, String academia, String curso, String fechaInicio, String fechaFin, String estado) {
         
