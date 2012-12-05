@@ -5,6 +5,8 @@
 package proyectopoo;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class AdminCompras {
      private ArrayList<Compras> compras;
@@ -66,5 +68,26 @@ public class AdminCompras {
             if(lstcompras.getFactura().equals(factura))
                 return lstcompras;
         return null;
+    }
+    
+    public boolean listarCompras() {
+        boolean respuesta = false;
+        Collections.sort(compras, new ComprasFechaVencimientoComparator());
+        for (Compras nuevo : compras) {
+            System.out.println(nuevo.getFechaEmision());
+            respuesta = true;
+        }
+        return respuesta;
+    }
+    
+    class ComprasFechaVencimientoComparator implements Comparator<Compras> {
+
+        @Override
+        public int compare(Compras o1, Compras o2) {
+            return o1.getFechaVencimiento().compareTo(o2.getFechaVencimiento());
+        }
+    
+   
+    
     }
 }

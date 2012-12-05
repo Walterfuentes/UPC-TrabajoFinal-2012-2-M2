@@ -28,7 +28,7 @@ public class AdminClientesTest {
         String fecha = "081212";
         int transacciones = 0;
         
-        String nombre2 ="Carlos";
+        String nombre2 ="Carlos4";
         String ApellidoPaterno2 = "flores";
         String ApellidoMaterno2 = "Lopez";
         String Correo2 = "micorreo@micorreo.com";
