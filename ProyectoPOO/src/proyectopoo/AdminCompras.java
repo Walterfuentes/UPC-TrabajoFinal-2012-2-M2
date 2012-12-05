@@ -54,6 +54,13 @@ public class AdminCompras {
         getCompras().add(new Compras(factura, concepto, fechaEmision, fechaVencimiento, subtotal, igv, total, moneda));
     }
     
+    public void editarCompra(String factura, String concepto, String fechaEmision, String fechaVencimiento, double subtotal, double igv, double total, String moneda)
+           throws BusinessException{
+        validarDatosIncompletos(factura, concepto, fechaEmision, fechaVencimiento, subtotal, igv, total, moneda);
+        validarDuplicidad(concepto);
+        getCompras().add(new Compras(factura, concepto, fechaEmision, fechaVencimiento, subtotal, igv, total, moneda));
+    }
+    
     public Compras buscar(String factura){
         for(Compras lstcompras : getCompras())
             if(lstcompras.getFactura().equals(factura))
