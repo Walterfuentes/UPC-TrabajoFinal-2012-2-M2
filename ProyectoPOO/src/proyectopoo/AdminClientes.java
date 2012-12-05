@@ -132,7 +132,7 @@ public class AdminClientes {
     }
     
     
-    public Prospecto BusquedaProspectos (String Dato){
+    public Clientes BusquedaProspectos (String Dato){
          return prospectos.buscaProspectos(Dato);
         
     }

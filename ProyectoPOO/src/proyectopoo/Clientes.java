@@ -34,6 +34,20 @@ public class Clientes {
         this.transacciones = transacciones;
     }
 
+    public Clientes(String codigoCliente, String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni, String telefonofijo, String celular, String fechaIngreso) {
+        this.codigoCliente = codigoCliente;
+        this.nombre = nombre;
+        this.ApellidoPaterno = ApellidoPaterno;
+        this.ApellidoMaterno = ApellidoMaterno;
+        this.Correo = Correo;
+        this.Dni = Dni;
+        this.telefonofijo = telefonofijo;
+        this.celular = celular;
+        this.fechaIngreso = fechaIngreso;
+    }
+
+    
+    
     public String getCodigoCliente() {
         return codigoCliente;
     }

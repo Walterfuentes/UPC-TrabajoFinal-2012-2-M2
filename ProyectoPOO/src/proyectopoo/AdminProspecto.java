@@ -16,15 +16,15 @@ public class AdminProspecto {
     
     
     
-    ArrayList<Prospecto> AlmacenaProspectos;
+    ArrayList<Clientes> AlmacenaProspectos;
     private int aumentaNumeroProspecto;
 
     public AdminProspecto() {
-        AlmacenaProspectos = new ArrayList<Prospecto>();
+        AlmacenaProspectos = new ArrayList<Clientes>();
         this.aumentaNumeroProspecto = 0;
     }
 
-    public ArrayList<Prospecto> getAlmacenaProspectos() {
+    public ArrayList<Clientes> getAlmacenaProspectos() {
         return AlmacenaProspectos;
     }
      
@@ -40,7 +40,7 @@ public class AdminProspecto {
 
             if (validarDatos(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni).equalsIgnoreCase("OK")){
             codigoProspecto = GeneraSecuencia();
-            Prospecto nuevo = new Prospecto(codigoProspecto, nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso);
+            Clientes nuevo = new Clientes(codigoProspecto, nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso);
             AlmacenaProspectos.add(nuevo);
             }else{
                 codigoProspecto = validarDatos(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni);
@@ -80,9 +80,9 @@ public class AdminProspecto {
         return AlmacenaProspectos.size();
     }
 
-    public Prospecto buscaProspectos(String Dato) {
+    public Clientes buscaProspectos(String Dato) {
         
-        for (Prospecto aux : AlmacenaProspectos) {
+        for (Clientes aux : AlmacenaProspectos) {
             if ((Dato.equalsIgnoreCase(aux.getNombre())) || (Dato.equalsIgnoreCase(aux.getApellidoPaterno())) || (Dato.equalsIgnoreCase(aux.getDni()))) {
                 System.out.println("nombre Encontrado " + aux.getNombre() + " " + aux.getApellidoPaterno());
                 return aux;
@@ -96,7 +96,7 @@ public class AdminProspecto {
     }
 
     public boolean eliminaProspectos(String Nombre) {
-        Prospecto aux = buscaProspectos(Nombre);
+        Clientes aux = buscaProspectos(Nombre);
         AlmacenaProspectos.remove(aux);
         return true;
     }
@@ -104,7 +104,7 @@ public class AdminProspecto {
     public boolean listarProspectos() {
         boolean respuesta = false;
         Collections.sort(AlmacenaProspectos, new ProspectoFechaContactoComparator());
-        for (Prospecto nuevo : AlmacenaProspectos) {
+        for (Clientes nuevo : AlmacenaProspectos) {
             System.out.println(nuevo.getFechaIngreso());
             respuesta = true;
         }
@@ -112,10 +112,10 @@ public class AdminProspecto {
     }
 }
 
-class ProspectoFechaContactoComparator implements Comparator<Prospecto> {
+class ProspectoFechaContactoComparator implements Comparator<Clientes> {
 
     @Override
-    public int compare(Prospecto uno, Prospecto dos) {
+    public int compare(Clientes uno, Clientes dos) {
         return uno.getFechaIngreso().compareTo(dos.getFechaIngreso());
     }
     
