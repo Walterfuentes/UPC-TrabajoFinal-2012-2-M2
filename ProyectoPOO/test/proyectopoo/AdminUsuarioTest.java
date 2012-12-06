@@ -70,8 +70,8 @@ public class AdminUsuarioTest {
         String Contrasenia1 = "1234";
         
         AdminUsuario adminUsuario = new AdminUsuario();
-        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia);
-        adminUsuario.Adicionar(Dni1, Nombre1, ApellidoPaterno1, ApellidoMaterno1, Usuario1, Correo1, FechaIngreso1, Cargo1, Rol1, Contrasenia1);
+        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia,true);
+        adminUsuario.Adicionar(Dni1, Nombre1, ApellidoPaterno1, ApellidoMaterno1, Usuario1, Correo1, FechaIngreso1, Cargo1, Rol1, Contrasenia1,true);
 
         int totalRetornado = adminUsuario.getTotalUsuarios();
         assertEquals(totalRetornado,1);
@@ -92,7 +92,7 @@ public class AdminUsuarioTest {
         String Contrasenia = "1234";
         
         AdminUsuario adminUsuario = new AdminUsuario();
-        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia);        
+        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia,true);
     
         adminUsuario.Eliminar(Dni);
         Usuarios elemento= adminUsuario.Buscar(Dni);
@@ -119,7 +119,7 @@ public class AdminUsuarioTest {
         String Nombre_Editado = "Claudia";
     
         AdminUsuario adminUsuario = new AdminUsuario ();
-        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia);
+        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia,true);
         
         Usuarios elemento = adminUsuario.Buscar(Dni);
         assertEquals(Dni, elemento.getDni());
@@ -175,8 +175,8 @@ public class AdminUsuarioTest {
         String Contrasenia1 = "1564";
         
         AdminUsuario adminUsuario = new AdminUsuario();
-        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia);
-        adminUsuario.Adicionar(Dni1, Nombre1, ApellidoPaterno1, ApellidoMaterno1, Usuario1, Correo1, FechaIngreso1, Cargo1, Rol1, Contrasenia1);
+        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia,true);
+        adminUsuario.Adicionar(Dni1, Nombre1, ApellidoPaterno1, ApellidoMaterno1, Usuario1, Correo1, FechaIngreso1, Cargo1, Rol1, Contrasenia1,true);
         
         Usuarios elemento = adminUsuario.Buscar(Dni);
         assertEquals(Dni, elemento.getDni());

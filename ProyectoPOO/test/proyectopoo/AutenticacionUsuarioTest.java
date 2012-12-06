@@ -31,7 +31,7 @@ public class AutenticacionUsuarioTest {
           String Roll = "Analiza";
           String Contrasenia = "123456";
           AutenticacionUsuario test = new AutenticacionUsuario();
-          Assert.assertTrue(test.CrearUsuario(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Correo, FechaIngreso, Usuario, Contrasenia, Cargo, Roll));
+          Assert.assertTrue(test.CrearUsuario(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Correo, FechaIngreso, Usuario, Contrasenia, Cargo, Roll,true));
     }   
           
     @Test
@@ -47,7 +47,7 @@ public class AutenticacionUsuarioTest {
           String Roll = "Supervisa";
           String Contrasenia = "123456";
           AutenticacionUsuario nuevo = new AutenticacionUsuario();
-          nuevo.CrearUsuario(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Roll, Contrasenia);
+          nuevo.CrearUsuario(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Roll, Contrasenia,true);
           Assert.assertTrue(nuevo.permitirAcceso("jcastro", "123456"));
     }
    
@@ -64,7 +64,7 @@ public class AutenticacionUsuarioTest {
           String Roll = "Consulta";
           String Contrasenia = "123456";
           AutenticacionUsuario nuevo = new AutenticacionUsuario();
-          nuevo.CrearUsuario(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Roll, Contrasenia);
+          nuevo.CrearUsuario(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Roll, Contrasenia,true);
           Assert.assertFalse(nuevo.permitirAcceso("jcarrasco", Contrasenia));
     }
 }   
