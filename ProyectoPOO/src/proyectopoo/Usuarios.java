@@ -83,8 +83,6 @@ public class Usuarios {
         this.transacciones = transacciones;
     }
 
-   
-
     
     public String getFechaIngreso() {
         return FechaIngreso;
