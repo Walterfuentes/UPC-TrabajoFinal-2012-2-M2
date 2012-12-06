@@ -36,10 +36,10 @@ public class RolesTest {
         
         assertNotNull(rol);
         assertEquals(modulo, rol.getModulo());
-        assertFalse("No tiene permiso para acceder", rol.isAcceso());
-        assertFalse("No tiene permiso para adicionar", rol.isAdicionar());
-        assertFalse("No tiene permiso para editar", rol.isEditar());
-        assertFalse("No tiene permiso para eliminar", rol.isEliminar());
+        assertTrue("SI tiene permiso para acceder", rol.isAcceso());
+        assertTrue("SI tiene permiso para adicionar", rol.isAdicionar());
+        assertTrue("SI tiene permiso para editar", rol.isEditar());
+        assertTrue("SI tiene permiso para eliminar", rol.isEliminar());
     }
     
     @Test
@@ -66,10 +66,10 @@ public class RolesTest {
         
         assertNotNull(rol);
         assertEquals(modulo,rol.getModulo());
-        assertFalse("No tiene permiso para acceder", rol.isAcceso());
-        assertFalse("No tiene permiso para adicionar", rol.isAdicionar());
-        assertFalse("No tiene permiso para editar", rol.isEditar());
-        assertFalse("No tiene permiso para eliminar", rol.isEliminar());
+        assertTrue("SI tiene permiso para acceder", rol.isAcceso());
+        assertTrue("SI tiene permiso para adicionar", rol.isAdicionar());
+        assertTrue("SI tiene permiso para editar", rol.isEditar());
+        assertTrue("SI tiene permiso para eliminar", rol.isEliminar());
     }
     
     

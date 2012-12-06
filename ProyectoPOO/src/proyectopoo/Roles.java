@@ -4,17 +4,21 @@
  */
 package proyectopoo;
 
+import java.util.ArrayList;
+
 public class Roles {
-    private String nombre;
+    private String nombreRol;
     private String descripcion;
     private String modulo;
+    private ArrayList<Boolean> permisos;
+    
     private boolean acceso;
     private boolean adicionar;
     private boolean editar;
     private boolean eliminar;
 
-    public Roles(String nombre, String descripcion) {
-        this.nombre = nombre;
+    public Roles(String nombreRol, String descripcion) {
+        this.nombreRol = nombreRol;
         this.descripcion = descripcion;
     }
 
@@ -26,12 +30,18 @@ public class Roles {
         this.eliminar = eliminar;
     }
     
+    public Roles(String nombreRol, String descripcion, ArrayList<Boolean> Permisos) {
+        this.nombreRol = nombreRol;
+        this.descripcion = descripcion;
+        permisos = new ArrayList<Boolean>();
+    }
+    
     public String getDescripcion() {
         return descripcion;
     }
 
     public String getNombre() {
-        return nombre;
+        return nombreRol;
     }
 
     public boolean isAcceso() {
