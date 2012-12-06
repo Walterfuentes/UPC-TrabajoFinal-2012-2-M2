@@ -44,6 +44,33 @@ public class AdminProspectoTest {
         Assert.assertEquals("P0002", nuevo.agregarProspecto(nombre2, ApellidoPaterno2, ApellidoMaterno2, Correo2, Dni2, telefonofijo2, celular2, fechaIngreso2));
     }
     
+    
+    
+    @Test
+    public void ValidaDuplicidad(){
+        String nombre ="Juan";
+        String ApellidoPaterno = "Flores";
+        String ApellidoMaterno = "Jimenez";
+        String Correo = "micorreo@correo.com";
+        String Dni= "41334980";
+        String telefonofijo = "4502183";
+        String celular = "994578347";
+        String fechaIngreso = "08122012";
+        
+        String nombre2 ="Juan";
+        String ApellidoPaterno2 = "Gonzales";
+        String ApellidoMaterno2 = "Perez";
+        String Correo2 = "micorreo2@correo.com";
+        String Dni2= "41334980";
+        String telefonofijo2 = "2118800";
+        String celular2 = "994578347";
+        String fechaIngreso2 = "08122012";
+         
+        
+        AdminProspecto nuevo = new AdminProspecto(); 
+        Assert.assertEquals("P0001", nuevo.agregarProspecto(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso));
+        Assert.assertEquals("Usuario Existe", nuevo.agregarProspecto(nombre2, ApellidoPaterno2, ApellidoMaterno2, Correo2, Dni2, telefonofijo2, celular2, fechaIngreso2));
+    }
      @Test
     public void ValidaCampoNombre(){
         String nombre = null;

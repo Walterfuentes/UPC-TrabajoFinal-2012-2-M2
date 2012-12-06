@@ -5,8 +5,7 @@
 package proyectopoo;
 
 import java.util.ArrayList;
-import java.util.*;
-import java.text.*;
+import java.util.Comparator;
 
 /**
  *
@@ -15,23 +14,10 @@ import java.text.*;
 public class AdminGrupoEstudio {
     
     ArrayList<GrupoEstudio> almacenagrupoestudio;
-    private int correlativo;
-    private String descripcion;
-    private String instructor;
-    private String linkSyllabus;
-    private String local;
-    private String aula;
-    private String coordenadas;
-
-    public AdminGrupoEstudio(int correlativo, String descripcion, String instructor, String linkSyllabus, String local, String aula, String coordenadas) {
+    
+    public AdminGrupoEstudio() {
         almacenagrupoestudio = new ArrayList<GrupoEstudio>();
-        this.correlativo = correlativo;
-        this.descripcion = descripcion;
-        this.instructor = instructor;
-        this.linkSyllabus = linkSyllabus;
-        this.local = local;
-        this.aula = aula;
-        this.coordenadas = coordenadas;
+        
     }
 
     public ArrayList<GrupoEstudio> getAlmacenagrupoestudio() {
@@ -39,19 +25,18 @@ public class AdminGrupoEstudio {
     }
     
     
-    
-    public String validarDatosMandatorios(String codigoGrupo, String nombreGrupo, String academia, String curso, String fechaInicio, String fechaFin, String estado) {
+    public String validarDatosMandatorios(String nombreGrupo, String fechaInicio, String fechaFin) {
         
         String mensaje="correcto";
         
-        if(nombreGrupo==null || nombreGrupo.isEmpty())
-            mensaje = "Debe Ingresar Nombre de Grupo";
+        if(nombreGrupo==null || nombreGrupo.isEmpty()){
+            mensaje = "Debe Ingresar Nombre de Grupo";}
         
-        if(fechaInicio==null || fechaFin.isEmpty())
-            mensaje = "Debe Ingresar Fecha de Inicio";
+        if(fechaInicio==null || fechaInicio.isEmpty()){
+            mensaje = "Debe Ingresar Fecha de Inicio";}
         
-        if(fechaFin==null || fechaFin.isEmpty())
-            mensaje = "Debe ingresar Fecha Final";
+        if(fechaFin==null || fechaFin.isEmpty()){
+            mensaje = "Debe ingresar Fecha Final";}
         
         return mensaje;
     }
@@ -60,36 +45,31 @@ public class AdminGrupoEstudio {
         return almacenagrupoestudio.size();
     }
     
-    public boolean existeGrupoEstudio(String nombreGrupo) {
-        
-        boolean mensaje = false;
-        for(GrupoEstudio dato : almacenagrupoestudio) {
-            if(dato.getNombreGrupo().equalsIgnoreCase(nombreGrupo)) {
-                mensaje = true;
-                break;
-            }
-        }if(mensaje==true) {
-            System.out.println("Grupo de Estudio ya Existe");
-         }   
-        return mensaje;
-    }   
     
-    public boolean existeGrupoEstudio(GrupoEstudio grupoe, String nombreGrupo) {
-        
-        boolean mensaje = false;
-        for(GrupoEstudio dato : almacenagrupoestudio) {
-             if(!grupoe.equals(dato)) {
-                 if(dato.getNombreGrupo().equalsIgnoreCase(nombreGrupo)) {
-                     mensaje = true;
-                     break;
-                 }
-             }
-        }if(mensaje==true) {
-            System.out.println("Grupo de Estudio ya Existe");
+    public boolean CrearGrupoEstudios(String nombreGrupo, String academia, String curso, String fechaInicio, String fechaFin, String estado, String instructores, String linkToSyllabus, String local, String Aula, String CoordenadasAltitud, String CoordenadasLatitud){
+        if(validarDatosMandatorios(nombreGrupo, fechaInicio, fechaFin).equals("correcto")){
+        GrupoEstudio nuevo = new GrupoEstudio(nombreGrupo, academia, curso, fechaInicio, fechaFin, estado, instructores, linkToSyllabus, local, Aula, CoordenadasAltitud, CoordenadasLatitud);
+        almacenagrupoestudio.add(nuevo);
+        return true;
+        }else{
+            return false;
         }
-        return mensaje;
     }
     
+    public boolean DuplicidadGrupoEstudio(String nombreGrupo) {
+        
+        boolean Respuesta = false;
+        
+        for(GrupoEstudio dato : almacenagrupoestudio) {
+            if(dato.getNombreGrupo().equalsIgnoreCase(nombreGrupo)) {
+                Respuesta = true;
+            }
+        }if(Respuesta==true) {
+            System.out.println("Grupo de Estudio ya Existe");
+         }   
+        return Respuesta;
+    }   
+   
     public GrupoEstudio buscarGrupoEstudio(String nombreGrupo) {
         
         GrupoEstudio mensaje = null;
@@ -97,22 +77,12 @@ public class AdminGrupoEstudio {
             if(dato.getNombreGrupo().equalsIgnoreCase(nombreGrupo)) {
                 System.out.println("Datos Encontrados: " + dato.getNombreGrupo());
                 mensaje=dato;
-                break;
             }
         }
         return mensaje;
     }
     
-    public boolean eliminarGrupoEstudio(String nombreGrupo) {
-        
-        boolean mensaje = false;
-        GrupoEstudio dato = buscarGrupoEstudio(nombreGrupo);
-        if(dato != null)
-        almacenagrupoestudio.remove(dato);
-        System.out.println("Datos Eliminados");
-        return true;
-    }
-
+    
     public void listarGrupoEstudio() {
        
         for(GrupoEstudio dato : almacenagrupoestudio) {
@@ -127,3 +97,14 @@ public class AdminGrupoEstudio {
      
     }
 }
+
+class FechaInicioComparator implements Comparator<GrupoEstudio> {
+
+    @Override
+    public int compare(GrupoEstudio uno, GrupoEstudio dos) {
+        return uno.getFechaInicio().compareTo(dos.getFechaInicio());
+    }
+    
+   
+    
+    }

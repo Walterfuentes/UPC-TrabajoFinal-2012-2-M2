@@ -38,19 +38,33 @@ public class AdminProspecto {
             
             String codigoProspecto = "nada";
 
-            if (validarDatos(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni).equalsIgnoreCase("OK")){
+            if (validarDatos(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni).equalsIgnoreCase("Datos Correctos") && ValidarDuplicidad(nombre, Dni)== false){
             codigoProspecto = GeneraSecuencia();
             Clientes nuevo = new Clientes(codigoProspecto, nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni, telefonofijo, celular, fechaIngreso);
             AlmacenaProspectos.add(nuevo);
             }else{
-                codigoProspecto = validarDatos(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni);
+                if(ValidarDuplicidad(nombre, Dni)== true){
+                    codigoProspecto = "Usuario Existe";
+                }else{
+                    codigoProspecto = validarDatos(nombre, ApellidoPaterno, ApellidoMaterno, Correo, Dni);
+                }
             }
         return codigoProspecto;
     }
 
+    
+    public boolean ValidarDuplicidad(String nombre, String DNI){
+        
+        for(Clientes aux: AlmacenaProspectos){
+            if (nombre.equalsIgnoreCase(aux.getNombre()) && DNI.equalsIgnoreCase(aux.getDni()))
+                return true;
+        }     
+        return false;
+    }
+    
     public String validarDatos(String nombre, String ApellidoPaterno, String ApellidoMaterno, String Correo, String Dni){
             
-        String Respuesta = "OK";
+        String Respuesta = "Datos Correctos";
 
         if (nombre == null || nombre.isEmpty()) {
             Respuesta = "Falta Nombre";
