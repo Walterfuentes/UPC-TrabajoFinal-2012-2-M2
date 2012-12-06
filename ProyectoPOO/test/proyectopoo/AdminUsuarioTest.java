@@ -28,8 +28,7 @@ public class AdminUsuarioTest {
         String Contrasenia = "1234";
 
         AdminUsuario adminUsuario = new AdminUsuario();
-        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia);
-
+        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia, true);
         Usuarios elemento = adminUsuario.Buscar(Dni);
         assertNotNull(elemento);
         assertEquals(Dni, elemento.getDni());
