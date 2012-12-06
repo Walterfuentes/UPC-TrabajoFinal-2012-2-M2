@@ -18,9 +18,9 @@ public class Usuarios {
     private String Cargo;
     private String Rol;
     private String Contrasenia;
-    private boolean activo;
+    private int transacciones;
 
-    public Usuarios(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, String rol, String contrasenia, boolean activo) {
+    public Usuarios(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, String rol, String contrasenia, int transacciones) {
         this.Dni= dni ;
         this.Nombre= nombre;
         this.ApellidoPaterno= apellidoPaterno;
@@ -31,7 +31,7 @@ public class Usuarios {
         this.Cargo= cargo;
         this.Rol = rol;
         this.Contrasenia = contrasenia;
-        this.activo=activo;
+        this.transacciones= transacciones;
     }
 
     
@@ -75,9 +75,15 @@ public class Usuarios {
         this.Dni = dni;
     }
 
-    public boolean isActivo() {
-        return activo;
+    public int getTransacciones() {
+        return transacciones;
     }
+
+    public void setTransacciones(int transacciones) {
+        this.transacciones = transacciones;
+    }
+
+   
 
     
     public String getFechaIngreso() {

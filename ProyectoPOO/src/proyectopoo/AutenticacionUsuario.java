@@ -34,8 +34,8 @@ public class AutenticacionUsuario {
         return usuario;
     }
     
-    public boolean CrearUsuario(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, String rol, String contrasenia, boolean activo){
-        usuarionuevo.Adicionar(dni, nombre, apellidoPaterno, apellidoMaterno, usuario, correo, fechaIngreso, cargo, rol, contrasenia,activo);
+    public boolean CrearUsuario(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String correo, String fechaIngreso, String cargo, String rol, String contrasenia, int transacciones){
+        usuarionuevo.Adicionar(dni, nombre, apellidoPaterno, apellidoMaterno, usuario, correo, fechaIngreso, cargo, rol, contrasenia,transacciones);
         return true;
     }
     
@@ -43,18 +43,19 @@ public class AutenticacionUsuario {
 
          String mensaje="Correcto";
      
-         if (usuario == null || usuario.isEmpty())
-            
-            mensaje= "Debe ingresar Usuario";
-        
-         if (contrasenia ==null || contrasenia.isEmpty()) 
-           
-            mensaje= "Debe ingresar Contraseña";
-           
-         if ((usuario==null || usuario.isEmpty() && (contrasenia == null || contrasenia.isEmpty()))) 
-         
+         if (usuario == null || usuario.isEmpty() && (contrasenia == null || contrasenia.isEmpty())){
             mensaje= "Debe ingresar Usuario y contraseña";
-        
+         }
+         if(usuario !=null  && (contrasenia== null || contrasenia.isEmpty())){
+             mensaje = "Debe ingresar Contraseña";
+         }
+         if((usuario ==null|| usuario.isEmpty()) && contrasenia != null){
+             mensaje = "Debe ingresar usuario";
+         }
+         
+       
+           
+         
      return mensaje; 
     }
     
@@ -63,10 +64,13 @@ public class AutenticacionUsuario {
          for(Usuarios aux : usuarionuevo.getUsuarios()) {
              if(aux.getUsuario().equalsIgnoreCase(usuario) && aux.getContrasenia().equalsIgnoreCase(contrasenia)) {
                 System.out.println("Usuario Existe");
+                return true;
                 }else{
                 System.out.println("Usuario No existe");
+                
              }
           }
          return false;
+         
     }
 }

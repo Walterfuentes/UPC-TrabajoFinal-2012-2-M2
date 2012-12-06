@@ -26,9 +26,10 @@ public class AdminUsuarioTest {
         String Cargo = "jefe";
         String Rol = "rol1";
         String Contrasenia = "1234";
+        int Transacciones = 0;
 
         AdminUsuario adminUsuario = new AdminUsuario();
-        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia, true);
+        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia, Transacciones);
         Usuarios elemento = adminUsuario.Buscar(Dni);
         assertNotNull(elemento);
         assertEquals(Dni, elemento.getDni());
@@ -46,7 +47,7 @@ public class AdminUsuarioTest {
     }
 
     @Test
-    public void deberiaValidar() {
+    public void deberiaValidarNoIngresarUsuarioDuplicado() {
         String Dni = "123456789";
         String Nombre = "Gianina";
         String ApellidoPaterno = "Quispe";
@@ -57,6 +58,7 @@ public class AdminUsuarioTest {
         String Cargo = "jefe";
         String Rol = "rol1";
         String Contrasenia = "1234";
+        int Transacciones = 0;
 
         String Dni1 = "123456789";
         String Nombre1 = "Gianina";
@@ -68,18 +70,17 @@ public class AdminUsuarioTest {
         String Cargo1 = "jefe";
         String Rol1 = "rol1";
         String Contrasenia1 = "1234";
+        int Transacciones1 = 0;
         
         AdminUsuario adminUsuario = new AdminUsuario();
-        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia,true);
-        adminUsuario.Adicionar(Dni1, Nombre1, ApellidoPaterno1, ApellidoMaterno1, Usuario1, Correo1, FechaIngreso1, Cargo1, Rol1, Contrasenia1,true);
-
-        int totalRetornado = adminUsuario.getTotalUsuarios();
-        assertEquals(totalRetornado,1);
+        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia,Transacciones);
+        adminUsuario.Adicionar(Dni1, Nombre1, ApellidoPaterno1, ApellidoMaterno1, Usuario1, Correo1, FechaIngreso1, Cargo1, Rol1, Contrasenia1,Transacciones1);
+        assertEquals(1, adminUsuario.getTotalUsuarios());
         
     }
     
     @Test
-    public void deberiaEliminarUsuario(){
+    public void deberiaEliminarUsuariosinTransacciones(){
         String Dni = "123456789";
         String Nombre = "Gianina";
         String ApellidoPaterno = "Quispe";
@@ -90,19 +91,32 @@ public class AdminUsuarioTest {
         String Cargo = "jefe";
         String Rol = "rol1";
         String Contrasenia = "1234";
+        int Transacciones = 0;
+        
+        String Dni1 = "277473112";
+        String Nombre1 = "Maria";
+        String ApellidoPaterno1 = "Jimenez";
+        String ApellidoMaterno1 = "Rosas";
+        String Usuario1 = "u0001";
+        String Correo1 = "123@gmail.com";
+        String FechaIngreso1 = "10/10/2012";
+        String Cargo1 = "jefe";
+        String Rol1 = "rol1";
+        String Contrasenia1 = "1234";
+        int Transacciones1 = 0;
         
         AdminUsuario adminUsuario = new AdminUsuario();
-        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia,true);
-    
+        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia,Transacciones);
+        adminUsuario.Adicionar(Dni1, Nombre1, ApellidoPaterno1, ApellidoMaterno1, Usuario1, Correo1, FechaIngreso1, Cargo1, Rol1, Contrasenia1,Transacciones1);
+        Assert.assertEquals(2, adminUsuario.getTotalUsuarios());
         adminUsuario.Eliminar(Dni);
-        Usuarios elemento= adminUsuario.Buscar(Dni);
-        assertNull(elemento);
-               
+        Assert.assertEquals(1, adminUsuario.getTotalUsuarios());
+         
         
     } 
     
-    @Test 
-    public void deveriaEditar (){
+    @Test
+    public void NodeberiaEliminarUsuarioconTransacciones(){
         String Dni = "123456789";
         String Nombre = "Gianina";
         String ApellidoPaterno = "Quispe";
@@ -113,13 +127,48 @@ public class AdminUsuarioTest {
         String Cargo = "jefe";
         String Rol = "rol1";
         String Contrasenia = "1234";
+        int Transacciones = 2;
+        
+        String Dni1 = "277473112";
+        String Nombre1 = "Maria";
+        String ApellidoPaterno1 = "Jimenez";
+        String ApellidoMaterno1 = "Rosas";
+        String Usuario1 = "u0001";
+        String Correo1 = "123@gmail.com";
+        String FechaIngreso1 = "10/10/2012";
+        String Cargo1 = "jefe";
+        String Rol1 = "rol1";
+        String Contrasenia1 = "1234";
+        int Transacciones1 = 2;
+        
+        AdminUsuario adminUsuario = new AdminUsuario();
+        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia,Transacciones);
+        adminUsuario.Adicionar(Dni1, Nombre1, ApellidoPaterno1, ApellidoMaterno1, Usuario1, Correo1, FechaIngreso1, Cargo1, Rol1, Contrasenia1,Transacciones1);
+        Assert.assertEquals(2, adminUsuario.getTotalUsuarios());
+        adminUsuario.Eliminar(Dni);
+        Assert.assertEquals(2, adminUsuario.getTotalUsuarios());
+          } 
+    
+    @Test 
+    public void deBeriaEditar (){
+        String Dni = "123456789";
+        String Nombre = "Gianina";
+        String ApellidoPaterno = "Quispe";
+        String ApellidoMaterno = "Rosas";
+        String Usuario = "u0001";
+        String Correo = "123@gmail.com";
+        String FechaIngreso = "10/10/2012";
+        String Cargo = "jefe";
+        String Rol = "rol1";
+        String Contrasenia = "1234";
+        int Transacciones = 0;
         
         String Correo_Editado = "789@gmail.com";
         String FechaIngreso_Editado = "19/11/2012";
         String Nombre_Editado = "Claudia";
     
         AdminUsuario adminUsuario = new AdminUsuario ();
-        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia,true);
+        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia,Transacciones);
         
         Usuarios elemento = adminUsuario.Buscar(Dni);
         assertEquals(Dni, elemento.getDni());
@@ -162,6 +211,7 @@ public class AdminUsuarioTest {
         String Cargo = "jefe";
         String Rol = "rol1";
         String Contrasenia = "1234";
+        int Transacciones = 0;
 
         String Dni1 = "98765432";
         String Nombre1 = "Jorge";
@@ -173,10 +223,11 @@ public class AdminUsuarioTest {
         String Cargo1 = "lider";
         String Rol1 = "rol2";
         String Contrasenia1 = "1564";
+        int Transacciones1 = 0;
         
         AdminUsuario adminUsuario = new AdminUsuario();
-        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia,true);
-        adminUsuario.Adicionar(Dni1, Nombre1, ApellidoPaterno1, ApellidoMaterno1, Usuario1, Correo1, FechaIngreso1, Cargo1, Rol1, Contrasenia1,true);
+        adminUsuario.Adicionar(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Rol, Contrasenia,Transacciones);
+        adminUsuario.Adicionar(Dni1, Nombre1, ApellidoPaterno1, ApellidoMaterno1, Usuario1, Correo1, FechaIngreso1, Cargo1, Rol1, Contrasenia1,Transacciones1);
         
         Usuarios elemento = adminUsuario.Buscar(Dni);
         assertEquals(Dni, elemento.getDni());

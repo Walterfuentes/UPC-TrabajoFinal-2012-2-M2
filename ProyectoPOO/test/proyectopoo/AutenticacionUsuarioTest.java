@@ -30,8 +30,9 @@ public class AutenticacionUsuarioTest {
           String Cargo = "Analista";
           String Roll = "Analiza";
           String Contrasenia = "123456";
+          int Transacciones = 0;
           AutenticacionUsuario test = new AutenticacionUsuario();
-          Assert.assertTrue(test.CrearUsuario(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Correo, FechaIngreso, Usuario, Contrasenia, Cargo, Roll,true));
+          Assert.assertTrue(test.CrearUsuario(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Correo, FechaIngreso, Usuario, Contrasenia, Cargo, Roll,Transacciones));
     }   
           
     @Test
@@ -46,9 +47,12 @@ public class AutenticacionUsuarioTest {
           String Cargo = "Supervisor";
           String Roll = "Supervisa";
           String Contrasenia = "123456";
+          int Transacciones = 0;
           AutenticacionUsuario nuevo = new AutenticacionUsuario();
-          nuevo.CrearUsuario(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Roll, Contrasenia,true);
-          Assert.assertTrue(nuevo.permitirAcceso("jcastro", "123456"));
+          nuevo.CrearUsuario(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Roll, Contrasenia,Transacciones);
+          
+          
+          Assert.assertTrue(nuevo.permitirAcceso("Jcastro", "123456"));
     }
    
     @Test
@@ -63,48 +67,53 @@ public class AutenticacionUsuarioTest {
           String Cargo = "Colsultor";
           String Roll = "Consulta";
           String Contrasenia = "123456";
+          int Transacciones = 0;
           AutenticacionUsuario nuevo = new AutenticacionUsuario();
-          nuevo.CrearUsuario(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Roll, Contrasenia,true);
+          nuevo.CrearUsuario(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Roll, Contrasenia,Transacciones);
           Assert.assertFalse(nuevo.permitirAcceso("jcarrasco", Contrasenia));
     }
-}   
+  
    
    
-//   @Test
-//   public void validarCamposContraseniaNombre() {
-//          String nombre = null;
-//          String contrasenia = null;
-//       
-//          AutenticacionUsuario test1 = new AutenticacionUsuario();
-//          Assert.assertEquals("Datos Incompletos", test1.validarCamposDeAcceso(nombre, contrasenia));
-//      
-//          
-//   }                                                                                            
-//   
-//   @Test
-//   public void validarCampoNombre() { 
-//          String nombre = null;
-//          String contrasenia = "asieslavida";
-//          
-//          AutenticacionUsuario test = new AutenticacionUsuario();
-//          Assert.assertEquals("Falta Nombre", test.validarCamposDeAcceso(nombre, contrasenia));
-//   }
-//   
-//   @Test
-//   public void validarCampoContrasenia() {
-//          String nombre = "Carlos";
-//          String contrasenia = null;
-//          
-//          AutenticacionUsuario test = new AutenticacionUsuario();
-//          Assert.assertEquals("Falta Contraseña", test.validarCamposDeAcceso(nombre, contrasenia));
-//   }
-//   
-//   @Test
-//   public void validarExistenciaDeUsuario() {
-//          AutenticacionUsuario test = new AutenticacionUsuario();
-//          
-//          
-//   }
-//   
-//   
-//}      
+   @Test
+   public void validaCamposContraseniaNombreVacios() {
+      String usuario = null;
+      String contrasenia = null;
+      AutenticacionUsuario nuevo = new AutenticacionUsuario();
+      Assert.assertEquals("Debe ingresar Usuario y contraseña", nuevo.validarCamposDeAcceso(usuario, contrasenia));
+      
+          
+   } 
+   
+    @Test
+   public void validaCamposContraseniaVacia() {
+      String usuario = "Juan";
+      String contrasenia = null;
+      AutenticacionUsuario nuevo = new AutenticacionUsuario();
+      Assert.assertEquals("Debe ingresar Contraseña", nuevo.validarCamposDeAcceso(usuario, contrasenia));
+      
+         
+   } 
+    
+    
+    @Test
+   public void validaCamposNombreVacio() {
+      String usuario = null;
+      String contrasenia = "Contrasenia";
+      AutenticacionUsuario nuevo = new AutenticacionUsuario();
+      Assert.assertEquals("Debe ingresar usuario", nuevo.validarCamposDeAcceso(usuario, contrasenia));
+      
+          
+   } 
+     
+     @Test
+   public void validaCamposContraseniaNombreDatosCorrectos() {
+      String usuario = "Mario";
+      String contrasenia = "Contra";
+      AutenticacionUsuario nuevo = new AutenticacionUsuario();
+      Assert.assertEquals("Correcto", nuevo.validarCamposDeAcceso(usuario, contrasenia));
+      
+          
+   } 
+      
+}
