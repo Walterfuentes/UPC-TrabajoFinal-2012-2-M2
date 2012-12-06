@@ -8,12 +8,12 @@ package proyectopoo;
  *
  * @author walterfuentes
  */
-public class LoginUsuario extends javax.swing.JFrame {
+public class PanelLoginUsuario extends javax.swing.JFrame {
 
     /**
-     * Creates new form LoginUsuario
+     * Creates new form PanelLoginUsuario
      */
-    public LoginUsuario() {
+    public PanelLoginUsuario() {
         initComponents();
     }
 
@@ -42,6 +42,12 @@ public class LoginUsuario extends javax.swing.JFrame {
         UsuarioLabel.setText("Usuario");
 
         ContraseniaLabel.setText("Contraseña");
+
+        CampoIngresoUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoIngresoUsuarioActionPerformed(evt);
+            }
+        });
 
         CampoIngresoContrasenia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,6 +169,10 @@ public class LoginUsuario extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void CampoIngresoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoIngresoUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoIngresoUsuarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -184,13 +194,13 @@ public class LoginUsuario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PanelLoginUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PanelLoginUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PanelLoginUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PanelLoginUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -201,7 +211,7 @@ public class LoginUsuario extends javax.swing.JFrame {
 
             @Override
             public void run() {
-                new LoginUsuario().setVisible(true);
+                new PanelLoginUsuario().setVisible(true);
             }
         });
     }
