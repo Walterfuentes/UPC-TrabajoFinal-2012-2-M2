@@ -8,15 +8,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+
 /**
  * @author Pedro Balarezo
  */
-public class VentasAdmin {
+public class AdminVentas {
 
     private ArrayList<Venta> ventas;
     private ArrayList<Venta> aux;
 
-    public VentasAdmin() {
+    public AdminVentas() {
         ventas = new ArrayList<Venta>();
     }
 
@@ -215,7 +216,6 @@ public class VentasAdmin {
     
     
 }
-
 class Fecha_Vencimiento_Comparator implements Comparator {
 
     @Override

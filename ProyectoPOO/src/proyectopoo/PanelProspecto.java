@@ -84,6 +84,7 @@ public class PanelProspecto extends javax.swing.JFrame {
 
         jLabel1.setText("MODULO PROSPECTO");
 
+        PanelListaDatos.setBackground(new java.awt.Color(204, 204, 204));
         PanelListaDatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         PanelListaDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -109,6 +110,8 @@ public class PanelProspecto extends javax.swing.JFrame {
                 BotonAltaProspectoActionPerformed(evt);
             }
         });
+
+        CampoRespuestaAcciones.setBackground(new java.awt.Color(102, 102, 102));
 
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

@@ -29,7 +29,7 @@ public class HistoriaVentaTest {
         String observaciones = "provando";
         
         Venta v = new Venta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado);
-        VentasAdmin vd = new VentasAdmin();
+        AdminVentas vd = new AdminVentas();
 
         vd.Alta(factura_boleta, null, numero, 0, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado);
 
@@ -51,7 +51,7 @@ public class HistoriaVentaTest {
         String observaciones = "provando";
         
         Venta v = new Venta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado);
-        VentasAdmin vd = new VentasAdmin();
+        AdminVentas vd = new AdminVentas();
 
         vd.Alta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado);
 
@@ -75,7 +75,7 @@ public class HistoriaVentaTest {
         String observaciones = "provando";
 
         Venta v = new Venta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado);
-        VentasAdmin vd = new VentasAdmin();
+        AdminVentas vd = new AdminVentas();
 
         vd.Alta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado);
         
@@ -137,7 +137,7 @@ public class HistoriaVentaTest {
         String estado2 = "mal";
 
         Venta v = new Venta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado);
-        VentasAdmin vd = new VentasAdmin();
+        AdminVentas vd = new AdminVentas();
 
         vd.Alta(factura_boleta, concepto, numero, fecha_emision, empresa, subtotal, igv, total, moneda, fecha_vencimiento, fecha_pago, observaciones, estado);
         vd.Alta(factura_boleta1, concepto1, numero1, fecha_emision1, empresa1, subtotal1, igv1, total1, moneda1, fecha_vencimiento1, fecha_pago1, observaciones1, estado1);
