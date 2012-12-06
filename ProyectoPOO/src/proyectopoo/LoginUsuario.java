@@ -137,20 +137,25 @@ public class LoginUsuario extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
         AutenticacionUsuario nuevo = new AutenticacionUsuario();
-        nuevo.CrearUsuario("41334903", "Javier", "Perez", "Manrique", "JPerez", "micorreo@correo.com", "03/12/2012", "Jefe IT", "ADMIN", "contra", 0);
+        nuevo.CrearUsuario("41334903", "Pedro", "Balarezo", "Hernandez", "pbalarezo", "micorreo@correo.com", "03/12/2012", "Jefe IT", "ADMIN", "contra", 0);
+        nuevo.CrearUsuario("41374903", "Carlos", "Ricaldi", "Flores", "cricaldi", "micorreo@correo.com", "03/12/2012", "Jefe IT", "ADMIN", "contra", 0);
+        nuevo.CrearUsuario("41394903", "Walter", "Fuentes", "Berrocal", "wfuentes", "micorreo@correo.com", "03/12/2012", "Jefe IT", "ADMIN", "contra", 0);
         
         String usuario = this.CampoIngresoUsuario.getText();
         String contrasenia = this.CampoIngresoContrasenia.getText();
         String Mensaje = nuevo.validarCamposDeAcceso(usuario, contrasenia);
         if(Mensaje.equalsIgnoreCase("Correcto")){
-        boolean respuesta = nuevo.permitirAcceso(usuario, contrasenia);
-        if(respuesta == true){
+        String respuesta = nuevo.permitirAcceso(usuario, contrasenia);
+        if(respuesta.equalsIgnoreCase("Credenciales Correctas")){
             Mensaje = "Bienvenido al sistema";
             this.CampoRespuesta.setText(Mensaje);
         }else{
-            Mensaje = "Usuario No Existe";
+            Mensaje = nuevo.permitirAcceso(usuario, contrasenia);
             this.CampoRespuesta.setText(Mensaje);
         }
+        }else{
+            Mensaje = nuevo.validarCamposDeAcceso(usuario, contrasenia);
+            this.CampoRespuesta.setText(Mensaje);
         }
         
         
@@ -194,6 +199,7 @@ public class LoginUsuario extends javax.swing.JFrame {
          */
         java.awt.EventQueue.invokeLater(new Runnable() {
 
+            @Override
             public void run() {
                 new LoginUsuario().setVisible(true);
             }

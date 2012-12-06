@@ -50,7 +50,7 @@ public class AutenticacionUsuarioTest {
           int Transacciones = 0;
           AutenticacionUsuario nuevo = new AutenticacionUsuario();
           nuevo.CrearUsuario(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Roll, Contrasenia,Transacciones);
-          Assert.assertTrue(nuevo.permitirAcceso("Jcastro", "123456"));
+          Assert.assertEquals("Credenciales Correctas", nuevo.permitirAcceso("Jcastro", "123456"));
     }
    
     @Test
@@ -68,7 +68,7 @@ public class AutenticacionUsuarioTest {
           int Transacciones = 0;
           AutenticacionUsuario nuevo = new AutenticacionUsuario();
           nuevo.CrearUsuario(Dni, Nombre, ApellidoPaterno, ApellidoMaterno, Usuario, Correo, FechaIngreso, Cargo, Roll, Contrasenia,Transacciones);
-          Assert.assertFalse(nuevo.permitirAcceso("jcarrasco", Contrasenia));
+          Assert.assertEquals("Usuario No Existe", nuevo.permitirAcceso("jcarrasco", Contrasenia));
     }
   
    

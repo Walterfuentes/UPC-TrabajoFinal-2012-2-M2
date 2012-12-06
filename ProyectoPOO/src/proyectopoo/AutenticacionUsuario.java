@@ -59,18 +59,21 @@ public class AutenticacionUsuario {
      return mensaje; 
     }
     
-    public boolean permitirAcceso(String usuario, String contrasenia) {
-        
+    public String permitirAcceso(String usuario, String contrasenia) {
+        String mensaje = "";
          for(Usuarios aux : usuarionuevo.getUsuarios()) {
-             if(aux.getUsuario().equalsIgnoreCase(usuario) && aux.getContrasenia().equalsIgnoreCase(contrasenia)) {
-                System.out.println("Usuario Existe");
-                return true;
-                }else{
-                System.out.println("Usuario No existe");
+             if(aux.getUsuario().equalsIgnoreCase(usuario) && aux.getContrasenia().equalsIgnoreCase(contrasenia)) 
+                  mensaje = "Credenciales Correctas";
                 
-             }
-          }
-         return false;
-         
+            if(!aux.getUsuario().equalsIgnoreCase(usuario)) 
+                  mensaje =  "Usuario No Existe";
+            
+            if((aux.getUsuario().equalsIgnoreCase(usuario)) && (!aux.getContrasenia().equalsIgnoreCase(contrasenia))) 
+                  mensaje =  "Contraseña Incorrecta";
+             
+            }
+         return mensaje; 
+                   
     }
 }
+    
