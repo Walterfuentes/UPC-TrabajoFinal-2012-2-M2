@@ -7,16 +7,19 @@ package proyectopoo;
 import java.util.ArrayList;
 import java.util.Comparator;
 
+
 /**
  *
  * @author AnyeloMenacho
  */
 public class AdminGrupoEstudio {
     
-    ArrayList<GrupoEstudio> almacenagrupoestudio;
+    private ArrayList<GrupoEstudio> almacenagrupoestudio;
+    private String CampoBusqueda;
     
     public AdminGrupoEstudio() {
         almacenagrupoestudio = new ArrayList<GrupoEstudio>();
+        this.CampoBusqueda = "";
         
     }
 
@@ -40,6 +43,14 @@ public class AdminGrupoEstudio {
         
         return mensaje;
     }
+
+    public String getCampoBusqueda() {
+        return CampoBusqueda;
+    }
+
+    public void setCampoBusqueda(String CampoBusqueda) {
+        this.CampoBusqueda = CampoBusqueda;
+    }
     
     public int obtenerCantidadGrupoDeEstudio() {
         return almacenagrupoestudio.size();
@@ -47,7 +58,7 @@ public class AdminGrupoEstudio {
     
     
     public boolean CrearGrupoEstudios(String nombreGrupo, String academia, String curso, String fechaInicio, String fechaFin, String estado, String instructores, String linkToSyllabus, String local, String Aula, String CoordenadasAltitud, String CoordenadasLatitud){
-        if(validarDatosMandatorios(nombreGrupo, fechaInicio, fechaFin).equals("correcto")){
+        if(validarDatosMandatorios(nombreGrupo, fechaInicio, fechaFin).equals("correcto") && DuplicidadGrupoEstudio(nombreGrupo)==false){
         GrupoEstudio nuevo = new GrupoEstudio(nombreGrupo, academia, curso, fechaInicio, fechaFin, estado, instructores, linkToSyllabus, local, Aula, CoordenadasAltitud, CoordenadasLatitud);
         almacenagrupoestudio.add(nuevo);
         return true;
@@ -61,26 +72,34 @@ public class AdminGrupoEstudio {
         boolean Respuesta = false;
         
         for(GrupoEstudio dato : almacenagrupoestudio) {
-            if(dato.getNombreGrupo().equalsIgnoreCase(nombreGrupo)) {
+            if(dato.getNombreGrupo().equalsIgnoreCase(nombreGrupo)) 
                 Respuesta = true;
             }
-        }if(Respuesta==true) {
-            System.out.println("Grupo de Estudio ya Existe");
-         }   
+        
         return Respuesta;
     }   
    
-    public GrupoEstudio buscarGrupoEstudio(String nombreGrupo) {
+    public boolean filtrosBusqueda(String CampoBusqueda, String DatoBuscar){
+        if(CampoBusqueda.equalsIgnoreCase("GrupoEstudio")){
+            return buscarGrupoEstudio(DatoBuscar);
+        }else{
+             return false;
+        }
+        }
+    
+    
+    
+    public Boolean buscarGrupoEstudio(String DatoBusqueda) {
         
-        GrupoEstudio mensaje = null;
+        boolean mensaje = false;
         for(GrupoEstudio dato : almacenagrupoestudio) {
-            if(dato.getNombreGrupo().equalsIgnoreCase(nombreGrupo)) {
+            if(dato.getNombreGrupo().equalsIgnoreCase(DatoBusqueda)) {
                 System.out.println("Datos Encontrados: " + dato.getNombreGrupo());
-                mensaje=dato;
+                mensaje=true;
             }
         }
         return mensaje;
-    }
+    }   
     
     
     public void listarGrupoEstudio() {
@@ -97,7 +116,6 @@ public class AdminGrupoEstudio {
      
     }
 }
-
 class FechaInicioComparator implements Comparator<GrupoEstudio> {
 
     @Override
